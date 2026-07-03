@@ -16,7 +16,7 @@ Minimal pattern for delivering contact or enrollment forms to an inbox without a
 
 ## Production checklist
 
-See [Abe Inc. launch checklist](https://abeinc.com/resources/production-launch-checklist.html)
+See [Abe Inc. launch checklist](https://abestack.com/resources/production-launch-checklist.html)
 
 ---
-Built by [Abe Inc.](https://abeinc.com) — web apps, automation & integrations.
+Built by [Abe Inc.](https://abestack.com) — web apps, automation & integrations.

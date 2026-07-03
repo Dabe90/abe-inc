@@ -6,5 +6,5 @@ window.ABE_INC = {
   loomEmbedUrl: '',
   // Clutch: create profile at clutch.co → paste profile URL when ready
   clutchProfileUrl: '',
-  siteUrl: 'https://abe-inc.vercel.app',
+  siteUrl: 'https://abestack.com',
 };

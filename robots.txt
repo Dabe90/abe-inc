@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://abe-inc.vercel.app/sitemap.xml
+Sitemap: https://abestack.com/sitemap.xml
