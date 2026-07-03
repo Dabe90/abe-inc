@@ -1,5 +1,5 @@
 window.ABE_INC = {
-  email: 'abuxberkeley@gmail.com',
+  email: 'hello@abestack.com',
   // Calendly: sign up free at calendly.com → create "Discovery call" → paste link below
   calendlyUrl: 'https://calendly.com/abe-inc/discovery',
   // Loom: record a 60–90s walkthrough → Share → Embed → paste embed URL below
