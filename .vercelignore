@@ -1,0 +1,4 @@
+node_modules
+scripts
+lighthouse-report.json
+package-lock.json

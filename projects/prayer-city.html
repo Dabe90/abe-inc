@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prayer City — Abe Inc.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',soft:'#64748b'},accent:{DEFAULT:'#2563eb'}}}}};</script>
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body class="bg-white text-ink antialiased">
+  <header class="border-b border-slate-200"><div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between text-sm">
+    <a href="../index.html" class="font-semibold">Abe Inc.</a>
+    <a href="../projects.html" class="text-accent">← All work</a>
+  </div></header>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <p class="text-xs font-bold uppercase text-accent">Case study · 2026</p>
+    <h1 class="mt-2 text-3xl font-bold">Houston World Cup Prayer City</h1>
+    <p class="mt-4 text-ink-soft leading-relaxed">Volunteer operations platform: signup, hub, daily digests, gallery, Gmail/Sheets automation.</p>
+    <p class="mt-4"><a href="https://prayercityhtx.com" class="text-accent font-semibold" target="_blank" rel="noopener">prayercityhtx.com ↗</a></p>
+    <figure class="mt-8">
+      <img src="../images/screenshots/prayer-city/hero.png" alt="Prayer City volunteer hub homepage" class="w-full rounded-xl screenshot-frame border border-slate-200" width="1440" height="900" />
+      <figcaption class="mt-2 text-xs text-ink-soft text-center">Volunteer hub — role guides, daily content, and shift management</figcaption>
+    </figure>
+    <section class="mt-10"><h2 class="text-xl font-bold">Problem</h2><p class="mt-2 text-ink-soft text-sm">Coordinate hundreds of volunteers across serve days without spreadsheet chaos.</p></section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Solution</h2>
+      <ul class="mt-2 text-ink-soft text-sm space-y-2 list-disc pl-5">
+        <li>Public site + volunteer signup with shift picker</li>
+        <li>Firebase Auth volunteer hub</li>
+        <li>Cloud Functions + daily role digests</li>
+        <li>Apps Script Gmail pipeline + bounce handling</li>
+        <li>Multi-day media gallery on Firebase Storage</li>
+      </ul>
+    </section>
+    <section class="mt-10">
+      <h2 class="text-xl font-bold">Screenshots</h2>
+      <div class="mt-4 space-y-8">
+        <figure>
+          <img src="../images/screenshots/prayer-city/signup.png" alt="Prayer City volunteer signup flow" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" />
+          <figcaption class="mt-2 text-xs text-ink-soft">Volunteer signup with shift picker</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/screenshots/prayer-city/gallery.png" alt="Prayer City media gallery" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" />
+          <figcaption class="mt-2 text-xs text-ink-soft">Multi-day media gallery on Firebase Storage</figcaption>
+        </figure>
+      </div>
+    </section>
+  </article>
+  <footer class="border-t border-slate-200 mt-12">
+    <div class="max-w-3xl mx-auto px-4 py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-ink-soft">
+      <p>© <span data-year></span> Abe Inc.</p>
+      <div class="flex gap-6">
+        <a href="../projects.html" class="hover:text-accent transition">All work</a>
+        <a href="../contact.html" class="hover:text-accent transition">Start a project</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/site.js"></script>
+</body>
+</html>

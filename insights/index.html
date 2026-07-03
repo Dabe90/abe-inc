@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Insights — Abe Inc.</title>
+  <meta name="description" content="Practical notes on web apps, automation, and shipping production software — from the Abe Inc. team." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',muted:'#334155',soft:'#64748b'},accent:{DEFAULT:'#2563eb',light:'#3b82f6',soft:'#dbeafe'}}}}};</script>
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body class="min-h-screen bg-white text-ink antialiased flex flex-col" data-calendly-widget="true">
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+      <a href="../index.html" class="flex items-center gap-2.5 group">
+        <span class="w-9 h-9 rounded-lg bg-ink text-white text-sm font-bold flex items-center justify-center group-hover:bg-accent transition">A</span>
+        <span class="font-semibold text-ink tracking-tight">Abe Inc.</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-8 text-sm font-medium text-ink-muted" aria-label="Main">
+        <a href="../projects.html" class="hover:text-accent transition">Work</a>
+        <a href="index.html" class="text-accent font-semibold">Insights</a>
+        <a href="../about.html" class="hover:text-accent transition">About</a>
+        <a href="../contact.html" class="hover:text-accent transition">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="../contact.html" class="hidden sm:inline-flex rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white hover:bg-accent transition">Start a project</a>
+        <button id="nav-toggle" type="button" class="sm:hidden p-2 rounded-lg border border-slate-200" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-nav" class="hidden sm:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-1" aria-label="Mobile">
+      <a href="../projects.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">Work</a>
+      <a href="index.html" class="block py-2.5 text-sm font-medium text-accent">Insights</a>
+      <a href="../about.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">About</a>
+      <a href="../contact.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">Contact</a>
+    </nav>
+  </header>
+
+  <main class="flex-1 max-w-3xl mx-auto px-4 py-16 w-full">
+    <p class="text-sm font-semibold uppercase tracking-widest text-accent">Insights</p>
+    <h1 class="mt-2 text-3xl sm:text-4xl font-bold">Notes on building software that ships.</h1>
+    <p class="mt-4 text-ink-soft leading-relaxed">Practical thinking on web apps, automation, and production launches — from projects we're building in the field.</p>
+
+    <div class="mt-12 space-y-6">
+      <a href="../resources/index.html" class="block rounded-2xl border-2 border-accent bg-accent-soft/30 p-6 hover:shadow-md transition">
+        <p class="text-xs font-bold uppercase text-accent">Free download</p>
+        <h2 class="mt-2 text-xl font-bold">Production launch checklist</h2>
+        <p class="mt-2 text-sm text-ink-soft">DNS, email, forms, SEO — the checklist we run before every go-live.</p>
+      </a>
+      <a href="../resources/linkedin-starter-pack.html" class="block rounded-2xl border border-slate-200 p-6 hover:border-accent hover:shadow-md transition">
+        <p class="text-xs font-bold uppercase text-accent">Internal resource</p>
+        <h2 class="mt-2 text-xl font-bold">LinkedIn starter pack</h2>
+        <p class="mt-2 text-sm text-ink-soft">8 copy-paste posts from our case studies — for your marketing.</p>
+      </a>
+      <a href="owned-software-vs-saas.html" class="block rounded-2xl border border-slate-200 p-6 hover:border-accent hover:shadow-md transition group">
+        <p class="text-xs font-bold uppercase text-accent">Strategy · Mar 2026</p>
+        <h2 class="mt-2 text-xl font-bold group-hover:text-accent transition">Owned software vs. monthly SaaS: when custom build wins</h2>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed">Subscription tools are fast to start — but per-seat fees, platform limits, and data lock-in add up. Here's when a one-time build pays for itself.</p>
+      </a>
+      <a href="production-launch-checklist.html" class="block rounded-2xl border border-slate-200 p-6 hover:border-accent hover:shadow-md transition group">
+        <p class="text-xs font-bold uppercase text-accent">DevOps · Feb 2026</p>
+        <h2 class="mt-2 text-xl font-bold group-hover:text-accent transition">What a production launch actually includes</h2>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed">DNS, SSL, domain email, form delivery, SEO basics, and handoff docs — the checklist clients forget until go-live week.</p>
+      </a>
+      <a href="firebase-for-volunteer-platforms.html" class="block rounded-2xl border border-slate-200 p-6 hover:border-accent hover:shadow-md transition group">
+        <p class="text-xs font-bold uppercase text-accent">Engineering · Jan 2026</p>
+        <h2 class="mt-2 text-xl font-bold group-hover:text-accent transition">Why Firebase works for volunteer and ops platforms</h2>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed">Auth, real-time data, scheduled functions, and storage — without running a server. A pattern we use for event-scale coordination.</p>
+      </a>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white mt-auto">
+    <div class="max-w-6xl mx-auto px-4 py-8 text-center text-sm text-ink-soft">
+      <p>© <span data-year></span> Abe Inc.</p>
+    </div>
+  </footer>
+  <script src="../js/config.js"></script>
+  <script src="../js/site.js"></script>
+</body>
+</html>

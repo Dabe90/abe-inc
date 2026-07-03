@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prayer City Social — Abe Inc.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',soft:'#64748b'},accent:{DEFAULT:'#2563eb'}}}}};</script>
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body class="bg-white text-ink antialiased">
+  <header class="border-b border-slate-200"><div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between text-sm">
+    <a href="../index.html" class="font-semibold">Abe Inc.</a>
+    <a href="../projects.html" class="text-accent">← All work</a>
+  </div></header>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <p class="text-xs font-bold uppercase text-accent">Case study · 2026</p>
+    <h1 class="mt-2 text-3xl font-bold">Prayer City Social</h1>
+    <p class="mt-4 text-ink-soft leading-relaxed">Multi-platform social publishing platform — compose once, generate AI-tailored variants, schedule or publish to 10 networks from one dashboard.</p>
+    <p class="mt-4"><a href="https://social.prayercityhtx.com" class="text-accent font-semibold" target="_blank" rel="noopener">social.prayercityhtx.com ↗</a></p>
+    <figure class="mt-8">
+      <img src="../images/screenshots/prayer-city-social/hero.png" alt="Prayer City Social Manager landing page" class="w-full rounded-xl screenshot-frame border border-slate-200" width="1440" height="900" />
+      <figcaption class="mt-2 text-xs text-ink-soft text-center">Social Manager — compose once, publish everywhere</figcaption>
+    </figure>
+    <section class="mt-10"><h2 class="text-xl font-bold">Problem</h2><p class="mt-2 text-ink-soft text-sm">Posting the same content to every platform by hand is slow and repetitive. Subscription schedulers are expensive, rented, and limited in what they connect to.</p></section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Solution</h2>
+      <ul class="mt-2 text-ink-soft text-sm space-y-2 list-disc pl-5">
+        <li>Next.js dashboard with one compose box and AI variants per network</li>
+        <li>10 platforms — Instagram, Facebook, YouTube, TikTok, LinkedIn, X, Threads, Bluesky, Spotify, WhatsApp</li>
+        <li>Queue-based worker for scheduled and instant publishing with retry logic</li>
+        <li>OAuth account linking with token refresh for each provider</li>
+        <li>In-browser video editor for Reels and short-form clips</li>
+        <li>Multi-provider AI layer (Groq, DeepSeek, OpenAI) with automatic failover</li>
+        <li>PocketBase auth, media storage, and job records behind Cloudflare Tunnel</li>
+      </ul>
+    </section>
+    <section class="mt-10">
+      <h2 class="text-xl font-bold">Screenshots</h2>
+      <div class="mt-4 space-y-8">
+        <figure>
+          <img src="../images/screenshots/prayer-city-social/editor.png" alt="In-browser video editor for social posts" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" />
+          <figcaption class="mt-2 text-xs text-ink-soft">In-browser video editor — trim, crop, and prep clips before publishing</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/screenshots/prayer-city-social/dashboard.png" alt="Prayer City Social dashboard login" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" />
+          <figcaption class="mt-2 text-xs text-ink-soft">Command center dashboard for channel management and scheduling</figcaption>
+        </figure>
+      </div>
+    </section>
+  </article>
+  <footer class="border-t border-slate-200 mt-12">
+    <div class="max-w-3xl mx-auto px-4 py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-ink-soft">
+      <p>© <span data-year></span> Abe Inc.</p>
+      <div class="flex gap-6">
+        <a href="../projects.html" class="hover:text-accent transition">All work</a>
+        <a href="../contact.html" class="hover:text-accent transition">Start a project</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/site.js"></script>
+</body>
+</html>

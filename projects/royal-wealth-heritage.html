@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Royal Wealth Heritage LLC — Abe Inc.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',soft:'#64748b'},accent:{DEFAULT:'#2563eb'}}}}};</script>
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body class="bg-white text-ink antialiased">
+  <header class="border-b border-slate-200"><div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between text-sm">
+    <a href="../index.html" class="font-semibold">Abe Inc.</a>
+    <a href="../projects.html" class="text-accent">← All work</a>
+  </div></header>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <p class="text-xs font-bold uppercase text-accent">Case study · 2026</p>
+    <h1 class="mt-2 text-3xl font-bold">Royal Wealth Heritage LLC</h1>
+    <p class="mt-4 text-ink-soft leading-relaxed">Custom business website and academy enrollment platform for a Texas financial consulting firm and its RWH Life Skills &amp; Learning Academy division.</p>
+    <p class="mt-4"><a href="https://royalwealthheritage.com" class="text-accent font-semibold" target="_blank" rel="noopener">royalwealthheritage.com ↗</a></p>
+    <figure class="mt-8">
+      <img src="../images/screenshots/royal-wealth-heritage/hero.png" alt="Royal Wealth Heritage LLC homepage" class="w-full rounded-xl screenshot-frame border border-slate-200" width="1440" height="900" />
+      <figcaption class="mt-2 text-xs text-ink-soft text-center">Branded homepage — financial services and Life Skills Academy</figcaption>
+    </figure>
+    <section class="mt-10"><h2 class="text-xl font-bold">Problem</h2><p class="mt-2 text-ink-soft text-sm">Royal Wealth Heritage needed a professional web presence for two divisions — financial consulting and an educational academy — plus a way to collect enrollment paperwork without email attachments or paper forms.</p></section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Solution</h2>
+      <ul class="mt-2 text-ink-soft text-sm space-y-2 list-disc pl-5">
+        <li>11-page Next.js site with custom branding (magenta, gold, cream palette)</li>
+        <li>7-step academy enrollment wizard with 7 standalone legal forms</li>
+        <li>Contact and enrollment forms delivered to info@royalwealthheritage.com via Web3Forms</li>
+        <li>SEO assets — sitemap, Open Graph images, page metadata</li>
+        <li>Zoho Mail setup with MX, SPF, and DKIM on Vercel DNS</li>
+        <li>Mobile-first UX with accessible navigation and print-friendly forms</li>
+      </ul>
+    </section>
+    <section class="mt-10">
+      <h2 class="text-xl font-bold">Screenshots</h2>
+      <div class="mt-4 space-y-8">
+        <figure>
+          <img src="../images/screenshots/royal-wealth-heritage/academy.png" alt="RWH Life Skills Academy page with pricing" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" />
+          <figcaption class="mt-2 text-xs text-ink-soft">Life Skills Academy — services, pricing, and FAQ</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/screenshots/royal-wealth-heritage/enrollment.png" alt="Academy enrollment wizard" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" />
+          <figcaption class="mt-2 text-xs text-ink-soft">7-step enrollment wizard with progress tracking</figcaption>
+        </figure>
+      </div>
+    </section>
+  </article>
+  <footer class="border-t border-slate-200 mt-12">
+    <div class="max-w-3xl mx-auto px-4 py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-ink-soft">
+      <p>© <span data-year></span> Abe Inc.</p>
+      <div class="flex gap-6">
+        <a href="../projects.html" class="hover:text-accent transition">All work</a>
+        <a href="../contact.html" class="hover:text-accent transition">Start a project</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/site.js"></script>
+</body>
+</html>

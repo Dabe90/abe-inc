@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Starter template</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 28rem; margin: 2rem auto; padding: 0 1rem; }
+    label { display: block; font-weight: 600; margin-top: 1rem; font-size: 0.875rem; }
+    input, textarea { width: 100%; padding: 0.5rem; margin-top: 0.25rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; }
+    button { margin-top: 1rem; width: 100%; padding: 0.75rem; background: #0f172a; color: #fff; border: none; border-radius: 9999px; font-weight: 600; cursor: pointer; }
+    .hp { position: absolute; left: -9999px; }
+  </style>
+</head>
+<body>
+  <h1>Contact us</h1>
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
+    <input type="hidden" name="subject" value="New contact form submission" />
+    <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+    <label>Name<input type="text" name="name" required /></label>
+    <label>Email<input type="email" name="email" required /></label>
+    <label>Message<textarea name="message" rows="5" required></textarea></label>
+    <button type="submit">Send</button>
+  </form>
+</body>
+</html>

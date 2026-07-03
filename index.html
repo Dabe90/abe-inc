@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Abe Inc. — Web apps, automation &amp; integrations</title>
+  <meta name="description" content="Abe Inc. ships production web applications, serverless backends, and workflow automation for teams that need software built right." />
+  <meta property="og:title" content="Abe Inc. — Software that ships" />
+  <meta property="og:description" content="Full-stack web apps, Firebase backends, and Google Workspace automation — from idea to production." />
+  <meta property="og:type" content="website" />
+  <link rel="sitemap" type="application/xml" href="sitemap.xml" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"Abe Inc.","description":"Web applications, Firebase backends, and workflow automation.","url":"https://abe-inc.vercel.app","email":"abuxberkeley@gmail.com","areaServed":"US","address":{"@type":"PostalAddress","addressLocality":"Houston","addressRegion":"TX","addressCountry":"US"},"priceRange":"$$","sameAs":["https://github.com/Dabe90"]}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: {
+      ink: { DEFAULT: '#0f172a', muted: '#334155', soft: '#64748b' },
+      accent: { DEFAULT: '#2563eb', light: '#3b82f6', soft: '#dbeafe' },
+    }}}};
+  </script>
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body class="min-h-screen bg-white text-ink antialiased flex flex-col" data-calendly-widget="true">
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <span class="w-9 h-9 rounded-lg bg-ink text-white text-sm font-bold flex items-center justify-center group-hover:bg-accent transition">A</span>
+        <span class="font-semibold text-ink tracking-tight">Abe Inc.</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-ink-muted" aria-label="Main">
+        <a href="projects.html" class="hover:text-accent transition">Work</a>
+        <a href="services.html" class="hover:text-accent transition">Services</a>
+        <a href="pricing.html" class="hover:text-accent transition">Pricing</a>
+        <a href="insights/index.html" class="hover:text-accent transition">Insights</a>
+        <a href="about.html" class="hover:text-accent transition">About</a>
+        <a href="contact.html" class="hover:text-accent transition">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="contact.html" class="hidden sm:inline-flex rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white hover:bg-accent transition">Start a project</a>
+        <button id="nav-toggle" type="button" class="md:hidden p-2 rounded-lg border border-slate-200 text-ink-muted hover:border-slate-300" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-nav" class="hidden md:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-1" aria-label="Mobile">
+      <a href="projects.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">Work</a>
+      <a href="services.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">Services</a>
+      <a href="pricing.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">Pricing</a>
+      <a href="about.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">About</a>
+      <a href="contact.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">Contact</a>
+      <a href="contact.html" class="block mt-2 text-center rounded-full bg-ink px-4 py-2.5 text-sm font-semibold text-white">Start a project</a>
+    </nav>
+  </header>
+
+  <main class="flex-1">
+    <section class="hero-grid border-b border-slate-100">
+      <div class="max-w-6xl mx-auto px-4 py-20 sm:py-28">
+        <p class="text-sm font-semibold uppercase tracking-widest text-accent mb-4">Software that ships</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-ink tracking-tight leading-[1.1] max-w-3xl">We build web products and automation that teams actually use.</h1>
+        <p class="mt-6 text-lg sm:text-xl text-ink-soft max-w-2xl leading-relaxed">Abe Inc. is a technology studio. Full-stack web apps, Firebase backends, and Google Workspace automation — structured for search, AI discoverability, and production from day one.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="pricing.html" class="text-sm font-semibold text-accent hover:underline">See pricing →</a>
+          <span class="text-ink-soft">·</span>
+          <a href="resources/index.html" class="text-sm font-semibold text-accent hover:underline">Free launch checklist</a>
+        </div>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="projects.html" class="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 hover:bg-accent-light transition">View our work →</a>
+          <a href="contact.html" class="inline-flex items-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-ink hover:border-ink transition" data-calendly-popup href="#">Book a discovery call</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-b border-slate-100 bg-white">
+      <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div><p class="stat-value text-3xl sm:text-4xl font-bold text-ink">3+</p><p class="mt-1 text-sm text-ink-soft">Live products shipped</p></div>
+        <div><p class="stat-value text-3xl sm:text-4xl font-bold text-ink">10+</p><p class="mt-1 text-sm text-ink-soft">Platforms integrated</p></div>
+        <div><p class="stat-value text-3xl sm:text-4xl font-bold text-ink">Full-stack</p><p class="mt-1 text-sm text-ink-soft">Design through deploy</p></div>
+        <div><p class="stat-value text-3xl sm:text-4xl font-bold text-ink">Houston</p><p class="mt-1 text-sm text-ink-soft">TX · Remote-friendly</p></div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-ink mb-3">What we do</h2>
+        <p class="text-ink-soft max-w-2xl mb-12">Custom software and automation — no templates, no page builders. Every project is built for your workflow and owned by you.</p>
+        <div class="grid sm:grid-cols-3 gap-6">
+          <article class="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
+            <div class="w-10 h-10 rounded-lg bg-accent-soft text-accent flex items-center justify-center text-lg font-bold mb-4">1</div>
+            <h3 class="font-bold text-lg mb-2">Web applications</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">Volunteer portals, enrollment systems, dashboards, and public sites on Next.js, Firebase, or static stacks — mobile-first and production-ready.</p>
+          </article>
+          <article class="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
+            <div class="w-10 h-10 rounded-lg bg-accent-soft text-accent flex items-center justify-center text-lg font-bold mb-4">2</div>
+            <h3 class="font-bold text-lg mb-2">Backend &amp; cloud</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">Firebase Auth, Firestore, Cloud Functions, scheduled jobs, webhooks, and secrets — infrastructure that scales without babysitting.</p>
+          </article>
+          <article class="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
+            <div class="w-10 h-10 rounded-lg bg-accent-soft text-accent flex items-center justify-center text-lg font-bold mb-4">3</div>
+            <h3 class="font-bold text-lg mb-2">Automation</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">Gmail → Sheets → APIs → email. Outreach pipelines, form routing, and ops workflows that run without manual copy-paste.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20 border-b border-slate-100">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-ink mb-3">How we work</h2>
+        <p class="text-ink-soft max-w-2xl mb-12">A clear process from first call to production — the same rigor boutique studios charge premium rates for, without the agency overhead.</p>
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="process-step">
+            <p class="text-xs font-bold uppercase tracking-widest text-accent">01</p>
+            <h3 class="mt-2 font-bold text-lg">Discover</h3>
+            <p class="mt-2 text-sm text-ink-soft leading-relaxed">Scope the problem, map users and workflows, and agree on what ships first.</p>
+          </div>
+          <div class="process-step">
+            <p class="text-xs font-bold uppercase tracking-widest text-accent">02</p>
+            <h3 class="mt-2 font-bold text-lg">Design &amp; build</h3>
+            <p class="mt-2 text-sm text-ink-soft leading-relaxed">Custom UI, APIs, and integrations — with daily Loom updates so you always see progress.</p>
+          </div>
+          <div class="process-step">
+            <p class="text-xs font-bold uppercase tracking-widest text-accent">03</p>
+            <h3 class="mt-2 font-bold text-lg">Ship</h3>
+            <p class="mt-2 text-sm text-ink-soft leading-relaxed">DNS, SSL, domain email, SEO basics, and a production deploy you can hand off.</p>
+          </div>
+          <div class="process-step">
+            <p class="text-xs font-bold uppercase tracking-widest text-accent">04</p>
+            <h3 class="mt-2 font-bold text-lg">Support</h3>
+            <p class="mt-2 text-sm text-ink-soft leading-relaxed">Post-launch fixes, content updates, and optional monthly retainers when you need us.</p>
+          </div>
+        </div>
+        <p class="mt-10"><a href="about.html" class="text-accent font-semibold text-sm hover:underline">Learn more about our approach →</a></p>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+          <div>
+            <h2 class="text-2xl font-bold text-ink">Selected work</h2>
+            <p class="mt-2 text-sm text-ink-soft">Production systems we've designed, built, and deployed.</p>
+          </div>
+          <a href="projects.html" class="text-sm font-semibold text-accent hover:underline shrink-0">View all projects →</a>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <a href="projects/prayer-city.html" class="block rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition group">
+            <img src="images/screenshots/prayer-city/hero.png" alt="Houston World Cup Prayer City volunteer platform" class="w-full aspect-video object-cover object-top group-hover:scale-[1.02] transition duration-300" width="1440" height="900" loading="lazy" />
+            <div class="p-6"><p class="text-xs font-bold uppercase text-accent">2026</p><h3 class="text-xl font-bold mt-1">Houston World Cup Prayer City</h3><p class="text-sm text-ink-soft mt-2">Volunteer platform · Firebase · Gmail automation</p></div>
+          </a>
+          <a href="projects/royal-wealth-heritage.html" class="block rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition group">
+            <img src="images/screenshots/royal-wealth-heritage/hero.png" alt="Royal Wealth Heritage LLC business website" class="w-full aspect-video object-cover object-top group-hover:scale-[1.02] transition duration-300" width="1440" height="900" loading="lazy" />
+            <div class="p-6"><p class="text-xs font-bold uppercase text-accent">2026</p><h3 class="text-xl font-bold mt-1">Royal Wealth Heritage LLC</h3><p class="text-sm text-ink-soft mt-2">Next.js site · Academy enrollment · Zoho email</p></div>
+          </a>
+          <a href="projects/prayer-city-social.html" class="block rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition group">
+            <img src="images/screenshots/prayer-city-social/hero.png" alt="Prayer City Social multi-platform publishing tool" class="w-full aspect-video object-cover object-top group-hover:scale-[1.02] transition duration-300" width="1440" height="900" loading="lazy" />
+            <div class="p-6"><p class="text-xs font-bold uppercase text-accent">2026</p><h3 class="text-xl font-bold mt-1">Prayer City Social</h3><p class="text-sm text-ink-soft mt-2">Social publishing · 10 platforms · AI variants</p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20 border-b border-slate-100">
+      <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-widest text-accent">See the work</p>
+          <h2 class="mt-2 text-2xl sm:text-3xl font-bold">Production systems, not mockups.</h2>
+          <p class="mt-4 text-ink-soft text-sm leading-relaxed">Walk through Prayer City, Royal Wealth Heritage, and our multi-platform social publishing tool — real software serving real users.</p>
+          <p class="mt-4 text-xs text-ink-soft">Add your Loom embed URL in <code class="bg-slate-100 px-1 rounded">js/config.js</code> to replace the placeholder.</p>
+        </div>
+        <div data-loom-embed class="video-placeholder rounded-2xl overflow-hidden flex items-center justify-center text-white text-sm p-8 text-center min-h-[240px]">
+          <div>
+            <p class="font-semibold text-lg">Project walkthrough</p>
+            <p class="mt-2 text-slate-300 text-xs max-w-xs mx-auto">Record a 60–90s Loom and paste the embed URL in config.js</p>
+            <a href="projects.html" class="inline-flex mt-4 text-blue-300 text-sm font-semibold hover:underline">View case studies →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20 bg-slate-50 border-b border-slate-100">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+          <div>
+            <h2 class="text-2xl font-bold text-ink">Transparent pricing</h2>
+            <p class="mt-2 text-sm text-ink-soft">Fixed quotes after discovery — you own the code.</p>
+          </div>
+          <a href="pricing.html" class="text-sm font-semibold text-accent hover:underline shrink-0">Full pricing &amp; comparison →</a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="rounded-xl border border-slate-200 bg-white p-5"><p class="text-xs font-bold uppercase text-accent">Launch</p><p class="mt-2 text-2xl font-bold">$3.5K–6K</p><p class="mt-1 text-sm text-ink-soft">Business sites, forms, email, SEO</p></div>
+          <div class="rounded-xl border-2 border-accent bg-white p-5 shadow-sm"><p class="text-xs font-bold uppercase text-accent">Platform</p><p class="mt-2 text-2xl font-bold">$8K–15K+</p><p class="mt-1 text-sm text-ink-soft">Auth, dashboards, Firebase apps</p></div>
+          <div class="rounded-xl border border-slate-200 bg-white p-5"><p class="text-xs font-bold uppercase text-accent">Care</p><p class="mt-2 text-2xl font-bold">$425+/mo</p><p class="mt-1 text-sm text-ink-soft">Updates, monitoring, automation</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20 bg-slate-50 border-y border-slate-100">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <div>
+            <h2 class="text-2xl font-bold text-ink">Built for performance</h2>
+            <p class="mt-2 text-sm text-ink-soft max-w-md">Google Lighthouse scores from our production site — fast, accessible, and search-ready out of the box.</p>
+            <p class="mt-3 text-xs text-ink-soft">Run your own audit at <a href="https://pagespeed.web.dev" target="_blank" rel="noopener" class="text-accent hover:underline">pagespeed.web.dev</a></p>
+          </div>
+          <div class="flex flex-wrap gap-6 justify-center lg:justify-end">
+            <div class="lighthouse-badge lighthouse-badge--perf" title="Lighthouse Performance"><div>90</div><span>Perf</span></div>
+            <div class="lighthouse-badge lighthouse-badge--a11y" title="Lighthouse Accessibility"><div>100</div><span>A11y</span></div>
+            <div class="lighthouse-badge lighthouse-badge--bp" title="Lighthouse Best Practices"><div>96</div><span>Best</span></div>
+            <div class="lighthouse-badge lighthouse-badge--seo" title="Lighthouse SEO"><div>100</div><span>SEO</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-bold text-ink mb-8">What clients say</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <blockquote class="testimonial-card rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <p class="text-sm text-ink-soft leading-relaxed">"Our academy enrollment used to mean PDF attachments and endless email threads. Abe Inc. delivered a polished Next.js site, a seven-step wizard, and business email on our domain — all live in under two months. Responsive, detail-oriented, and actually understood what a small business needs to look credible online."</p>
+            <footer class="mt-5 pt-5 border-t border-slate-100">
+              <p class="font-semibold text-sm">Helena C. Puati</p>
+              <p class="text-xs text-ink-soft mt-0.5">Founder &amp; CEO, Royal Wealth Heritage LLC</p>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial-card rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <p class="text-sm text-ink-soft leading-relaxed">"Coordinating hundreds of volunteers across World Cup serve days could have been spreadsheet chaos. Abe Inc. built signup flows, a volunteer hub, daily digests, and Gmail automation that actually runs without us babysitting it. It's the ops tooling we didn't know we needed until we had it."</p>
+            <footer class="mt-5 pt-5 border-t border-slate-100">
+              <p class="font-semibold text-sm">Prayer City Leadership</p>
+              <p class="text-xs text-ink-soft mt-0.5">Houston World Cup Prayer City</p>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial-card rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <p class="text-sm text-ink-soft leading-relaxed">"We needed to post across ten social platforms without paying per-seat fees forever. Abe Inc. built a custom publishing platform with AI variants, scheduling, and OAuth to every channel we use. One compose box, full control, and we own the entire stack."</p>
+            <footer class="mt-5 pt-5 border-t border-slate-100">
+              <p class="font-semibold text-sm">Dear Daughter Bible Study Team</p>
+              <p class="text-xs text-ink-soft mt-0.5">Prayer City Social</p>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20 bg-slate-50 border-y border-slate-100">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-bold text-ink mb-3">Built with a modern stack</h2>
+        <p class="text-ink-soft max-w-2xl mb-8">We pick tools for speed, reliability, and long-term maintainability — not hype.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="tech-badge">Next.js</span>
+          <span class="tech-badge">React</span>
+          <span class="tech-badge">TypeScript</span>
+          <span class="tech-badge">Firebase</span>
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">Tailwind CSS</span>
+          <span class="tech-badge">Vercel</span>
+          <span class="tech-badge">Google Apps Script</span>
+          <span class="tech-badge">Docker</span>
+          <span class="tech-badge">OAuth / APIs</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-bold text-ink mb-8">Who we work with</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="rounded-xl border border-slate-200 p-5"><h3 class="font-semibold">Nonprofits &amp; ministries</h3><p class="mt-2 text-sm text-ink-soft">Volunteer ops, event coordination, outreach tools</p></div>
+          <div class="rounded-xl border border-slate-200 p-5"><h3 class="font-semibold">Small businesses</h3><p class="mt-2 text-sm text-ink-soft">Branded sites, enrollment, domain email setup</p></div>
+          <div class="rounded-xl border border-slate-200 p-5"><h3 class="font-semibold">Founders &amp; teams</h3><p class="mt-2 text-sm text-ink-soft">MVPs, dashboards, and internal automation</p></div>
+          <div class="rounded-xl border border-slate-200 p-5"><h3 class="font-semibold">Organizations at scale</h3><p class="mt-2 text-sm text-ink-soft">Multi-platform integrations and publishing pipelines</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+          <div>
+            <h2 class="text-2xl font-bold text-ink">Insights</h2>
+            <p class="mt-2 text-sm text-ink-soft">Practical notes on shipping software, automation, and production launches.</p>
+          </div>
+          <a href="insights/index.html" class="text-sm font-semibold text-accent hover:underline shrink-0">All articles →</a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <a href="insights/owned-software-vs-saas.html" class="rounded-xl border border-slate-200 bg-white p-5 hover:border-accent hover:shadow-md transition block">
+            <p class="text-xs font-bold uppercase text-accent">Strategy</p>
+            <h3 class="mt-2 font-bold">Owned software vs. monthly SaaS</h3>
+            <p class="mt-2 text-sm text-ink-soft">When a custom build beats per-seat fees.</p>
+          </a>
+          <a href="insights/production-launch-checklist.html" class="rounded-xl border border-slate-200 bg-white p-5 hover:border-accent hover:shadow-md transition block">
+            <p class="text-xs font-bold uppercase text-accent">DevOps</p>
+            <h3 class="mt-2 font-bold">What a production launch includes</h3>
+            <p class="mt-2 text-sm text-ink-soft">DNS, email, forms, SEO — the full checklist.</p>
+          </a>
+          <a href="insights/firebase-for-volunteer-platforms.html" class="rounded-xl border border-slate-200 bg-white p-5 hover:border-accent hover:shadow-md transition block">
+            <p class="text-xs font-bold uppercase text-accent">Engineering</p>
+            <h3 class="mt-2 font-bold">Firebase for volunteer platforms</h3>
+            <p class="mt-2 text-sm text-ink-soft">Auth, real-time data, and scheduled automation.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20 bg-accent-soft/50 border-y border-accent/20">
+      <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <h2 class="text-xl font-bold text-ink">Free: Production launch checklist</h2>
+          <p class="mt-2 text-sm text-ink-soft max-w-lg">DNS, SSL, email, forms, SEO, and handoff — the checklist we run on every launch. Yours free.</p>
+        </div>
+        <a href="resources/index.html" class="shrink-0 inline-flex rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white hover:bg-accent transition">Download checklist</a>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20 bg-ink text-white">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold">Ready to ship something?</h2>
+        <p class="mt-4 text-slate-300 max-w-xl mx-auto">Tell us what you're building. We'll reply within 1–2 business days with next steps — no sales pitch, just a straight answer on fit and scope.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="contact.html" class="inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent-light transition">Start a project</a>
+          <a href="#" data-calendly-popup class="inline-flex rounded-full border border-slate-500 px-6 py-3 text-sm font-semibold text-white hover:border-white transition">Book a call</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="max-w-6xl mx-auto px-4 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+      <div>
+        <p class="font-semibold text-ink">Abe Inc.</p>
+        <p class="mt-2 text-ink-soft leading-relaxed">Technology studio — web apps, cloud backends, and automation.</p>
+      </div>
+      <div>
+        <p class="font-semibold text-ink mb-3">Explore</p>
+        <ul class="space-y-2 text-ink-soft">
+          <li><a href="projects.html" class="hover:text-accent transition">Work</a></li>
+          <li><a href="insights/index.html" class="hover:text-accent transition">Insights</a></li>
+          <li><a href="about.html" class="hover:text-accent transition">About</a></li>
+          <li><a href="contact.html" class="hover:text-accent transition">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-ink mb-3">Services</p>
+        <ul class="space-y-2 text-ink-soft">
+          <li><a href="services.html" class="hover:text-accent transition">Services</a></li>
+          <li><a href="pricing.html" class="hover:text-accent transition">Pricing</a></li>
+          <li><a href="resources/index.html" class="hover:text-accent transition">Free resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-ink mb-3">Connect</p>
+        <ul class="space-y-2 text-ink-soft">
+          <li><a href="mailto:abuxberkeley@gmail.com" data-email class="hover:text-accent transition">abuxberkeley@gmail.com</a></li>
+          <li><a href="https://github.com/Dabe90" target="_blank" rel="noopener" class="hover:text-accent transition">GitHub</a></li>
+          <li><a href="https://clutch.co" data-clutch-link target="_blank" rel="noopener" class="hidden hover:text-accent transition">Clutch reviews</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-100 py-6 px-4 text-center text-xs text-ink-soft">
+      <p>© <span data-year></span> Abe Inc. · Houston, TX</p>
+    </div>
+  </footer>
+  <script src="js/config.js"></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

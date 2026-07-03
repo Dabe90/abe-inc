@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Firebase for volunteer platforms — Abe Inc. Insights</title>
+  <meta name="description" content="Why Firebase Auth, Firestore, and Cloud Functions fit event-scale volunteer coordination." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',soft:'#64748b'},accent:{DEFAULT:'#2563eb'}}}}};</script>
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body class="bg-white text-ink antialiased">
+  <header class="border-b border-slate-200"><div class="max-w-3xl mx-auto px-4 h-14 flex items-center justify-between text-sm">
+    <a href="../index.html" class="font-semibold">Abe Inc.</a>
+    <a href="index.html" class="text-accent">← Insights</a>
+  </div></header>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <p class="text-xs font-bold uppercase text-accent">Engineering · Jan 2026</p>
+    <h1 class="mt-2 text-3xl font-bold">Why Firebase works for volunteer and ops platforms</h1>
+    <p class="mt-6 text-ink-soft leading-relaxed">When Houston World Cup Prayer City needed to coordinate hundreds of volunteers across serve days, spreadsheets weren't going to scale. We chose Firebase because the feature set maps directly to ops problems — without a server to maintain.</p>
+    <h2 class="mt-10 text-xl font-bold">Auth that volunteers actually use</h2>
+    <p class="mt-3 text-ink-soft text-sm leading-relaxed">Email link sign-in means no password reset tickets. Volunteers tap a link, land in their hub, see their shifts. Firebase Auth handles the security; we handle the UX.</p>
+    <h2 class="mt-8 text-xl font-bold">Data that updates in real time</h2>
+    <p class="mt-3 text-ink-soft text-sm leading-relaxed">Firestore stores role assignments, daily content, and gallery metadata. When coordinators update a schedule, volunteers see it immediately — no refresh hacks.</p>
+    <h2 class="mt-8 text-xl font-bold">Automation on a schedule</h2>
+    <p class="mt-3 text-ink-soft text-sm leading-relaxed">Cloud Functions send daily role digests, process webhooks, and run cleanup jobs. Combined with Google Apps Script for Gmail → Sheets pipelines, the ops layer runs while the team sleeps.</p>
+    <h2 class="mt-8 text-xl font-bold">When Firebase isn't the fit</h2>
+    <p class="mt-3 text-ink-soft text-sm leading-relaxed">Heavy relational reporting, complex transactions, or strict EU data residency may point you elsewhere. For event coordination, enrollment, and team dashboards, it's a strong default.</p>
+    <p class="mt-8"><a href="../projects/prayer-city.html" class="text-accent font-semibold hover:underline">See the Prayer City case study →</a></p>
+  </article>
+  <footer class="border-t border-slate-200 mt-12 py-8 text-center text-sm text-ink-soft">
+    <p>© <span data-year></span> Abe Inc.</p>
+  </footer>
+  <script src="../js/config.js"></script>
+  <script src="../js/site.js"></script>
+</body>
+</html>
