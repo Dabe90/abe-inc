@@ -11,4 +11,6 @@
   <url><loc>https://abestack.com/projects/prayer-city.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://abestack.com/projects/royal-wealth-heritage.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://abestack.com/projects/prayer-city-social.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://abestack.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://abestack.com/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

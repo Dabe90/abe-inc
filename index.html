@@ -46,18 +46,19 @@
       </nav>
       <div class="flex items-center gap-2">
         <a href="contact.html" class="hidden sm:inline-flex btn-primary !py-2 !px-4 !text-sm">Start a project</a>
-        <button id="nav-toggle" type="button" class="md:hidden p-2 rounded-lg border border-slate-200 text-ink-muted hover:border-slate-300" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <button id="nav-toggle" type="button" class="md:hidden p-2.5 rounded-lg border border-slate-200 text-ink-muted hover:border-slate-300 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
     </div>
     <nav id="mobile-nav" class="hidden md:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-1" aria-label="Mobile">
-      <a href="projects.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">Work</a>
-      <a href="services.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">Services</a>
-      <a href="pricing.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">Pricing</a>
-      <a href="about.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">About</a>
-      <a href="contact.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">Contact</a>
-      <a href="contact.html" class="block mt-2 text-center rounded-full bg-ink px-4 py-2.5 text-sm font-semibold text-white">Start a project</a>
+      <a href="projects.html" class="mobile-nav-link">Work</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="insights/index.html" class="mobile-nav-link">Insights</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="contact.html" class="block mt-2 text-center btn-primary !py-3">Start a project</a>
     </nav>
   </header>
 
@@ -74,7 +75,7 @@
               <span class="text-slate-600">·</span>
               <a href="resources/index.html" class="hover:underline">Free launch checklist</a>
             </div>
-            <div class="mt-10 flex flex-wrap gap-4">
+            <div class="hero-cta-row mt-10">
               <a href="projects.html" class="btn-primary">View our work →</a>
               <a href="contact.html#book-call" class="btn-secondary" data-calendly-popup>Book a discovery call</a>
             </div>
@@ -379,7 +380,7 @@
       <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Ready to ship something?</h2>
         <p class="mt-4 text-slate-400 max-w-xl mx-auto">Tell us what you're building. We'll reply within 1–2 business days with next steps — no sales pitch, just a straight answer on fit and scope.</p>
-        <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <div class="hero-cta-row mt-8 justify-center">
           <a href="contact.html" class="btn-primary">Start a project</a>
           <a href="contact.html#book-call" data-calendly-popup class="btn-secondary !text-white !border-white/25 !bg-white/5">Book a call</a>
         </div>
@@ -421,6 +422,7 @@
     </div>
     <div class="border-t border-white/10 py-6 px-4 text-center text-xs text-slate-500">
       <p>© <span data-year></span> Abe Stack · abestack.com</p>
+      <p class="footer-legal mt-2"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></p>
     </div>
   </footer>
   <script src="js/config.js"></script>

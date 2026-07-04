@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
   <title>Services — Abe Stack</title>
   <meta name="description" content="Web applications, Firebase backends, workflow automation, marketing infrastructure, and AI-ready SEO for teams that need software built right." />
@@ -26,17 +26,18 @@
         <a href="contact.html" class="hover:text-accent transition">Contact</a>
       </nav>
       <a href="contact.html" class="hidden sm:inline-flex btn-primary !py-2 !px-4 !text-sm">Start a project</a>
-      <button id="nav-toggle" type="button" class="md:hidden p-2 rounded-lg border border-slate-200" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <button id="nav-toggle" type="button" class="md:hidden p-2.5 rounded-lg border border-slate-200 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
     <nav id="mobile-nav" class="hidden md:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-1" aria-label="Mobile">
-      <a href="projects.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">Work</a>
-      <a href="services.html" class="block py-2.5 text-sm font-medium text-accent">Services</a>
-      <a href="pricing.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">Pricing</a>
-      <a href="insights/index.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">Insights</a>
-      <a href="about.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">About</a>
-      <a href="contact.html" class="block py-2.5 text-sm font-medium text-ink-muted hover:text-accent">Contact</a>
+      <a href="projects.html" class="mobile-nav-link">Work</a>
+      <a href="services.html" class="mobile-nav-link !text-accent">Services</a>
+      <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="insights/index.html" class="mobile-nav-link">Insights</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="contact.html" class="block mt-2 text-center btn-primary !py-3">Start a project</a>
     </nav>
   </header>
 
@@ -98,6 +99,7 @@
   <footer class="site-footer mt-auto">
     <div class="max-w-6xl mx-auto px-4 py-8 text-center text-sm">
       <p class="text-slate-500">© <span data-year></span> Abe Stack · abestack.com</p>
+      <p class="footer-legal mt-2"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></p>
     </div>
   </footer>
   <script src="js/config.js"></script>
