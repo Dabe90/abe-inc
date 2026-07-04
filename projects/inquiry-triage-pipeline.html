@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <title>Inquiry Triage Pipeline — Abe Stack</title>
+  <meta name="description" content="Production lead capture for abestack.com: Cloud Functions, Firestore queue, Genkit triage, FormSubmit fallback, human review before reply." />
+  <link rel="canonical" href="https://abestack.com/projects/inquiry-triage-pipeline.html" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"CreativeWork","name":"Inquiry Triage Pipeline","description":"Agentic lead capture and triage for Abe Stack.","url":"https://abestack.com/projects/inquiry-triage-pipeline.html","datePublished":"2026-07-01","author":{"@type":"Organization","name":"Abe Stack"}}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',soft:'#64748b'},accent:{DEFAULT:'#2563eb'}}}}};</script>
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body class="bg-white text-ink antialiased">
+  <header class="site-header sticky top-0 z-50"><div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between"><a href="../index.html" class="flex items-center gap-2.5"><span class="site-logo-mark">A</span><span class="font-semibold">Abe Stack</span></a><a href="../projects.html" class="text-sm font-semibold text-accent">← All work</a></div></header>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <p class="text-xs font-bold uppercase text-accent">Agentic AI · Shipped Q3 2026</p>
+    <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold">Inquiry Triage Pipeline</h1>
+    <p class="mt-4 text-ink-soft leading-relaxed">How abestack.com captures leads on a static Vercel site, queues them in Firestore, and runs Genkit triage before a human coordinator replies.</p>
+    <dl class="case-meta-bar mt-8 pt-6 border-t border-slate-200">
+      <div><dt>Shipped</dt><dd>Q3 2026</dd></div><div><dt>Client</dt><dd>Abe Stack (internal)</dd></div><div><dt>Stack</dt><dd>Firebase + Genkit</dd></div>
+    </dl>
+    <div class="case-metrics">
+      <div class="metric-card"><div class="metric-card__value">Firestore</div><div class="metric-card__label">Inquiry queue</div></div>
+      <div class="metric-card"><div class="metric-card__value">Genkit</div><div class="metric-card__label">Auto triage</div></div>
+      <div class="metric-card"><div class="metric-card__value">Human</div><div class="metric-card__label">Review gate</div></div>
+      <div class="metric-card"><div class="metric-card__value">Fallback</div><div class="metric-card__label">FormSubmit</div></div>
+    </div>
+    <section class="mt-10"><h2 class="text-xl font-bold">Problem</h2><p class="mt-2 text-ink-soft text-sm">Static marketing sites usually stop at “email delivered.” That works until volume grows — then there is no queue, no urgency signal, and no structured way to spot agentic AI opportunities before the discovery call.</p></section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Solution</h2>
+      <ul class="mt-2 text-ink-soft text-sm space-y-2 list-disc pl-5">
+        <li><strong class="text-ink">submitInquiry</strong> — HTTPS endpoint writes raw form data to <code class="text-xs bg-slate-100 px-1 rounded">inquiry_queue</code></li>
+        <li><strong class="text-ink">onInquiryCreated</strong> — Firestore trigger runs a Genkit triage flow (summary, category, urgency, audit flag)</li>
+        <li><strong class="text-ink">FormSubmit fallback</strong> — if Firebase is unreachable, the form posts to email backup automatically</li>
+        <li><strong class="text-ink">Thank-you page</strong> — inline success UX without leaving the brand</li>
+      </ul>
+    </section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Architecture</h2>
+      <pre class="mt-3 text-xs bg-slate-900 text-slate-100 p-4 rounded-xl overflow-x-auto leading-relaxed">abestack.com (Vercel static)
+  → POST submitInquiry (Cloud Function)
+  → Firestore inquiry_queue/{id}
+  → onInquiryCreated → Genkit triageInquiry flow
+  → Coordinator reviews in Firebase Console
+  → Human reply via hello@abestack.com</pre>
+    </section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Results</h2><p class="mt-2 text-ink-soft text-sm">Every inbound lead is structured before reply. Agentic AI audit requests are flagged automatically. The same pattern ships on client projects — this case study is the live reference implementation.</p></section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Technology</h2>
+      <div class="case-stack"><span class="tech-badge">Cloud Functions</span><span class="tech-badge">Firestore</span><span class="tech-badge">Genkit</span><span class="tech-badge">Gemini 2.5 Flash</span><span class="tech-badge">FormSubmit</span><span class="tech-badge">Vercel</span></div>
+    </section>
+    <blockquote class="case-testimonial"><p>"We dogfood the same agentic stack we sell — static site on Vercel, intelligence on Firebase."</p><footer><strong>Abe Stack</strong> · Internal production system</footer></blockquote>
+    <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="../contact.html?intent=ai-audit" class="inline-flex btn-primary justify-center">Try the live form</a>
+      <a href="../services.html" class="inline-flex btn-secondary justify-center">Agentic AI services</a>
+    </div>
+  </article>
+  <footer class="border-t border-slate-200 mt-12"><div class="max-w-3xl mx-auto px-4 py-8 text-sm text-ink-soft text-center"><p>© <span data-year></span> Abe Stack</p></div></footer>
+  <script src="../js/config.js"></script><script src="../js/site.js"></script>
+</body>
+</html>

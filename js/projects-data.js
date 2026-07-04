@@ -249,6 +249,31 @@ window.ABE_PROJECTS = [
     ],
     stack: ['FormSubmit', 'Static HTML', 'Google Search Console', 'Structured metadata'],
   },
+  {
+    slug: 'inquiry-triage-pipeline',
+    title: 'Inquiry Triage Pipeline',
+    subtitle: 'Contact form · Firestore · Genkit triage · human review',
+    category: 'Agentic AI',
+    filterTags: ['agentic-ai', 'automation', 'web-apps'],
+    shippedLabel: 'Shipped Q3 2026',
+    shippedISO: '2026-07-01',
+    duration: '2 weeks',
+    featured: true,
+    sortOrder: 11,
+    url: 'https://abestack.com/contact.html',
+    image: 'images/og-image.png',
+    imageAlt: 'Abe Stack inquiry triage pipeline architecture',
+    socialProof: 'Every inbound lead gets structured triage before a human replies — no more vague “we got your message” black holes.',
+    problem: 'Contact forms delivered email only — no queue, no categorization, and no way to flag agentic AI opportunities before the discovery call.',
+    solution: 'Static site form posts to Cloud Functions → Firestore inquiry queue → Genkit triage flow (category, urgency, audit recommendation) → coordinator reviews before reply.',
+    metrics: [
+      { value: '100%', label: 'Inquiries queued' },
+      { value: 'AI', label: 'Auto-triage summary' },
+      { value: 'Human', label: 'Approval before send' },
+      { value: 'Dual', label: 'FormSubmit fallback' },
+    ],
+    stack: ['Firebase Functions', 'Firestore', 'Genkit', 'Gemini', 'FormSubmit', 'Static HTML', 'Vercel'],
+  },
 ];
 
 window.ABE_PROJECT_FILTERS = [

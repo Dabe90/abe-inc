@@ -8,4 +8,5 @@ window.ABE_INC = {
   // Clutch: create profile at clutch.co → paste profile URL when ready
   clutchProfileUrl: '',
   siteUrl: 'https://abestack.com',
+  formEndpoint: 'https://us-central1-gen-lang-client-0550945038.cloudfunctions.net/submitInquiry',
 };

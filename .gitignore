@@ -4,3 +4,9 @@ Thumbs.db
 .vercel
 node_modules/
 lighthouse-report.json
+.env
+.env.local
+dist/
+functions/lib/
+.genkit/
+functions/src/genkit/

@@ -27,6 +27,11 @@
   <url><loc>https://abestack.com/projects/abe-stack-site.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://abestack.com/projects/launch-checklist.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://abestack.com/projects/firebase-form-starter.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://abestack.com/contact/thank-you.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://abestack.com/open-source/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://abestack.com/resources/linkedin-starter-pack.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://abestack.com/resources/production-launch-checklist.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://abestack.com/projects/inquiry-triage-pipeline.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://abestack.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://abestack.com/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

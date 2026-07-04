@@ -1,16 +1,28 @@
 {
   "name": "abe-inc",
   "version": "1.0.0",
-  "description": "Company website — open this folder in Cursor.",
-  "main": "index.js",
+  "description": "Abe Stack — marketing site + Genkit agentic AI layer",
+  "keywords": ["genkit", "firebase", "agentic-ai"],
+  "author": "Abe Stack",
+  "license": "ISC",
+  "type": "module",
   "scripts": {
+    "dev": "npx --yes serve . -p 3456",
+    "genkit:dev": "genkit start --non-interactive -- tsx --watch src/dev.ts",
+    "genkit:check": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
+    "@types/node": "^26.1.0",
+    "genkit-cli": "^1.39.0",
     "playwright": "^1.61.1"
+  },
+  "dependencies": {
+    "@genkit-ai/firebase": "^1.39.0",
+    "@genkit-ai/google-genai": "^1.39.0",
+    "dotenv": "^17.4.2",
+    "genkit": "^1.39.0",
+    "tsx": "^4.23.0",
+    "typescript": "^6.0.3"
   }
 }

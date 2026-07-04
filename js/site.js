@@ -32,6 +32,16 @@
     if (cfg.email) el.action = 'https://formsubmit.co/' + cfg.email;
   });
 
+  document.querySelectorAll('form[data-form-email]').forEach((form) => {
+    const replyField = form.querySelector('[data-replyto-field]');
+    const emailInput = form.querySelector('[name="email"]');
+    if (replyField && emailInput) {
+      emailInput.addEventListener('input', () => {
+        replyField.value = emailInput.value;
+      });
+    }
+  });
+
   const siteBase = (cfg.siteUrl || window.location.origin).replace(/\/$/, '');
   document.querySelectorAll('form[data-form-email] input[name="_next"]').forEach((input) => {
     try {
@@ -115,4 +125,67 @@
     var auditSection = document.getElementById('ai-audit');
     if (auditSection) auditSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+
+  if (params.get('sent') === '1') {
+    var successBanner = document.getElementById('form-success');
+    if (successBanner) {
+      successBanner.classList.remove('hidden');
+      successBanner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  document.querySelectorAll('form[data-form-email]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      var endpoint = cfg.formEndpoint;
+      if (!endpoint) return;
+
+      e.preventDefault();
+
+      var statusEl = form.querySelector('[data-form-status]');
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalLabel = submitBtn ? submitBtn.textContent : '';
+
+      function setStatus(message, isError) {
+        if (!statusEl) return;
+        statusEl.textContent = message;
+        statusEl.classList.remove('hidden', 'text-red-600', 'text-emerald-700');
+        statusEl.classList.add(isError ? 'text-red-600' : 'text-emerald-700');
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      var honey = form.querySelector('input[name="_honey"]');
+      var payload = {
+        name: (form.querySelector('[name="name"]') || {}).value || '',
+        email: (form.querySelector('[name="email"]') || {}).value || '',
+        service: (form.querySelector('[name="service"]') || {}).value || '',
+        message: (form.querySelector('[name="message"]') || {}).value || '',
+        _honey: honey ? honey.value : '',
+      };
+
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error('Request failed');
+          return res.json();
+        })
+        .then(function () {
+          window.location.href = siteBase + '/contact/thank-you.html';
+        })
+        .catch(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalLabel;
+          }
+          setStatus('Could not reach our server — submitting via email backup…', true);
+          HTMLFormElement.prototype.submit.call(form);
+        });
+    });
+  });
 })();
