@@ -2,6 +2,7 @@ import { onRequest } from 'firebase-functions/v2/https';
 import { defineSecret } from 'firebase-functions/params';
 
 const geminiApiKey = defineSecret('GEMINI_API_KEY');
+const agentApiKey = defineSecret('AGENT_API_KEY');
 
 const ALLOWED_ORIGINS = [
   'https://abestack.com',
@@ -45,7 +46,7 @@ export const volunteerCoordinator = onRequest(
     timeoutSeconds: 120,
     memory: '1GiB',
     cpu: 1,
-    secrets: [geminiApiKey],
+    secrets: [geminiApiKey, agentApiKey],
   },
   async (req, res) => {
     setCors(req, res);
