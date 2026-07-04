@@ -60,15 +60,6 @@
         el.dataset.calendlyInit = 'true';
         Calendly.initInlineWidget({ url: calendlyUrl, parentElement: el });
       });
-      if (document.body.dataset.calendlyWidget === 'true') {
-        Calendly.initBadgeWidget({
-          url: calendlyUrl,
-          text: 'Book a call',
-          color: '#2563eb',
-          textColor: '#ffffff',
-          branding: true,
-        });
-      }
     };
     if (window.Calendly) initCalendly();
     else window.addEventListener('load', initCalendly);
