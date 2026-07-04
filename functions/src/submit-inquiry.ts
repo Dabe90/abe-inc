@@ -20,7 +20,7 @@ type InquiryPayload = {
   _honey?: string;
 };
 
-export const submitInquiry = onRequest({ cors: false, maxInstances: 10 }, async (req, res) => {
+export const submitInquiry = onRequest({ cors: false, invoker: 'public', maxInstances: 10 }, async (req, res) => {
   setCors(req, res);
 
   if (req.method === 'OPTIONS') {

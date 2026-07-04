@@ -8,21 +8,28 @@
   "type": "module",
   "scripts": {
     "dev": "npx --yes serve . -p 3456",
+    "next:dev": "next dev",
+    "next:build": "next build",
     "genkit:dev": "genkit start --non-interactive -- tsx --watch src/dev.ts",
     "genkit:check": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "@types/node": "^26.1.0",
+    "@types/react": "^19.1.8",
     "genkit-cli": "^1.39.0",
-    "playwright": "^1.61.1"
+    "next": "^15.3.4",
+    "playwright": "^1.61.1",
+    "typescript": "^6.0.3"
   },
   "dependencies": {
     "@genkit-ai/firebase": "^1.39.0",
     "@genkit-ai/google-genai": "^1.39.0",
     "dotenv": "^17.4.2",
+    "firebase-admin": "^13.0.0",
     "genkit": "^1.39.0",
-    "tsx": "^4.23.0",
-    "typescript": "^6.0.3"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tsx": "^4.23.0"
   }
 }

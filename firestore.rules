@@ -7,5 +7,20 @@ service cloud.firestore {
     match /inquiry_triage_log/{id} {
       allow read, write: if false;
     }
+    match /agent_sessions/{document=**} {
+      allow read, write: if false;
+    }
+    match /agent_runs/{id} {
+      allow read, write: if false;
+    }
+    match /match_proposals/{id} {
+      allow read, write: if false;
+    }
+    match /coordinator_action_queue/{id} {
+      allow read, write: if false;
+    }
+    match /events/{eventId}/{document=**} {
+      allow read, write: if false;
+    }
   }
 }

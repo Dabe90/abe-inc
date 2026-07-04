@@ -26,4 +26,6 @@ if (!geminiKey) {
   await import('./flows/hello-flow.js');
   await import('./flows/triage-inquiry.js');
   await import('./agents/ops-assistant.js');
+  await import('./agents/volunteer-coordinator.js');
+  await import('./evaluators/volunteer-coordinator-quality.js');
 }
