@@ -1,9 +1,4 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false,
-  "functions": {
-    "api/demo/volunteer-agent.js": {
-      "maxDuration": 60
-    }
-  }
+  "trailingSlash": false
 }
