@@ -73,7 +73,10 @@
   const loomUrl = cfg.loomEmbedUrl;
   if (loomUrl) {
     document.querySelectorAll('[data-loom-embed]').forEach((el) => {
-      el.innerHTML = '<iframe src="' + loomUrl + '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="w-full h-full rounded-xl" title="Project walkthrough"></iframe>';
+      el.innerHTML =
+        '<div class="relative w-full" style="padding-bottom:56.25%;height:0;">' +
+        '<iframe src="' + loomUrl + '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen ' +
+        'class="absolute inset-0 w-full h-full rounded-xl" title="Project walkthrough"></iframe></div>';
       el.classList.remove('video-placeholder');
     });
   }
