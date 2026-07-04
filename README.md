@@ -1,4 +1,4 @@
-# Abe Inc.
+# Abe Stack
 
 Company website — open this folder in Cursor.
 

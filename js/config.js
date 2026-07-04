@@ -1,4 +1,5 @@
 window.ABE_INC = {
+  siteName: 'Abe Stack',
   email: 'hello@abestack.com',
   // Calendly: sign up free at calendly.com → create "Discovery call" → paste link below
   calendlyUrl: 'https://calendly.com/hello-abestack/discovery-call',

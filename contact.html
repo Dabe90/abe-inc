@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — Abe Inc.</title>
-  <meta name="description" content="Start a project with Abe Inc. — web apps, automation, and cloud backends. We reply within 1–2 business days." />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <title>Contact — Abe Stack</title>
+  <meta name="description" content="Start a project with Abe Stack — web apps, automation, and cloud backends. We reply within 1–2 business days." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',muted:'#334155',soft:'#64748b'},accent:{DEFAULT:'#2563eb',light:'#3b82f6',soft:'#dbeafe'}}}}};</script>
   <link rel="stylesheet" href="css/site.css" />
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 </head>
 <body class="min-h-screen bg-white text-ink antialiased flex flex-col" data-calendly-widget="true">
-  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
+  <header class="site-header sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
       <a href="index.html" class="flex items-center gap-2.5 group">
-        <span class="w-9 h-9 rounded-lg bg-ink text-white text-sm font-bold flex items-center justify-center group-hover:bg-accent transition">A</span>
-        <span class="font-semibold text-ink tracking-tight">Abe Inc.</span>
+        <span class="site-logo-mark">A</span>
+        <span class="font-semibold text-ink tracking-tight">Abe Stack</span>
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-ink-muted" aria-label="Main">
         <a href="projects.html" class="hover:text-accent transition">Work</a>
@@ -38,12 +39,15 @@
   </header>
 
   <main class="flex-1">
-    <div class="max-w-6xl mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12 lg:gap-16">
+    <section class="page-hero">
+      <div class="max-w-6xl mx-auto px-4 py-14 sm:py-16">
+        <p class="section-label mb-3">Contact</p>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Let's talk about your project.</h1>
+        <p class="mt-4 text-ink-soft max-w-2xl leading-relaxed text-base">Share what you're building — timeline, budget range, and goals. We reply within <strong class="text-ink font-semibold">1–2 business days</strong> with an honest take on fit and next steps.</p>
+      </div>
+    </section>
+    <div class="max-w-6xl mx-auto px-4 pb-16 grid lg:grid-cols-2 gap-12 lg:gap-16">
       <div>
-        <p class="text-sm font-semibold uppercase tracking-widest text-accent">Contact</p>
-        <h1 class="mt-2 text-3xl sm:text-4xl font-bold">Let's talk about your project.</h1>
-        <p class="mt-4 text-ink-soft leading-relaxed">Share what you're building — timeline, budget range, and goals. We reply within <strong class="text-ink font-medium">1–2 business days</strong> with an honest take on fit and next steps.</p>
-
         <div class="mt-8 space-y-4">
           <div class="rounded-xl border border-slate-200 p-5">
             <p class="font-semibold text-sm">What happens next</p>
@@ -76,7 +80,7 @@
       <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
         <h2 class="font-bold text-lg">Project inquiry</h2>
         <form class="mt-6 space-y-4" data-form-email method="POST" action="https://formsubmit.co/hello@abestack.com">
-          <input type="hidden" name="_subject" value="New Abe Inc. project inquiry" />
+          <input type="hidden" name="_subject" value="New Abe Stack project inquiry" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />
           <div>
@@ -118,9 +122,9 @@
     </section>
   </main>
 
-  <footer class="border-t border-slate-200 bg-white mt-auto">
-    <div class="max-w-6xl mx-auto px-4 py-8 text-center text-sm text-ink-soft">
-      <p>© <span data-year></span> Abe Inc. · Houston, TX</p>
+  <footer class="site-footer mt-auto">
+    <div class="max-w-6xl mx-auto px-4 py-8 text-center text-sm">
+      <p class="text-slate-500">© <span data-year></span> Abe Stack · Houston, TX</p>
     </div>
   </footer>
   <script src="js/config.js"></script>

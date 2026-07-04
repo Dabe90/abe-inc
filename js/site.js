@@ -18,6 +18,10 @@
   });
 
   const cfg = window.ABE_INC || {};
+  document.querySelectorAll('[data-brand]').forEach((el) => {
+    if (cfg.siteName) el.textContent = cfg.siteName;
+  });
+
   document.querySelectorAll('[data-email]').forEach((el) => {
     if (cfg.email) {
       if (el.tagName === 'A') el.href = 'mailto:' + cfg.email;

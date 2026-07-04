@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Work — Abe Inc.</title>
-  <meta name="description" content="Case studies from Abe Inc. — volunteer platforms, business websites, enrollment systems, and social publishing tools." />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <title>Work — Abe Stack</title>
+  <meta name="description" content="Case studies from Abe Stack — volunteer platforms, business websites, enrollment systems, and social publishing tools." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',muted:'#334155',soft:'#64748b'},accent:{DEFAULT:'#2563eb',light:'#3b82f6',soft:'#dbeafe'}}}}};</script>
   <link rel="stylesheet" href="css/site.css" />
 </head>
 <body class="min-h-screen bg-white text-ink antialiased flex flex-col" data-calendly-widget="true">
-  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
+  <header class="site-header sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
       <a href="index.html" class="flex items-center gap-2.5 group">
-        <span class="w-9 h-9 rounded-lg bg-ink text-white text-sm font-bold flex items-center justify-center group-hover:bg-accent transition">A</span>
-        <span class="font-semibold text-ink tracking-tight">Abe Inc.</span>
+        <span class="site-logo-mark">A</span>
+        <span class="font-semibold text-ink tracking-tight">Abe Stack</span>
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-ink-muted" aria-label="Main">
         <a href="projects.html" class="text-accent font-semibold">Work</a>
@@ -25,7 +26,7 @@
         <a href="contact.html" class="hover:text-accent transition">Contact</a>
       </nav>
       <div class="flex items-center gap-2">
-        <a href="contact.html" class="hidden sm:inline-flex rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white hover:bg-accent transition">Start a project</a>
+        <a href="contact.html" class="hidden sm:inline-flex btn-primary !py-2 !px-4 !text-sm">Start a project</a>
         <button id="nav-toggle" type="button" class="sm:hidden p-2 rounded-lg border border-slate-200" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
@@ -39,39 +40,44 @@
     </nav>
   </header>
 
-  <main class="flex-1 max-w-6xl mx-auto px-4 py-16 w-full">
-    <p class="text-sm font-semibold uppercase tracking-widest text-accent">Portfolio</p>
-    <h1 class="mt-2 text-3xl sm:text-4xl font-bold">Work</h1>
-    <p class="mt-4 text-ink-soft max-w-2xl leading-relaxed">Production systems we've designed, built, and deployed — from volunteer operations to multi-platform publishing.</p>
-
-    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <a href="projects/prayer-city.html" class="rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition block group">
-        <img src="images/screenshots/prayer-city/hero.png" alt="Prayer City volunteer platform" class="w-full aspect-video object-cover object-top group-hover:scale-[1.02] transition duration-300" width="1440" height="900" loading="lazy" />
-        <div class="p-6"><p class="text-xs font-bold uppercase text-accent">Nonprofit · 2026</p><h2 class="text-xl font-bold mt-1">Prayer City</h2><p class="text-sm text-ink-soft mt-2">Volunteer ops · Firebase · Gmail automation</p></div>
+  <main class="flex-1">
+    <section class="page-hero">
+      <div class="max-w-6xl mx-auto px-4 py-14 sm:py-16">
+        <p class="section-label mb-3">Portfolio</p>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Work</h1>
+        <p class="mt-4 text-ink-soft max-w-2xl leading-relaxed text-base">Production systems we've designed, built, and deployed — from volunteer operations to multi-platform publishing.</p>
+      </div>
+    </section>
+    <div class="max-w-6xl mx-auto px-4 py-16 w-full">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <a href="projects/prayer-city.html" class="work-card group">
+        <div class="work-card__media"><img src="images/screenshots/prayer-city/hero.png" alt="Prayer City volunteer platform" width="1440" height="900" loading="lazy" /></div>
+        <div class="work-card__body"><span class="work-card__tag">Nonprofit · 2026</span><h2 class="text-xl font-bold mt-3 group-hover:text-accent transition">Prayer City</h2><p class="text-sm text-ink-soft mt-2">Volunteer ops · Firebase · Gmail automation</p></div>
       </a>
-      <a href="projects/royal-wealth-heritage.html" class="rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition block group">
-        <img src="images/screenshots/royal-wealth-heritage/hero.png" alt="Royal Wealth Heritage LLC website" class="w-full aspect-video object-cover object-top group-hover:scale-[1.02] transition duration-300" width="1440" height="900" loading="lazy" />
-        <div class="p-6"><p class="text-xs font-bold uppercase text-accent">Business · 2026</p><h2 class="text-xl font-bold mt-1">Royal Wealth Heritage LLC</h2><p class="text-sm text-ink-soft mt-2">Next.js · Enrollment system · Domain email</p></div>
+      <a href="projects/royal-wealth-heritage.html" class="work-card group">
+        <div class="work-card__media"><img src="images/screenshots/royal-wealth-heritage/hero.png" alt="Royal Wealth Heritage LLC website" width="1440" height="900" loading="lazy" /></div>
+        <div class="work-card__body"><span class="work-card__tag">Business · 2026</span><h2 class="text-xl font-bold mt-3 group-hover:text-accent transition">Royal Wealth Heritage LLC</h2><p class="text-sm text-ink-soft mt-2">Next.js · Enrollment system · Domain email</p></div>
       </a>
-      <a href="projects/prayer-city-social.html" class="rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition block group">
-        <img src="images/screenshots/prayer-city-social/hero.png" alt="Prayer City Social publishing platform" class="w-full aspect-video object-cover object-top group-hover:scale-[1.02] transition duration-300" width="1440" height="900" loading="lazy" />
-        <div class="p-6"><p class="text-xs font-bold uppercase text-accent">SaaS · 2026</p><h2 class="text-xl font-bold mt-1">Prayer City Social</h2><p class="text-sm text-ink-soft mt-2">Social publishing · 10 platforms · AI</p></div>
+      <a href="projects/prayer-city-social.html" class="work-card group">
+        <div class="work-card__media"><img src="images/screenshots/prayer-city-social/hero.png" alt="Prayer City Social publishing platform" width="1440" height="900" loading="lazy" /></div>
+        <div class="work-card__body"><span class="work-card__tag">SaaS · 2026</span><h2 class="text-xl font-bold mt-3 group-hover:text-accent transition">Prayer City Social</h2><p class="text-sm text-ink-soft mt-2">Social publishing · 10 platforms · AI</p></div>
       </a>
     </div>
 
     <div class="mt-16 rounded-2xl bg-slate-50 border border-slate-200 p-8 sm:p-10 text-center">
       <p class="font-bold text-lg">Want something like this for your team?</p>
       <p class="mt-2 text-sm text-ink-soft max-w-md mx-auto">We scope, build, and ship — from first call to production deploy.</p>
-      <a href="contact.html" class="inline-flex mt-6 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent-light transition">Start a project</a>
+      <a href="contact.html" class="inline-flex mt-6 btn-primary">Start a project</a>
+    </div>
     </div>
   </main>
 
-  <footer class="border-t border-slate-200 bg-white mt-auto">
-    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-ink-soft">
-      <p>© <span data-year></span> Abe Inc.</p>
+  <footer class="site-footer mt-auto">
+    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm">
+      <p class="text-slate-500">© <span data-year></span> Abe Stack · abestack.com</p>
       <div class="flex gap-6">
-        <a href="about.html" class="hover:text-accent transition">About</a>
-        <a href="contact.html" class="hover:text-accent transition">Contact</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
   </footer>

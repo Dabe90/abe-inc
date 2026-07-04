@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services — Abe Inc.</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <title>Services — Abe Stack</title>
   <meta name="description" content="Web applications, Firebase backends, workflow automation, marketing infrastructure, and AI-ready SEO for teams that need software built right." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',muted:'#334155',soft:'#64748b'},accent:{DEFAULT:'#2563eb',light:'#3b82f6',soft:'#dbeafe'}}}}};</script>
   <link rel="stylesheet" href="css/site.css" />
 </head>
 <body class="min-h-screen bg-white text-ink antialiased flex flex-col" data-calendly-widget="true">
-  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
+  <header class="site-header sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
       <a href="index.html" class="flex items-center gap-2.5 group">
-        <span class="w-9 h-9 rounded-lg bg-ink text-white text-sm font-bold flex items-center justify-center group-hover:bg-accent transition">A</span>
-        <span class="font-semibold text-ink tracking-tight">Abe Inc.</span>
+        <span class="site-logo-mark">A</span>
+        <span class="font-semibold text-ink tracking-tight">Abe Stack</span>
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-ink-muted" aria-label="Main">
         <a href="projects.html" class="hover:text-accent transition">Work</a>
@@ -24,7 +25,7 @@
         <a href="about.html" class="hover:text-accent transition">About</a>
         <a href="contact.html" class="hover:text-accent transition">Contact</a>
       </nav>
-      <a href="contact.html" class="hidden sm:inline-flex rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white hover:bg-accent transition">Start a project</a>
+      <a href="contact.html" class="hidden sm:inline-flex btn-primary !py-2 !px-4 !text-sm">Start a project</a>
       <button id="nav-toggle" type="button" class="md:hidden p-2 rounded-lg border border-slate-200" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
@@ -39,34 +40,39 @@
     </nav>
   </header>
 
-  <main class="flex-1 max-w-6xl mx-auto px-4 py-16 w-full">
-    <p class="text-sm font-semibold uppercase tracking-widest text-accent">Services</p>
-    <h1 class="mt-2 text-3xl sm:text-4xl font-bold">Everything from homepage to production ops.</h1>
-    <p class="mt-4 text-ink-soft max-w-2xl leading-relaxed">Custom software, cloud infrastructure, and automation — plus the launch details most studios skip. <a href="pricing.html" class="text-accent font-semibold hover:underline">View pricing →</a></p>
+  <main class="flex-1">
+    <section class="page-hero">
+      <div class="max-w-6xl mx-auto px-4 py-14 sm:py-16">
+        <p class="section-label mb-3">Services</p>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight max-w-3xl">Everything from homepage to production ops.</h1>
+        <p class="mt-4 text-ink-soft max-w-2xl leading-relaxed text-base">Custom software, cloud infrastructure, and automation — plus the launch details most studios skip. <a href="pricing.html" class="text-accent font-bold hover:underline">View pricing →</a></p>
+      </div>
+    </section>
+    <div class="max-w-6xl mx-auto px-4 py-16 w-full">
 
-    <div class="mt-12 grid sm:grid-cols-2 gap-6">
-      <article class="rounded-2xl border border-slate-200 p-6">
+    <div class="grid sm:grid-cols-2 gap-6">
+      <article class="service-card">
         <h2 class="text-lg font-bold">Web applications</h2>
         <p class="mt-2 text-sm text-ink-soft leading-relaxed">Next.js and React sites, volunteer portals, enrollment wizards, dashboards, and public marketing sites — mobile-first, accessible, and owned by you.</p>
       </article>
-      <article class="rounded-2xl border border-slate-200 p-6">
+      <article class="service-card">
         <h2 class="text-lg font-bold">Backend &amp; cloud</h2>
         <p class="mt-2 text-sm text-ink-soft leading-relaxed">Firebase Auth, Firestore, Cloud Functions, PocketBase, job queues, webhooks, and API integrations that scale without a server to babysit.</p>
       </article>
-      <article class="rounded-2xl border border-slate-200 p-6">
+      <article class="service-card">
         <h2 class="text-lg font-bold">Workflow automation</h2>
         <p class="mt-2 text-sm text-ink-soft leading-relaxed">Google Apps Script, Gmail API, Sheets pipelines, form routing, scheduled digests, and outreach flows — the ops layer behind your site.</p>
       </article>
-      <article class="rounded-2xl border border-slate-200 p-6">
+      <article class="service-card">
         <h2 class="text-lg font-bold">Domain &amp; email launch</h2>
         <p class="mt-2 text-sm text-ink-soft leading-relaxed">DNS, SSL, business email (Zoho / Google Workspace), MX/SPF/DKIM, and form delivery to your inbox — live before go-live week panic.</p>
       </article>
-      <article class="rounded-2xl border border-slate-200 p-6 ring-2 ring-accent/20">
+      <article class="service-card ring-2 ring-accent/15">
         <h2 class="text-lg font-bold">Marketing wired in</h2>
         <p class="mt-1 text-xs font-semibold text-accent uppercase">Add-on · $500 – $1,500</p>
         <p class="mt-2 text-sm text-ink-soft leading-relaxed">Meta Pixel + events, Google Analytics / Search Console, basic conversion tracking, and form-to-CRM routing — built during construction, not bolted on after launch.</p>
       </article>
-      <article class="rounded-2xl border border-slate-200 p-6 ring-2 ring-accent/20">
+      <article class="service-card ring-2 ring-accent/15">
         <h2 class="text-lg font-bold">AI-ready SEO &amp; discoverability</h2>
         <p class="mt-1 text-xs font-semibold text-accent uppercase">Included in every build</p>
         <p class="mt-2 text-sm text-ink-soft leading-relaxed">Semantic HTML, structured metadata, sitemaps, Open Graph images, and clean architecture so Google and AI assistants can find and cite your business.</p>
@@ -86,11 +92,12 @@
     <section class="mt-12 text-center">
       <a href="open-source/index.html" class="text-accent font-semibold text-sm hover:underline">Open-source starters on GitHub →</a>
     </section>
+    </div>
   </main>
 
-  <footer class="border-t border-slate-200 bg-white mt-auto">
-    <div class="max-w-6xl mx-auto px-4 py-8 text-center text-sm text-ink-soft">
-      <p>© <span data-year></span> Abe Inc.</p>
+  <footer class="site-footer mt-auto">
+    <div class="max-w-6xl mx-auto px-4 py-8 text-center text-sm">
+      <p class="text-slate-500">© <span data-year></span> Abe Stack · abestack.com</p>
     </div>
   </footer>
   <script src="js/config.js"></script>
