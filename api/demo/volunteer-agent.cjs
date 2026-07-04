@@ -1,19 +1,13 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-
-export const config = {
-  maxDuration: 60,
-};
-
 const DEMO_DISCLAIMER = 'Demo mode — not real client data';
 
-function clientIp(req: VercelRequest): string {
+function clientIp(req) {
   const forwarded = req.headers['x-forwarded-for'];
   if (typeof forwarded === 'string') return forwarded.split(',')[0].trim();
   if (Array.isArray(forwarded) && forwarded[0]) return forwarded[0].split(',')[0].trim();
   return req.socket?.remoteAddress || 'unknown';
 }
 
-function setDemoHeaders(res: VercelResponse): void {
+function setDemoHeaders(res) {
   res.setHeader('Access-Control-Allow-Origin', 'https://abestack.com');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -21,8 +15,8 @@ function setDemoHeaders(res: VercelResponse): void {
   res.setHeader('X-Demo-Disclaimer', DEMO_DISCLAIMER);
 }
 
-/** Vercel serverless entry — works alongside static HTML on abestack.com */
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+/** Vercel serverless — safe Genkit demo (sample data only). */
+module.exports = async function handler(req, res) {
   setDemoHeaders(res);
 
   if (req.method === 'OPTIONS') {
@@ -47,20 +41,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const { runDemoVolunteerAgent, DemoRateLimitError, DemoValidationError } = await import(
-      '../../src/demo/run-demo-volunteer-agent.js'
-    );
+    const { runDemoVolunteerAgent } = await import('../../src/demo/run-demo-volunteer-agent.js');
     const result = await runDemoVolunteerAgent(req.body, { ip: clientIp(req) });
     res.setHeader('Cache-Control', 'no-store');
     res.status(200).json(result);
   } catch (err) {
-    const name = err instanceof Error ? err.name : '';
+    const name = err && err.name;
     if (name === 'DemoValidationError') {
-      res.status(400).json({ ok: false, error: (err as Error).message, demoMode: true });
+      res.status(400).json({ ok: false, error: err.message, demoMode: true });
       return;
     }
     if (name === 'DemoRateLimitError') {
-      res.status(429).json({ ok: false, error: (err as Error).message, demoMode: true });
+      res.status(429).json({ ok: false, error: err.message, demoMode: true });
       return;
     }
 
@@ -71,4 +63,4 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       error: err instanceof Error ? err.message : 'Demo agent failed',
     });
   }
-}
+};

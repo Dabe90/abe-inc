@@ -2,9 +2,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "functions": {
-    "api/demo/volunteer-agent.ts": {
-      "maxDuration": 60,
-      "memory": 1024
+    "api/demo/volunteer-agent.cjs": {
+      "maxDuration": 60
     }
   }
 }
