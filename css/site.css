@@ -855,6 +855,192 @@ body {
   }
 }
 
+/* ——— Work card metrics ——— */
+.work-card__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.work-card__metric {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  padding: 0.25rem 0.625rem;
+}
+
+.work-card__metric strong {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+/* ——— Case study pages ——— */
+.case-study-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.case-meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+}
+
+.case-meta-bar dt {
+  font-weight: 700;
+  color: var(--ink);
+  display: inline;
+}
+
+.case-meta-bar dd {
+  display: inline;
+  margin-left: 0.35rem;
+}
+
+.case-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+@media (min-width: 640px) {
+  .case-metrics {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.metric-card {
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.metric-card__value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.1;
+}
+
+.metric-card__label {
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+}
+
+.case-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.case-testimonial {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border-left: 4px solid var(--accent);
+  background: var(--surface);
+}
+
+.case-testimonial p {
+  font-size: 0.9375rem;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.case-testimonial footer {
+  margin-top: 1rem;
+  font-size: 0.8125rem;
+}
+
+.case-testimonial footer strong {
+  color: var(--ink);
+}
+
+/* ——— Flagship AI section ——— */
+.flagship-ai {
+  background: linear-gradient(135deg, #0b1220 0%, #1e3a5f 55%, #0f172a 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.flagship-ai::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 80% 20%, rgba(37, 99, 235, 0.25), transparent);
+  pointer-events: none;
+}
+
+.flagship-ai__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.flagship-ai h2 {
+  color: #fff;
+}
+
+.flagship-ai p {
+  color: #94a3b8;
+}
+
+.flagship-ai .tech-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
+}
+
+/* ——— Trust bar ——— */
+.trust-bar {
+  border-block: 1px solid var(--border);
+  background: #fff;
+}
+
+.logo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem 2.5rem;
+}
+
+.logo-strip__item {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+  opacity: 0.75;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.logo-strip__item:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+/* ——— Article CTA ——— */
+.article-cta {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
 @media print {
   header, footer, .no-print { display: none !important; }
   body { font-size: 11pt; }

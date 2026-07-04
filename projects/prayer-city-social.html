@@ -2,63 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
   <title>Prayer City Social — Abe Stack</title>
+  <meta name="description" content="Case study: multi-platform social publishing with AI variants, 10 OAuth integrations, and owned infrastructure — shipped Nov 2025." />
+  <link rel="canonical" href="https://abestack.com/projects/prayer-city-social.html" />
+  <meta property="og:image" content="https://abestack.com/images/screenshots/prayer-city-social/hero.png" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"CreativeWork","name":"Prayer City Social","datePublished":"2025-11-10","author":{"@type":"Organization","name":"Abe Stack"},"url":"https://abestack.com/projects/prayer-city-social.html"}
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',soft:'#64748b'},accent:{DEFAULT:'#2563eb'}}}}};</script>
   <link rel="stylesheet" href="../css/site.css" />
 </head>
 <body class="bg-white text-ink antialiased">
-  <header class="border-b border-slate-200"><div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between text-sm">
-    <a href="../index.html" class="font-semibold">Abe Stack</a>
-    <a href="../projects.html" class="text-accent">← All work</a>
-  </div></header>
+  <header class="site-header sticky top-0 z-50"><div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between"><a href="../index.html" class="flex items-center gap-2.5"><span class="site-logo-mark">A</span><span class="font-semibold">Abe Stack</span></a><a href="../projects.html" class="text-sm font-semibold text-accent">← All work</a></div></header>
   <article class="max-w-3xl mx-auto px-4 py-12">
-    <p class="text-xs font-bold uppercase text-accent">Case study · 2026</p>
-    <h1 class="mt-2 text-3xl font-bold">Prayer City Social</h1>
-    <p class="mt-4 text-ink-soft leading-relaxed">Multi-platform social publishing platform — compose once, generate AI-tailored variants, schedule or publish to 10 networks from one dashboard.</p>
-    <p class="mt-4"><a href="https://social.prayercityhtx.com" class="text-accent font-semibold" target="_blank" rel="noopener">social.prayercityhtx.com ↗</a></p>
-    <figure class="mt-8">
-      <img src="../images/screenshots/prayer-city-social/hero.png" alt="Prayer City Social Manager landing page" class="w-full rounded-xl screenshot-frame border border-slate-200" width="1440" height="900" />
-      <figcaption class="mt-2 text-xs text-ink-soft text-center">Social Manager — compose once, publish everywhere</figcaption>
-    </figure>
-    <section class="mt-10"><h2 class="text-xl font-bold">Problem</h2><p class="mt-2 text-ink-soft text-sm">Posting the same content to every platform by hand is slow and repetitive. Subscription schedulers are expensive, rented, and limited in what they connect to.</p></section>
+    <p class="text-xs font-bold uppercase text-accent">AI &amp; SaaS · Shipped Nov 2025</p>
+    <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold">Prayer City Social</h1>
+    <p class="mt-4 text-ink-soft leading-relaxed">Multi-platform social publishing — compose once, generate AI-tailored variants, schedule or publish to 10 networks from one owned dashboard.</p>
+    <p class="mt-4"><a href="https://social.prayercityhtx.com" class="text-accent font-semibold" target="_blank" rel="noopener">social.prayercityhtx.com ↗</a> · <a href="../services/agentic-ai.html" class="text-accent font-semibold">See our AI automation service →</a></p>
+    <dl class="case-meta-bar mt-8 pt-6 border-t border-slate-200">
+      <div><dt>Shipped</dt><dd>Nov 2025</dd></div><div><dt>Duration</dt><dd>10 weeks</dd></div><div><dt>Client</dt><dd>Dear Daughter Bible Study / Prayer City</dd></div>
+    </dl>
+    <div class="case-metrics">
+      <div class="metric-card"><div class="metric-card__value">10</div><div class="metric-card__label">Social platforms</div></div>
+      <div class="metric-card"><div class="metric-card__value">3</div><div class="metric-card__label">LLM providers</div></div>
+      <div class="metric-card"><div class="metric-card__value">1</div><div class="metric-card__label">Compose → publish</div></div>
+      <div class="metric-card"><div class="metric-card__value">$1.2K+</div><div class="metric-card__label">Annual SaaS avoided</div></div>
+    </div>
+    <figure class="mt-8"><img src="../images/screenshots/prayer-city-social/hero.png" alt="Prayer City Social dashboard" class="w-full rounded-xl screenshot-frame border border-slate-200" width="1440" height="900" /></figure>
+    <section class="mt-10"><h2 class="text-xl font-bold">Problem</h2><p class="mt-2 text-ink-soft text-sm">Posting to every platform by hand is slow. Subscription schedulers are expensive, rented, and limited in integrations.</p></section>
     <section class="mt-8"><h2 class="text-xl font-bold">Solution</h2>
       <ul class="mt-2 text-ink-soft text-sm space-y-2 list-disc pl-5">
-        <li>Next.js dashboard with one compose box and AI variants per network</li>
-        <li>10 platforms — Instagram, Facebook, YouTube, TikTok, LinkedIn, X, Threads, Bluesky, Spotify, WhatsApp</li>
-        <li>Queue-based worker for scheduled and instant publishing with retry logic</li>
-        <li>OAuth account linking with token refresh for each provider</li>
+        <li>Next.js dashboard — one compose box, AI variants per network</li>
+        <li>10 platforms: Instagram, Facebook, YouTube, TikTok, LinkedIn, X, Threads, Bluesky, Spotify, WhatsApp</li>
+        <li>Queue worker for scheduled and instant publishing with retry logic</li>
+        <li>Multi-provider AI (Groq, DeepSeek, OpenAI) with automatic failover</li>
         <li>In-browser video editor for Reels and short-form clips</li>
-        <li>Multi-provider AI layer (Groq, DeepSeek, OpenAI) with automatic failover</li>
-        <li>PocketBase auth, media storage, and job records behind Cloudflare Tunnel</li>
+        <li>PocketBase auth and media storage behind Cloudflare Tunnel</li>
       </ul>
     </section>
-    <section class="mt-10">
-      <h2 class="text-xl font-bold">Screenshots</h2>
+    <section class="mt-8"><h2 class="text-xl font-bold">Results</h2><p class="mt-2 text-ink-soft text-sm">The team posts across ten channels from one system they own — no per-seat SaaS fees, no platform caps. AI generates network-specific copy while humans approve before publish. Estimated $1,200+/year saved vs. comparable subscription tools for a 3-person team.</p></section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Technology</h2>
+      <div class="case-stack"><span class="tech-badge">Next.js</span><span class="tech-badge">PocketBase</span><span class="tech-badge">Queue workers</span><span class="tech-badge">Groq</span><span class="tech-badge">OpenAI</span><span class="tech-badge">OAuth 2.0</span></div>
+    </section>
+    <section class="mt-10"><h2 class="text-xl font-bold">Screenshots</h2>
       <div class="mt-4 space-y-8">
-        <figure>
-          <img src="../images/screenshots/prayer-city-social/editor.png" alt="In-browser video editor for social posts" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" />
-          <figcaption class="mt-2 text-xs text-ink-soft">In-browser video editor — trim, crop, and prep clips before publishing</figcaption>
-        </figure>
-        <figure>
-          <img src="../images/screenshots/prayer-city-social/dashboard.png" alt="Prayer City Social dashboard login" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" />
-          <figcaption class="mt-2 text-xs text-ink-soft">Command center dashboard for channel management and scheduling</figcaption>
-        </figure>
+        <figure><img src="../images/screenshots/prayer-city-social/editor.png" alt="Video editor" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" /></figure>
+        <figure><img src="../images/screenshots/prayer-city-social/dashboard.png" alt="Dashboard" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" /></figure>
       </div>
     </section>
+    <blockquote class="case-testimonial"><p>"We needed to post across ten social platforms without paying per-seat fees forever. Abe Stack built a custom publishing platform with AI variants, scheduling, and OAuth to every channel we use."</p><footer><strong>Dear Daughter Bible Study Team</strong> · Prayer City Social</footer></blockquote>
+    <div class="mt-10 text-center rounded-2xl bg-slate-50 border border-slate-200 p-8"><p class="font-bold">Outgrow your social SaaS bill?</p><a href="../services/agentic-ai.html" class="inline-flex mt-4 btn-primary">Explore AI automation</a></div>
   </article>
-  <footer class="border-t border-slate-200 mt-12">
-    <div class="max-w-3xl mx-auto px-4 py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-ink-soft">
-      <p>© <span data-year></span> Abe Stack</p>
-      <p class="footer-legal mt-2"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></p>
-      <div class="flex gap-6">
-        <a href="../projects.html" class="hover:text-accent transition">All work</a>
-        <a href="../contact.html" class="hover:text-accent transition">Start a project</a>
-      </div>
-    </div>
-  </footer>
-  <script src="../js/site.js"></script>
+  <footer class="border-t border-slate-200 mt-12"><div class="max-w-3xl mx-auto px-4 py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-ink-soft"><p>© <span data-year></span> Abe Stack</p><p class="footer-legal mt-2"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></p><div class="flex gap-6"><a href="../projects.html">All work</a><a href="../contact.html">Contact</a></div></div></footer>
+  <script src="../js/config.js"></script><script src="../js/site.js"></script>
 </body>
 </html>

@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
   <title>Services — Abe Stack</title>
-  <meta name="description" content="Web applications, Firebase backends, workflow automation, marketing infrastructure, and AI-ready SEO for teams that need software built right." />
+  <meta name="description" content="Web applications, Firebase backends, agentic AI automation, workflow systems, and AI-ready SEO for teams that need software built right." />
+  <link rel="canonical" href="https://abestack.com/services.html" />
+  <meta property="og:title" content="Services — Abe Stack" />
+  <meta property="og:url" content="https://abestack.com/services.html" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Service","name":"Abe Stack Development Services","provider":{"@type":"Organization","name":"Abe Stack"},"url":"https://abestack.com/services.html"}
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',muted:'#334155',soft:'#64748b'},accent:{DEFAULT:'#2563eb',light:'#3b82f6',soft:'#dbeafe'}}}}};</script>
   <link rel="stylesheet" href="css/site.css" />
@@ -20,6 +26,7 @@
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-ink-muted" aria-label="Main">
         <a href="projects.html" class="hover:text-accent transition">Work</a>
         <a href="services.html" class="text-accent font-semibold">Services</a>
+        <a href="services/agentic-ai.html" class="hover:text-accent transition">AI Automation</a>
         <a href="pricing.html" class="hover:text-accent transition">Pricing</a>
         <a href="insights/index.html" class="hover:text-accent transition">Insights</a>
         <a href="about.html" class="hover:text-accent transition">About</a>
@@ -33,6 +40,7 @@
     <nav id="mobile-nav" class="hidden md:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-1" aria-label="Mobile">
       <a href="projects.html" class="mobile-nav-link">Work</a>
       <a href="services.html" class="mobile-nav-link !text-accent">Services</a>
+      <a href="services/agentic-ai.html" class="mobile-nav-link">AI Automation</a>
       <a href="pricing.html" class="mobile-nav-link">Pricing</a>
       <a href="insights/index.html" class="mobile-nav-link">Insights</a>
       <a href="about.html" class="mobile-nav-link">About</a>
@@ -52,6 +60,11 @@
     <div class="max-w-6xl mx-auto px-4 py-16 w-full">
 
     <div class="grid sm:grid-cols-2 gap-6">
+      <article class="service-card ring-2 ring-accent/20 sm:col-span-2">
+        <p class="text-xs font-bold uppercase text-accent mb-1">Flagship</p>
+        <h2 class="text-lg font-bold"><a href="services/agentic-ai.html" class="hover:text-accent">Agentic AI &amp; intelligent automation</a></h2>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed">Multi-LLM agents, content variant pipelines, queue workers, and human-in-the-loop review — for teams that outgrow Zapier and per-seat AI SaaS. $5K–$12K · <a href="projects/agentic-publishing.html" class="text-accent font-semibold">See case study →</a></p>
+      </article>
       <article class="service-card">
         <h2 class="text-lg font-bold">Web applications</h2>
         <p class="mt-2 text-sm text-ink-soft leading-relaxed">Next.js and React sites, volunteer portals, enrollment wizards, dashboards, and public marketing sites — mobile-first, accessible, and owned by you.</p>

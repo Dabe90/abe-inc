@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://abestack.com/sitemap.xml
+
+# Optional summary for AI assistants
+# https://abestack.com/llms.txt

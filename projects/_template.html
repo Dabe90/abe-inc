@@ -1,1 +1,73 @@
-<!-- Duplicate this file and rename for each new project -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <title><!-- TITLE --> — Abe Stack</title>
+  <meta name="description" content="<!-- META DESCRIPTION -->" />
+  <link rel="canonical" href="https://abestack.com/projects/<!-- SLUG -->.html" />
+  <meta property="og:title" content="<!-- TITLE --> — Abe Stack" />
+  <meta property="og:description" content="<!-- META DESCRIPTION -->" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://abestack.com/projects/<!-- SLUG -->.html" />
+  <meta property="og:image" content="https://abestack.com/<!-- OG IMAGE PATH -->" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',muted:'#334155',soft:'#64748b'},accent:{DEFAULT:'#2563eb'}}}}};</script>
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body class="bg-white text-ink antialiased">
+  <header class="site-header sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+      <a href="../index.html" class="flex items-center gap-2.5"><span class="site-logo-mark">A</span><span class="font-semibold">Abe Stack</span></a>
+      <a href="../projects.html" class="text-sm font-semibold text-accent">← All work</a>
+    </div>
+  </header>
+
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <p class="text-xs font-bold uppercase text-accent"><!-- CATEGORY --> · <!-- SHIPPED LABEL --></p>
+    <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight"><!-- H1 --></h1>
+    <p class="mt-4 text-ink-soft leading-relaxed"><!-- LEAD --></p>
+    <p class="mt-4"><a href="<!-- LIVE URL -->" class="text-accent font-semibold" target="_blank" rel="noopener"><!-- LIVE URL LABEL --> ↗</a></p>
+
+    <dl class="case-meta-bar mt-8 pt-6 border-t border-slate-200">
+      <div><dt>Shipped</dt><dd><!-- SHIPPED LABEL --></dd></div>
+      <div><dt>Duration</dt><dd><!-- DURATION --></dd></div>
+      <div><dt>Client</dt><dd><!-- CLIENT --></dd></div>
+    </dl>
+
+    <div class="case-metrics"><!-- METRIC CARDS --></div>
+
+    <figure class="mt-8">
+      <img src="<!-- HERO IMG -->" alt="<!-- HERO ALT -->" class="w-full rounded-xl screenshot-frame border border-slate-200" width="1440" height="900" />
+      <figcaption class="mt-2 text-xs text-ink-soft text-center"><!-- HERO CAPTION --></figcaption>
+    </figure>
+
+    <section class="mt-10"><h2 class="text-xl font-bold">Problem</h2><p class="mt-2 text-ink-soft text-sm leading-relaxed"><!-- PROBLEM --></p></section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Solution</h2><ul class="mt-2 text-ink-soft text-sm space-y-2 list-disc pl-5"><!-- SOLUTION LI --></ul></section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Results</h2><p class="mt-2 text-ink-soft text-sm leading-relaxed"><!-- RESULTS --></p></section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Technology</h2><div class="case-stack"><!-- TECH BADGES --></div></section>
+
+    <section class="mt-10"><h2 class="text-xl font-bold">Screenshots</h2><div class="mt-4 space-y-8"><!-- SCREENSHOTS --></div></section>
+
+    <blockquote class="case-testimonial"><p><!-- TESTIMONIAL --></p><footer><strong><!-- AUTHOR --></strong> · <!-- ROLE --></footer></blockquote>
+
+    <div class="mt-10 text-center rounded-2xl bg-slate-50 border border-slate-200 p-8">
+      <p class="font-bold">Want something like this?</p>
+      <a href="../contact.html" class="inline-flex mt-4 btn-primary">Start a project</a>
+    </div>
+  </article>
+
+  <footer class="border-t border-slate-200 mt-12">
+    <div class="max-w-3xl mx-auto px-4 py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-ink-soft">
+      <p>© <span data-year></span> Abe Stack</p>
+      <p class="footer-legal mt-2"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></p>
+      <div class="flex gap-6"><a href="../projects.html" class="hover:text-accent">All work</a><a href="../contact.html" class="hover:text-accent">Contact</a></div>
+    </div>
+  </footer>
+  <script src="../js/config.js"></script>
+  <script src="../js/site.js"></script>
+</body>
+</html>
+
+<!-- Duplicate this file. Replace all <!-- --> placeholders. Add JSON-LD in head before </head>. -->

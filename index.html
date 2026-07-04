@@ -17,7 +17,7 @@
   <meta name="twitter:image" content="https://abestack.com/images/og-image.png" />
   <link rel="sitemap" type="application/xml" href="sitemap.xml" />
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfessionalService","name":"Abe Stack","description":"Web applications, Firebase backends, and workflow automation.","url":"https://abestack.com","email":"hello@abestack.com","areaServed":"US","address":{"@type":"PostalAddress","addressLocality":"Houston","addressRegion":"TX","addressCountry":"US"},"priceRange":"$$","sameAs":["https://github.com/Dabe90"]}
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"Abe Stack","description":"Web applications, Firebase backends, agentic AI automation, and workflow systems.","url":"https://abestack.com","email":"hello@abestack.com","areaServed":"US","address":{"@type":"PostalAddress","addressLocality":"Houston","addressRegion":"TX","addressCountry":"US"},"priceRange":"$$","knowsAbout":["Next.js","Firebase","Agentic AI","Workflow Automation","Intelligent Automation"],"sameAs":["https://github.com/Dabe90"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Abe Stack Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Web Applications"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Agentic AI & Intelligent Automation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Workflow Automation"}}]}}
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -39,6 +39,7 @@
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-ink-muted" aria-label="Main">
         <a href="projects.html" class="hover:text-accent transition">Work</a>
         <a href="services.html" class="hover:text-accent transition">Services</a>
+        <a href="services/agentic-ai.html" class="hover:text-accent transition">AI Automation</a>
         <a href="pricing.html" class="hover:text-accent transition">Pricing</a>
         <a href="insights/index.html" class="hover:text-accent transition">Insights</a>
         <a href="about.html" class="hover:text-accent transition">About</a>
@@ -54,6 +55,7 @@
     <nav id="mobile-nav" class="hidden md:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-1" aria-label="Mobile">
       <a href="projects.html" class="mobile-nav-link">Work</a>
       <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="services/agentic-ai.html" class="mobile-nav-link">AI Automation</a>
       <a href="pricing.html" class="mobile-nav-link">Pricing</a>
       <a href="insights/index.html" class="mobile-nav-link">Insights</a>
       <a href="about.html" class="mobile-nav-link">About</a>
@@ -69,7 +71,7 @@
           <div>
             <p class="hero-premium__badge mb-6"><span class="hero-premium__badge-dot" aria-hidden="true"></span> Software that ships</p>
             <h1 class="text-4xl sm:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight max-w-xl">We build web products and automation that teams actually use.</h1>
-            <p class="hero-lead mt-6 text-lg sm:text-xl max-w-xl">Full-stack web apps, Firebase backends, and workflow automation — structured for search, AI discoverability, and production from day one.</p>
+            <p class="hero-lead mt-6 text-lg sm:text-xl max-w-xl">Full-stack web apps, agentic AI automation, Firebase backends, and workflow systems — structured for search, AI discoverability, and production from day one.</p>
             <div class="hero-links mt-6 flex flex-wrap gap-3 text-sm">
               <a href="pricing.html" class="hover:underline">See pricing →</a>
               <span class="text-slate-600">·</span>
@@ -107,8 +109,8 @@
       <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
         <div class="stat-card">
           <div class="stat-card__icon" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-          <p class="stat-value text-3xl sm:text-4xl">3+</p>
-          <p class="mt-1 text-sm text-ink-soft font-medium">Live products shipped</p>
+          <p class="stat-value text-3xl sm:text-4xl">8+</p>
+          <p class="mt-1 text-sm text-ink-soft font-medium">Production systems shipped</p>
         </div>
         <div class="stat-card">
           <div class="stat-card__icon" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
@@ -128,12 +130,54 @@
       </div>
     </section>
 
+    <section class="trust-bar py-8">
+      <div class="max-w-6xl mx-auto px-4">
+        <p class="text-center text-xs font-bold uppercase tracking-widest text-ink-soft mb-4">Trusted by teams we've shipped for</p>
+        <div class="logo-strip">
+          <a href="projects/prayer-city.html" class="logo-strip__item">Prayer City</a>
+          <a href="projects/royal-wealth-heritage.html" class="logo-strip__item">Royal Wealth Heritage</a>
+          <a href="projects/prayer-city-social.html" class="logo-strip__item">Prayer City Social</a>
+          <a href="https://prayercityhtx.com" target="_blank" rel="noopener" class="logo-strip__item">prayercityhtx.com</a>
+          <a href="https://royalwealthheritage.com" target="_blank" rel="noopener" class="logo-strip__item">royalwealthheritage.com</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="flagship-ai py-16 sm:py-20">
+      <div class="flagship-ai__inner max-w-6xl mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <p class="section-label mb-3 !text-blue-300">Flagship offering</p>
+            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Agentic AI &amp; intelligent automation</h2>
+            <p class="mt-4 text-base leading-relaxed">Multi-step AI agents, LLM orchestration with failover, and queue workers — for content pipelines, ops automation, and enrollment processing. You own the stack; humans approve before anything goes live.</p>
+            <ul class="mt-6 space-y-2 text-sm text-slate-300">
+              <li>✓ Multi-provider LLM routing (Groq, OpenAI, DeepSeek)</li>
+              <li>✓ 10-platform social publishing — see Prayer City Social</li>
+              <li>✓ $5K–$12K add-on · fixed quote after discovery</li>
+            </ul>
+            <div class="hero-cta-row mt-8">
+              <a href="services/agentic-ai.html" class="btn-primary">Explore AI automation →</a>
+              <a href="projects/agentic-publishing.html" class="btn-secondary">Case study</a>
+            </div>
+          </div>
+          <div class="hidden sm:block rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+            <img src="images/screenshots/prayer-city-social/dashboard.png" alt="Agentic publishing dashboard" class="w-full aspect-video object-cover object-top" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="py-16 sm:py-20 bg-slate-50">
       <div class="max-w-6xl mx-auto px-4">
         <p class="section-label mb-3">Capabilities</p>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-ink mb-3 tracking-tight">What we do</h2>
         <p class="text-ink-soft max-w-2xl mb-12 text-base">Custom software and automation — no templates, no page builders. Every project is built for your workflow and owned by you.</p>
-        <div class="grid sm:grid-cols-3 gap-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <article class="service-card ring-2 ring-accent/15">
+            <div class="service-card__icon" aria-hidden="true"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg></div>
+            <h3 class="font-bold text-lg mb-2">Agentic AI &amp; automation</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">Multi-LLM agents, content variants, queue workers, and human-in-the-loop workflows — <a href="services/agentic-ai.html" class="text-accent font-semibold hover:underline">learn more →</a></p>
+          </article>
           <article class="service-card">
             <div class="service-card__icon" aria-hidden="true"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
             <h3 class="font-bold text-lg mb-2">Web applications</h3>
@@ -192,40 +236,9 @@
             <h2 class="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">Selected work</h2>
             <p class="mt-2 text-sm text-ink-soft">Production systems we've designed, built, and deployed.</p>
           </div>
-          <a href="projects.html" class="text-sm font-bold text-accent hover:underline shrink-0">View all projects →</a>
+          <a href="projects.html" class="text-sm font-bold text-accent hover:underline shrink-0">View all 8 projects →</a>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <a href="projects/prayer-city.html" class="work-card group">
-            <div class="work-card__media">
-              <img src="images/screenshots/prayer-city/hero.png" alt="Houston World Cup Prayer City volunteer platform" width="1440" height="900" loading="lazy" />
-            </div>
-            <div class="work-card__body">
-              <span class="work-card__tag">2026</span>
-              <h3 class="text-xl font-bold mt-3 group-hover:text-accent transition">Houston World Cup Prayer City</h3>
-              <p class="text-sm text-ink-soft mt-2">Volunteer platform · Firebase · Gmail automation</p>
-            </div>
-          </a>
-          <a href="projects/royal-wealth-heritage.html" class="work-card group">
-            <div class="work-card__media">
-              <img src="images/screenshots/royal-wealth-heritage/hero.png" alt="Royal Wealth Heritage LLC business website" width="1440" height="900" loading="lazy" />
-            </div>
-            <div class="work-card__body">
-              <span class="work-card__tag">2026</span>
-              <h3 class="text-xl font-bold mt-3 group-hover:text-accent transition">Royal Wealth Heritage LLC</h3>
-              <p class="text-sm text-ink-soft mt-2">Next.js site · Academy enrollment · Zoho email</p>
-            </div>
-          </a>
-          <a href="projects/prayer-city-social.html" class="work-card group">
-            <div class="work-card__media">
-              <img src="images/screenshots/prayer-city-social/hero.png" alt="Prayer City Social multi-platform publishing tool" width="1440" height="900" loading="lazy" />
-            </div>
-            <div class="work-card__body">
-              <span class="work-card__tag">2026</span>
-              <h3 class="text-xl font-bold mt-3 group-hover:text-accent transition">Prayer City Social</h3>
-              <p class="text-sm text-ink-soft mt-2">Social publishing · 10 platforms · AI variants</p>
-            </div>
-          </a>
-        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-projects-grid data-limit="6" data-featured="true"></div>
       </div>
     </section>
 
@@ -253,8 +266,9 @@
         <div class="grid md:grid-cols-3 gap-6">
           <div class="pricing-teaser"><p class="text-xs font-bold uppercase text-accent tracking-wider">Launch</p><p class="mt-2 text-2xl font-extrabold">$3.5K–6K</p><p class="mt-1 text-sm text-ink-soft">Business sites, forms, email, SEO</p></div>
           <div class="pricing-teaser pricing-teaser--featured"><p class="text-xs font-bold uppercase text-accent tracking-wider">Platform</p><p class="mt-2 text-2xl font-extrabold">$8K–15K+</p><p class="mt-1 text-sm text-ink-soft">Auth, dashboards, Firebase apps</p></div>
-          <div class="pricing-teaser"><p class="text-xs font-bold uppercase text-accent tracking-wider">Care</p><p class="mt-2 text-2xl font-extrabold">$425+/mo</p><p class="mt-1 text-sm text-ink-soft">Updates, monitoring, automation</p></div>
+          <div class="pricing-teaser"><p class="text-xs font-bold uppercase text-accent tracking-wider">Agentic AI</p><p class="mt-2 text-2xl font-extrabold">$5K–12K</p><p class="mt-1 text-sm text-ink-soft">Multi-LLM agents &amp; automation</p></div>
         </div>
+        <p class="mt-4 text-center text-sm text-ink-soft">Care plans from <strong class="text-ink">$425/mo</strong> · <a href="pricing.html" class="text-accent font-semibold hover:underline">Full pricing →</a></p>
       </div>
     </section>
 
@@ -284,21 +298,21 @@
             <p class="testimonial-card__quote text-sm text-ink-soft leading-relaxed">"Our academy enrollment used to mean PDF attachments and endless email threads. Abe Stack delivered a polished Next.js site, a seven-step wizard, and business email on our domain — all live in under two months. Responsive, detail-oriented, and actually understood what a small business needs to look credible online."</p>
             <footer class="mt-5 pt-5 border-t border-slate-100">
               <p class="font-semibold text-sm">Helena C. Puati</p>
-              <p class="text-xs text-ink-soft mt-0.5">Founder &amp; CEO, Royal Wealth Heritage LLC</p>
+              <p class="text-xs text-ink-soft mt-0.5">Founder &amp; CEO, <a href="projects/royal-wealth-heritage.html" class="text-accent hover:underline">Royal Wealth Heritage LLC</a></p>
             </footer>
           </blockquote>
           <blockquote class="testimonial-card rounded-2xl border border-slate-200 p-6 shadow-sm">
             <p class="text-sm text-ink-soft leading-relaxed">"Coordinating hundreds of volunteers across World Cup serve days could have been spreadsheet chaos. Abe Stack built signup flows, a volunteer hub, daily digests, and Gmail automation that actually runs without us babysitting it. It's the ops tooling we didn't know we needed until we had it."</p>
             <footer class="mt-5 pt-5 border-t border-slate-100">
               <p class="font-semibold text-sm">Prayer City Leadership</p>
-              <p class="text-xs text-ink-soft mt-0.5">Houston World Cup Prayer City</p>
+              <p class="text-xs text-ink-soft mt-0.5"><a href="projects/prayer-city.html" class="text-accent hover:underline">Houston World Cup Prayer City</a></p>
             </footer>
           </blockquote>
           <blockquote class="testimonial-card rounded-2xl border border-slate-200 p-6 shadow-sm">
             <p class="text-sm text-ink-soft leading-relaxed">"We needed to post across ten social platforms without paying per-seat fees forever. Abe Stack built a custom publishing platform with AI variants, scheduling, and OAuth to every channel we use. One compose box, full control, and we own the entire stack."</p>
             <footer class="mt-5 pt-5 border-t border-slate-100">
               <p class="font-semibold text-sm">Dear Daughter Bible Study Team</p>
-              <p class="text-xs text-ink-soft mt-0.5">Prayer City Social</p>
+              <p class="text-xs text-ink-soft mt-0.5"><a href="projects/prayer-city-social.html" class="text-accent hover:underline">Prayer City Social</a></p>
             </footer>
           </blockquote>
         </div>
@@ -320,8 +334,37 @@
           <span class="tech-badge">Google Apps Script</span>
           <span class="tech-badge">Docker</span>
           <span class="tech-badge">OAuth / APIs</span>
+          <span class="tech-badge">Agentic AI</span>
         </div>
       </div>
+    </section>
+
+    <section class="py-16 sm:py-20 bg-slate-50 border-y border-slate-100 faq" id="faq">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-bold text-ink mb-2">Common questions</h2>
+        <p class="text-sm text-ink-soft mb-8">Straight answers — the same transparency we bring to pricing and case studies.</p>
+        <div class="grid md:grid-cols-2 gap-4 max-w-4xl">
+          <details class="rounded-xl border border-slate-200 bg-white p-4">
+            <summary class="font-semibold text-sm cursor-pointer">What does Abe Stack build?</summary>
+            <p class="mt-3 text-sm text-ink-soft">Production web applications, Firebase backends, agentic AI automation, and workflow systems — from business sites to multi-platform publishing tools. You own the source code.</p>
+          </details>
+          <details class="rounded-xl border border-slate-200 bg-white p-4">
+            <summary class="font-semibold text-sm cursor-pointer">How much does a project cost?</summary>
+            <p class="mt-3 text-sm text-ink-soft">Launch sites: $3.5K–6K. Platforms: $8K–15K+. Agentic automation add-ons: $5K–12K. Fixed quotes after a free discovery call. <a href="pricing.html" class="text-accent font-semibold">See pricing →</a></p>
+          </details>
+          <details class="rounded-xl border border-slate-200 bg-white p-4">
+            <summary class="font-semibold text-sm cursor-pointer">What is agentic AI automation?</summary>
+            <p class="mt-3 text-sm text-ink-soft">Multi-step workflows where AI agents draft content or process data, humans approve, and queue workers execute via APIs — with multi-LLM failover. <a href="services/agentic-ai.html" class="text-accent font-semibold">Learn more →</a></p>
+          </details>
+          <details class="rounded-xl border border-slate-200 bg-white p-4">
+            <summary class="font-semibold text-sm cursor-pointer">Where is Abe Stack based?</summary>
+            <p class="mt-3 text-sm text-ink-soft">Houston, TX — remote-friendly across the US. Email <a href="mailto:hello@abestack.com" data-email>hello@abestack.com</a> or <a href="contact.html" class="text-accent">book a discovery call</a>.</p>
+          </details>
+        </div>
+      </div>
+      <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does Abe Stack build?","acceptedAnswer":{"@type":"Answer","text":"Production web applications, Firebase backends, agentic AI automation, and workflow systems. Clients own the source code."}},{"@type":"Question","name":"How much does a project cost?","acceptedAnswer":{"@type":"Answer","text":"Launch sites $3,500–6,000. Platforms $8,000–15,000+. Agentic automation $5,000–12,000. Fixed quotes after discovery."}}]}
+      </script>
     </section>
 
     <section class="py-16 sm:py-20">
@@ -345,7 +388,12 @@
           </div>
           <a href="insights/index.html" class="text-sm font-semibold text-accent hover:underline shrink-0">All articles →</a>
         </div>
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a href="insights/agentic-ai-for-ops-teams.html" class="rounded-xl border border-slate-200 bg-white p-5 hover:border-accent hover:shadow-md transition block">
+            <p class="text-xs font-bold uppercase text-accent">Agentic AI</p>
+            <h3 class="mt-2 font-bold">Agentic AI for ops teams</h3>
+            <p class="mt-2 text-sm text-ink-soft">When workflows need more than Zapier.</p>
+          </a>
           <a href="insights/owned-software-vs-saas.html" class="rounded-xl border border-slate-200 bg-white p-5 hover:border-accent hover:shadow-md transition block">
             <p class="text-xs font-bold uppercase text-accent">Strategy</p>
             <h3 class="mt-2 font-bold">Owned software vs. monthly SaaS</h3>
@@ -407,6 +455,7 @@
         <p class="site-footer__heading">Services</p>
         <ul class="space-y-2">
           <li><a href="services.html">Services</a></li>
+          <li><a href="services/agentic-ai.html">AI Automation</a></li>
           <li><a href="pricing.html">Pricing</a></li>
           <li><a href="resources/index.html">Free resources</a></li>
         </ul>
@@ -426,6 +475,8 @@
     </div>
   </footer>
   <script src="js/config.js"></script>
+  <script src="js/projects-data.js"></script>
+  <script src="js/render-projects.js"></script>
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <script src="js/site.js"></script>
 </body>

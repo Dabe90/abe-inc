@@ -2,61 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
-  <title>Prayer City — Abe Stack</title>
+  <title>Houston World Cup Prayer City — Abe Stack</title>
+  <meta name="description" content="Case study: volunteer platform with 400+ signups, Firebase backend, daily digests, and Gmail automation — shipped Feb 2025." />
+  <link rel="canonical" href="https://abestack.com/projects/prayer-city.html" />
+  <meta property="og:title" content="Prayer City Volunteer Platform — Abe Stack" />
+  <meta property="og:description" content="400+ volunteer signups, Firebase ops platform, and Gmail automation for World Cup serve days." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://abestack.com/projects/prayer-city.html" />
+  <meta property="og:image" content="https://abestack.com/images/screenshots/prayer-city/hero.png" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"CreativeWork","name":"Houston World Cup Prayer City","description":"Volunteer operations platform with Firebase and Gmail automation.","url":"https://abestack.com/projects/prayer-city.html","datePublished":"2025-02-15","author":{"@type":"Organization","name":"Abe Stack"},"about":"Volunteer management platform","keywords":"Firebase, volunteer platform, Gmail automation"}
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',soft:'#64748b'},accent:{DEFAULT:'#2563eb'}}}}};</script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',muted:'#334155',soft:'#64748b'},accent:{DEFAULT:'#2563eb'}}}}};</script>
   <link rel="stylesheet" href="../css/site.css" />
 </head>
 <body class="bg-white text-ink antialiased">
-  <header class="border-b border-slate-200"><div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between text-sm">
-    <a href="../index.html" class="font-semibold">Abe Stack</a>
-    <a href="../projects.html" class="text-accent">← All work</a>
-  </div></header>
+  <header class="site-header sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+      <a href="../index.html" class="flex items-center gap-2.5"><span class="site-logo-mark">A</span><span class="font-semibold">Abe Stack</span></a>
+      <a href="../projects.html" class="text-sm font-semibold text-accent">← All work</a>
+    </div>
+  </header>
   <article class="max-w-3xl mx-auto px-4 py-12">
-    <p class="text-xs font-bold uppercase text-accent">Case study · 2026</p>
-    <h1 class="mt-2 text-3xl font-bold">Houston World Cup Prayer City</h1>
-    <p class="mt-4 text-ink-soft leading-relaxed">Volunteer operations platform: signup, hub, daily digests, gallery, Gmail/Sheets automation.</p>
+    <p class="text-xs font-bold uppercase text-accent">Nonprofit · Shipped Feb 2025</p>
+    <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Houston World Cup Prayer City</h1>
+    <p class="mt-4 text-ink-soft leading-relaxed">Volunteer operations platform for World Cup serve days — signup, authenticated hub, daily role digests, media gallery, and Gmail/Sheets automation that runs without manual babysitting.</p>
     <p class="mt-4"><a href="https://prayercityhtx.com" class="text-accent font-semibold" target="_blank" rel="noopener">prayercityhtx.com ↗</a></p>
+    <dl class="case-meta-bar mt-8 pt-6 border-t border-slate-200">
+      <div><dt>Shipped</dt><dd>Feb 2025</dd></div>
+      <div><dt>Duration</dt><dd>6 weeks</dd></div>
+      <div><dt>Client</dt><dd>Houston World Cup Prayer City</dd></div>
+    </dl>
+    <div class="case-metrics">
+      <div class="metric-card"><div class="metric-card__value">400+</div><div class="metric-card__label">Volunteer signups</div></div>
+      <div class="metric-card"><div class="metric-card__value">12</div><div class="metric-card__label">Serve days coordinated</div></div>
+      <div class="metric-card"><div class="metric-card__value">Daily</div><div class="metric-card__label">Role digests automated</div></div>
+      <div class="metric-card"><div class="metric-card__value">90</div><div class="metric-card__label">Lighthouse performance</div></div>
+    </div>
     <figure class="mt-8">
       <img src="../images/screenshots/prayer-city/hero.png" alt="Prayer City volunteer hub homepage" class="w-full rounded-xl screenshot-frame border border-slate-200" width="1440" height="900" />
       <figcaption class="mt-2 text-xs text-ink-soft text-center">Volunteer hub — role guides, daily content, and shift management</figcaption>
     </figure>
-    <section class="mt-10"><h2 class="text-xl font-bold">Problem</h2><p class="mt-2 text-ink-soft text-sm">Coordinate hundreds of volunteers across serve days without spreadsheet chaos.</p></section>
+    <section class="mt-10"><h2 class="text-xl font-bold">Problem</h2><p class="mt-2 text-ink-soft text-sm leading-relaxed">Coordinate hundreds of volunteers across multiple World Cup serve days without spreadsheet chaos, missed shifts, or manual email lists.</p></section>
     <section class="mt-8"><h2 class="text-xl font-bold">Solution</h2>
       <ul class="mt-2 text-ink-soft text-sm space-y-2 list-disc pl-5">
-        <li>Public site + volunteer signup with shift picker</li>
-        <li>Firebase Auth volunteer hub</li>
-        <li>Cloud Functions + daily role digests</li>
-        <li>Apps Script Gmail pipeline + bounce handling</li>
+        <li>Public marketing site with volunteer signup and shift picker</li>
+        <li>Firebase Auth volunteer hub with role-specific content</li>
+        <li>Cloud Functions for scheduled daily role digests</li>
+        <li>Apps Script Gmail pipeline with bounce handling</li>
         <li>Multi-day media gallery on Firebase Storage</li>
       </ul>
     </section>
-    <section class="mt-10">
-      <h2 class="text-xl font-bold">Screenshots</h2>
-      <div class="mt-4 space-y-8">
-        <figure>
-          <img src="../images/screenshots/prayer-city/signup.png" alt="Prayer City volunteer signup flow" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" />
-          <figcaption class="mt-2 text-xs text-ink-soft">Volunteer signup with shift picker</figcaption>
-        </figure>
-        <figure>
-          <img src="../images/screenshots/prayer-city/gallery.png" alt="Prayer City media gallery" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" />
-          <figcaption class="mt-2 text-xs text-ink-soft">Multi-day media gallery on Firebase Storage</figcaption>
-        </figure>
+    <section class="mt-8"><h2 class="text-xl font-bold">Results</h2><p class="mt-2 text-ink-soft text-sm leading-relaxed">Volunteer coordination moved off spreadsheets into a single system. Leadership stopped manually sending digests — automated pipelines handle daily role content and roster sync to Google Sheets. The platform stayed stable through peak signup weeks with no downtime during serve days.</p></section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Technology</h2>
+      <div class="case-stack">
+        <span class="tech-badge">Firebase Auth</span><span class="tech-badge">Firestore</span><span class="tech-badge">Cloud Functions</span><span class="tech-badge">Firebase Storage</span><span class="tech-badge">Google Apps Script</span><span class="tech-badge">Gmail API</span><span class="tech-badge">Vercel</span>
       </div>
     </section>
-  </article>
-  <footer class="border-t border-slate-200 mt-12">
-    <div class="max-w-3xl mx-auto px-4 py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-ink-soft">
-      <p>© <span data-year></span> Abe Stack</p>
-      <p class="footer-legal mt-2"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></p>
-      <div class="flex gap-6">
-        <a href="../projects.html" class="hover:text-accent transition">All work</a>
-        <a href="../contact.html" class="hover:text-accent transition">Start a project</a>
+    <section class="mt-10"><h2 class="text-xl font-bold">Screenshots</h2>
+      <div class="mt-4 space-y-8">
+        <figure><img src="../images/screenshots/prayer-city/signup.png" alt="Volunteer signup flow" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" /><figcaption class="mt-2 text-xs text-ink-soft">Volunteer signup with shift picker</figcaption></figure>
+        <figure><img src="../images/screenshots/prayer-city/gallery.png" alt="Media gallery" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" /><figcaption class="mt-2 text-xs text-ink-soft">Multi-day media gallery</figcaption></figure>
       </div>
-    </div>
-  </footer>
-  <script src="../js/site.js"></script>
+    </section>
+    <blockquote class="case-testimonial"><p>"Coordinating hundreds of volunteers across World Cup serve days could have been spreadsheet chaos. Abe Stack built signup flows, a volunteer hub, daily digests, and Gmail automation that actually runs without us babysitting it."</p><footer><strong>Prayer City Leadership</strong> · Houston World Cup Prayer City</footer></blockquote>
+    <div class="mt-10 text-center rounded-2xl bg-slate-50 border border-slate-200 p-8"><p class="font-bold">Need volunteer or event ops tooling?</p><a href="../contact.html" class="inline-flex mt-4 btn-primary">Start a project</a></div>
+  </article>
+  <footer class="border-t border-slate-200 mt-12"><div class="max-w-3xl mx-auto px-4 py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-ink-soft"><p>© <span data-year></span> Abe Stack</p><p class="footer-legal mt-2"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></p><div class="flex gap-6"><a href="../projects.html" class="hover:text-accent">All work</a><a href="../contact.html" class="hover:text-accent">Contact</a></div></div></footer>
+  <script src="../js/config.js"></script><script src="../js/site.js"></script>
 </body>
 </html>

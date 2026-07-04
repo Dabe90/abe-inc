@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <title>Agentic Publishing Layer — Abe Stack</title>
+  <meta name="description" content="Multi-LLM agentic publishing with queue workers, prompt pipelines, and human-in-the-loop review — shipped Nov 2025." />
+  <link rel="canonical" href="https://abestack.com/projects/agentic-publishing.html" />
+  <meta property="og:image" content="https://abestack.com/images/screenshots/prayer-city-social/dashboard.png" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"CreativeWork","name":"Agentic Publishing Layer","datePublished":"2025-11-15","author":{"@type":"Organization","name":"Abe Stack"},"url":"https://abestack.com/projects/agentic-publishing.html"}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',soft:'#64748b'},accent:{DEFAULT:'#2563eb'}}}}};</script>
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body class="bg-white text-ink antialiased">
+  <header class="site-header sticky top-0 z-50"><div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between"><a href="../index.html" class="flex items-center gap-2.5"><span class="site-logo-mark">A</span><span class="font-semibold">Abe Stack</span></a><a href="../projects.html" class="text-sm font-semibold text-accent">← All work</a></div></header>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <p class="text-xs font-bold uppercase text-accent">Agentic AI · Shipped Nov 2025</p>
+    <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold">Agentic Publishing Layer</h1>
+    <p class="mt-4 text-ink-soft leading-relaxed">Intelligent automation add-on for Prayer City Social — multi-LLM agents generate platform-specific content variants, queue workers handle scheduling and retries, and humans approve before anything goes live.</p>
+    <p class="mt-4"><a href="../services/agentic-ai.html" class="text-accent font-semibold">Our Agentic AI service →</a> · <a href="prayer-city-social.html" class="text-accent font-semibold">Full platform case study →</a></p>
+    <dl class="case-meta-bar mt-8 pt-6 border-t border-slate-200">
+      <div><dt>Shipped</dt><dd>Nov 2025</dd></div><div><dt>Duration</dt><dd>4 weeks (add-on)</dd></div><div><dt>Client</dt><dd>Prayer City Social</dd></div>
+    </dl>
+    <div class="case-metrics">
+      <div class="metric-card"><div class="metric-card__value">10</div><div class="metric-card__label">Platform variants</div></div>
+      <div class="metric-card"><div class="metric-card__value">3</div><div class="metric-card__label">LLM providers</div></div>
+      <div class="metric-card"><div class="metric-card__value">Queue</div><div class="metric-card__label">Retry + scheduling</div></div>
+      <div class="metric-card"><div class="metric-card__value">Owned</div><div class="metric-card__label">Full stack control</div></div>
+    </div>
+    <figure class="mt-8"><img src="../images/screenshots/prayer-city-social/dashboard.png" alt="Agentic publishing dashboard" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" /></figure>
+    <section class="mt-10"><h2 class="text-xl font-bold">Problem</h2><p class="mt-2 text-ink-soft text-sm">Each social network needs different tone, length, and format. Manual rewriting for ten platforms doesn't scale — and single-provider AI APIs fail without fallbacks.</p></section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Solution</h2>
+      <ul class="mt-2 text-ink-soft text-sm space-y-2 list-disc pl-5">
+        <li>Agent orchestration layer with platform-specific prompt templates</li>
+        <li>Multi-provider routing: Groq, DeepSeek, OpenAI with automatic failover</li>
+        <li>Job queue for scheduled publish, instant publish, and retry on API errors</li>
+        <li>Human review step before content leaves the dashboard</li>
+        <li>Token refresh and OAuth health checks per connected channel</li>
+      </ul>
+    </section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Results</h2><p class="mt-2 text-ink-soft text-sm">One compose action produces ten network-ready variants in seconds. Provider outages no longer block publishing — the system routes to healthy backends automatically. This is the flagship pattern behind our <a href="../services/agentic-ai.html" class="text-accent font-semibold">Agentic AI &amp; Intelligent Automation</a> offering.</p></section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Technology</h2>
+      <div class="case-stack"><span class="tech-badge">Agent orchestration</span><span class="tech-badge">Groq</span><span class="tech-badge">DeepSeek</span><span class="tech-badge">OpenAI</span><span class="tech-badge">Node.js workers</span><span class="tech-badge">PocketBase</span></div>
+    </section>
+    <div class="mt-10 text-center rounded-2xl bg-slate-50 border border-slate-200 p-8"><p class="font-bold">Building agentic workflows?</p><a href="../services/agentic-ai.html" class="inline-flex mt-4 btn-primary">Explore AI automation</a></div>
+  </article>
+  <footer class="border-t border-slate-200 mt-12"><div class="max-w-3xl mx-auto px-4 py-8 text-sm text-ink-soft text-center"><p>© <span data-year></span> Abe Stack</p><p class="footer-legal mt-2"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></p></div></footer>
+  <script src="../js/config.js"></script><script src="../js/site.js"></script>
+</body>
+</html>

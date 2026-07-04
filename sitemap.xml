@@ -3,14 +3,21 @@
   <url><loc>https://abestack.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://abestack.com/projects.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://abestack.com/services.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://abestack.com/services/agentic-ai.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://abestack.com/pricing.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://abestack.com/about.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://abestack.com/contact.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://abestack.com/insights/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://abestack.com/insights/agentic-ai-for-ops-teams.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://abestack.com/resources/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://abestack.com/projects/prayer-city.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://abestack.com/projects/royal-wealth-heritage.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://abestack.com/projects/prayer-city-social.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://abestack.com/projects/prayer-city-automation.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://abestack.com/projects/agentic-publishing.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://abestack.com/projects/abe-stack-site.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://abestack.com/projects/launch-checklist.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://abestack.com/projects/firebase-form-starter.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://abestack.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://abestack.com/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
