@@ -10,6 +10,6 @@ window.ABE_INC = {
   siteUrl: 'https://abestack.com',
   formEndpoint: 'https://us-central1-gen-lang-client-0550945038.cloudfunctions.net/submitInquiry',
   // Safe public demo — Next.js / Vercel API, sample data only (no API key)
-  agentDemoEndpoint: '/api/demo/volunteer-agent',
+  agentDemoEndpoint: '/api/volunteer-agent-demo',
   agentDemoEventId: 'demo-serve-day-2026',
 };

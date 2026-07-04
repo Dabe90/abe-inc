@@ -58,7 +58,7 @@ export async function GET() {
     ok: true,
     demoMode: true,
     disclaimer: 'Demo mode — not real client data',
-    endpoint: '/api/demo/volunteer-agent',
+      endpoint: '/api/volunteer-agent-demo',
     method: 'POST',
     body: { goal: 'string (min 10 chars)', eventId: 'optional — ignored, uses demo data' },
   });
