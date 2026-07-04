@@ -28,8 +28,8 @@
     <div class="case-metrics">
       <div class="metric-card"><div class="metric-card__value">10</div><div class="metric-card__label">Social platforms</div></div>
       <div class="metric-card"><div class="metric-card__value">3</div><div class="metric-card__label">LLM providers</div></div>
-      <div class="metric-card"><div class="metric-card__value">1</div><div class="metric-card__label">Compose → publish</div></div>
-      <div class="metric-card"><div class="metric-card__value">$1.2K+</div><div class="metric-card__label">Annual SaaS avoided</div></div>
+      <div class="metric-card"><div class="metric-card__value">85%</div><div class="metric-card__label">Less manual rewriting</div></div>
+      <div class="metric-card"><div class="metric-card__value">1,200+</div><div class="metric-card__label">Publish actions processed</div></div>
     </div>
     <figure class="mt-8"><img src="../images/screenshots/prayer-city-social/hero.png" alt="Prayer City Social dashboard" class="w-full rounded-xl screenshot-frame border border-slate-200" width="1440" height="900" /></figure>
     <section class="mt-10"><h2 class="text-xl font-bold">Problem</h2><p class="mt-2 text-ink-soft text-sm">Posting to every platform by hand is slow. Subscription schedulers are expensive, rented, and limited in integrations.</p></section>
@@ -43,7 +43,18 @@
         <li>PocketBase auth and media storage behind Cloudflare Tunnel</li>
       </ul>
     </section>
-    <section class="mt-8"><h2 class="text-xl font-bold">Results</h2><p class="mt-2 text-ink-soft text-sm">The team posts across ten channels from one system they own — no per-seat SaaS fees, no platform caps. AI generates network-specific copy while humans approve before publish. Estimated $1,200+/year saved vs. comparable subscription tools for a 3-person team.</p></section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Results</h2><p class="mt-2 text-ink-soft text-sm">The team posts across ten channels from one system they own — no per-seat SaaS fees, no platform caps. AI generates network-specific copy while humans approve before publish. Cut publishing time by an estimated 85% vs. hand-adapting each post. Processed 1,200+ automated publish actions in the first quarter. Estimated $1,200+/year saved vs. comparable subscription tools for a 3-person team.</p></section>
+    <!-- Agentic publishing pipeline — ties to portfolio AI narrative -->
+    <section class="mt-8 rounded-2xl border border-accent/20 bg-accent-soft/20 p-6 sm:p-8">
+      <p class="text-xs font-bold uppercase text-accent mb-1">Agentic AI pipeline</p>
+      <h2 class="text-xl font-bold">One compose → ten agent-generated variants → human review → publish</h2>
+      <p class="mt-2 text-ink-soft text-sm leading-relaxed">A multi-step publishing agent orchestrates variant generation per network, queues scheduled posts, and retries failed OAuth publishes — with coordinators approving copy before anything goes live. Same pattern documented in our <a href="agentic-publishing.html" class="text-accent font-semibold hover:underline">Agentic Publishing Layer</a> case study.</p>
+      <ul class="mt-4 text-ink-soft text-sm space-y-2 list-disc pl-5">
+        <li>Multi-LLM failover (Groq → DeepSeek → OpenAI) for variant generation</li>
+        <li>Queue workers with retry logic across 10 OAuth-connected platforms</li>
+        <li>Before: ~45 min per multi-platform post. After: one compose, review variants, publish in minutes.</li>
+      </ul>
+    </section>
     <section class="mt-8"><h2 class="text-xl font-bold">Technology</h2>
       <div class="case-stack"><span class="tech-badge">Next.js</span><span class="tech-badge">PocketBase</span><span class="tech-badge">Queue workers</span><span class="tech-badge">Groq</span><span class="tech-badge">OpenAI</span><span class="tech-badge">OAuth 2.0</span></div>
     </section>

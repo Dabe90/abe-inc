@@ -1156,6 +1156,26 @@ body {
   color: var(--accent);
 }
 
+/* Portfolio card expandable solution details */
+.work-card__details summary {
+  list-style: none;
+}
+.work-card__details summary::-webkit-details-marker {
+  display: none;
+}
+.work-card__details[open] summary {
+  margin-bottom: 0.25rem;
+}
+
+/* AI agents page screenshot gallery */
+.agent-gallery__item img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.agent-gallery__item:hover img {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
 /* ——— Demo placeholders ——— */
 .demo-placeholder {
   position: relative;

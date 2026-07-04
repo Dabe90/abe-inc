@@ -52,6 +52,16 @@
         escapeHtml(project.problem) +
         '</p>'
       : '';
+    var beforeAfter = project.beforeAfter
+      ? '<p class="work-card__before-after mt-3 text-xs text-ink-soft leading-relaxed"><span class="font-bold text-ink">Before → After:</span> ' +
+        escapeHtml(project.beforeAfter) +
+        '</p>'
+      : '';
+    var solution = project.solution
+      ? '<details class="work-card__details mt-3"><summary class="text-xs font-bold text-accent cursor-pointer">Solution details</summary><p class="mt-2 text-xs text-ink-muted leading-relaxed">' +
+        escapeHtml(project.solution) +
+        '</p></details>'
+      : '';
 
     var card = document.createElement('a');
     card.href = href;
@@ -78,6 +88,8 @@
       '</p>' +
       problem +
       metricChips(project.metrics) +
+      beforeAfter +
+      solution +
       proof +
       '<p class="work-card__link mt-4 text-sm font-bold text-accent group-hover:underline">View full case study →</p>' +
       '</div>';

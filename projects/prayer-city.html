@@ -57,6 +57,17 @@
       </ul>
     </section>
     <section class="mt-8"><h2 class="text-xl font-bold">Results</h2><p class="mt-2 text-ink-soft text-sm leading-relaxed">Processed 500+ volunteer signups in the first month without spreadsheet chaos. Manual coordination dropped an estimated 70%. Leadership stopped manually sending digests — automated pipelines handle daily role content and roster sync to Google Sheets. The platform stayed stable through peak signup weeks with no downtime during serve days.</p></section>
+    <!-- Agentic AI layer — extended portfolio detail -->
+    <section class="mt-8 rounded-2xl border border-accent/20 bg-accent-soft/20 p-6 sm:p-8">
+      <p class="text-xs font-bold uppercase text-accent mb-1">Agentic AI layer</p>
+      <h2 class="text-xl font-bold">Volunteer matching agent on top of the platform</h2>
+      <p class="mt-2 text-ink-soft text-sm leading-relaxed">Built on the same Firestore roster and Gmail pipelines, a Genkit agent now proposes shift matches from signup data — coordinators approve before any digest sends. Handles 500+ volunteer shifts with an estimated 70% reduction in manual matching. <a href="volunteer-matching-agent.html" class="text-accent font-semibold hover:underline">Read the matching agent case study →</a></p>
+      <ul class="mt-4 text-ink-soft text-sm space-y-2 list-disc pl-5">
+        <li>Tool-calling: getEventRoster, proposeMatches, queueDigestEmail</li>
+        <li>Human-in-the-loop approval — zero unsupervised outbound email</li>
+        <li>Structured audit log of every agent recommendation</li>
+      </ul>
+    </section>
     <section class="mt-8"><h2 class="text-xl font-bold">Technology</h2>
       <div class="case-stack">
         <span class="tech-badge">Firebase Auth</span><span class="tech-badge">Firestore</span><span class="tech-badge">Cloud Functions</span><span class="tech-badge">Firebase Storage</span><span class="tech-badge">Google Apps Script</span><span class="tech-badge">Gmail API</span><span class="tech-badge">Vercel</span>
