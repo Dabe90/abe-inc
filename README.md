@@ -1,16 +1,10 @@
 # Abe Stack
 
-Company website — open this folder in Cursor.
-
-**Path:** `C:\Users\damil\OneDrive\Desktop\Abe Inc`
-
-## Open in Cursor
-
-File → Open Folder → `C:\Users\damil\OneDrive\Desktop\Abe Inc`
+Company website for abestack.com.
 
 ## Preview
 
-Open `index.html` in a browser, or: `npx serve .`
+Open `index.html` in a browser, or run: `npx serve .`
 
 ## Screenshots
 
@@ -18,4 +12,4 @@ Put images in `images/screenshots/prayer-city/` then update HTML `src` paths.
 
 ## Deploy
 
-`git init` → GitHub → Vercel (separate repo from Prayer City).
+Push to GitHub → Vercel deploys from `main`. Firebase Functions: `scripts/deploy-firebase.ps1`.
