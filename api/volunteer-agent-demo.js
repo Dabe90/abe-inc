@@ -1,4 +1,4 @@
-const DEMO_DISCLAIMER = 'Demo mode — not real client data';
+const DEMO_DISCLAIMER = 'Demo mode - not real client data';
 const DEMO_EVENT_ID = 'demo-serve-day-2026';
 
 const ROSTER = {
@@ -9,10 +9,13 @@ const ROSTER = {
   ],
   openShifts: [
     { id: 'demo-s1', title: 'Welcome desk' },
-    { id: 'demo-s2', title: 'Parking & logistics' },
+    { id: 'demo-s2', title: 'Parking and logistics' },
     { id: 'demo-s3', title: 'Kids ministry helper' },
   ],
 };
+
+const buckets = new Map();
+const HOURLY_LIMIT = Number(process.env.DEMO_AGENT_RATE_LIMIT || 12);
 
 function clientIp(req) {
   const forwarded = req.headers['x-forwarded-for'];
@@ -20,9 +23,6 @@ function clientIp(req) {
   if (Array.isArray(forwarded) && forwarded[0]) return forwarded[0].split(',')[0].trim();
   return req.socket?.remoteAddress || 'unknown';
 }
-
-const buckets = new Map();
-const HOURLY_LIMIT = Number(process.env.DEMO_AGENT_RATE_LIMIT || 12);
 
 function assertRateLimit(ip) {
   const key = ip || 'unknown';
@@ -34,7 +34,7 @@ function assertRateLimit(ip) {
     return { remaining: HOURLY_LIMIT - 1, resetAt: now + windowMs };
   }
   if (existing.count >= HOURLY_LIMIT) {
-    const err = new Error(`Demo rate limit reached (${HOURLY_LIMIT} runs per hour). Try again later.`);
+    const err = new Error('Demo rate limit reached (' + HOURLY_LIMIT + ' runs per hour). Try again later.');
     err.name = 'DemoRateLimitError';
     throw err;
   }
@@ -43,65 +43,26 @@ function assertRateLimit(ip) {
 }
 
 function buildMockResponse(goal) {
-  const sessionId = `demo-${Date.now()}`;
+  const sessionId = 'demo-' + Date.now();
   const wantsSpanish = /spanish|bilingual|greeter/i.test(goal);
   const match1 = wantsSpanish ? 'Alex R.' : 'Riley K.';
   const match2 = 'Jordan M.';
 
   const reasoningTrace = [
-    {
-      step: 1,
-      type: 'reasoning',
-      content: 'Parsing coordinator goal and confirming this is a demo event with fictional roster data.',
-    },
-    {
-      step: 2,
-      type: 'tool_request',
-      toolName: 'demoGetEventRoster',
-      content: JSON.stringify({ eventId: DEMO_EVENT_ID }),
-    },
-    {
-      step: 3,
-      type: 'tool_response',
-      toolName: 'demoGetEventRoster',
-      content: JSON.stringify({ ...ROSTER, source: 'demo', volunteerCount: 3, openShiftCount: 3 }),
-    },
-    {
-      step: 4,
-      type: 'tool_request',
-      toolName: 'demoProposeVolunteerMatches',
-      content: JSON.stringify({
-        matches: [
-          { volunteerName: match1, shiftTitle: 'Welcome desk', confidence: 'high' },
-          { volunteerName: match2, shiftTitle: 'Parking & logistics', confidence: 'high' },
-        ],
-      }),
-    },
-    {
-      step: 5,
-      type: 'tool_response',
-      toolName: 'demoProposeVolunteerMatches',
-      content: JSON.stringify({ proposalId: `demo_prop_${Date.now()}`, status: 'pending_human_review' }),
-    },
-    {
-      step: 6,
-      type: 'tool_request',
-      toolName: 'demoQueueCoordinatorAction',
-      content: JSON.stringify({ actionType: 'send_digest', summary: 'Coordinator digest for demo matches' }),
-    },
-    {
-      step: 7,
-      type: 'tool_response',
-      toolName: 'demoQueueCoordinatorAction',
-      content: JSON.stringify({ actionId: `demo_action_${Date.now()}`, reviewRequired: true }),
-    },
+    { step: 1, type: 'reasoning', content: 'Parsing coordinator goal. Using fictional demo roster only.' },
+    { step: 2, type: 'tool_request', toolName: 'demoGetEventRoster', content: JSON.stringify({ eventId: DEMO_EVENT_ID }) },
+    { step: 3, type: 'tool_response', toolName: 'demoGetEventRoster', content: JSON.stringify({ source: 'demo', volunteerCount: 3, openShiftCount: 3 }) },
+    { step: 4, type: 'tool_request', toolName: 'demoProposeVolunteerMatches', content: JSON.stringify({ matches: 2 }) },
+    { step: 5, type: 'tool_response', toolName: 'demoProposeVolunteerMatches', content: JSON.stringify({ status: 'pending_human_review' }) },
+    { step: 6, type: 'tool_request', toolName: 'demoQueueCoordinatorAction', content: JSON.stringify({ actionType: 'send_digest' }) },
+    { step: 7, type: 'tool_response', toolName: 'demoQueueCoordinatorAction', content: JSON.stringify({ reviewRequired: true }) },
   ];
 
   const summary = [
-    `Demo coordinator run for ${DEMO_EVENT_ID}.`,
-    `Proposed ${match1} → Welcome desk and ${match2} → Parking & logistics`,
-    wantsSpanish ? '(prioritized Spanish-speaking greeter skills).' : '.',
-    'Digest queued for human approval — nothing was sent automatically.',
+    'Demo coordinator run for ' + DEMO_EVENT_ID + '.',
+    'Proposed ' + match1 + ' for Welcome desk and ' + match2 + ' for Parking and logistics.',
+    wantsSpanish ? 'Prioritized Spanish-speaking greeter skills.' : '',
+    'Digest queued for human approval. Nothing was sent automatically.',
   ].join(' ');
 
   return {
@@ -120,9 +81,9 @@ function buildMockResponse(goal) {
     },
     finalActions: [
       {
-        actionId: `demo_action_${Date.now()}`,
+        actionId: 'demo_action_' + Date.now(),
         actionType: 'send_digest',
-        summary: 'Email digest with proposed shift matches (demo — not sent)',
+        summary: 'Email digest with proposed shift matches (demo - not sent)',
         status: 'pending_human_review',
       },
     ],
@@ -130,19 +91,19 @@ function buildMockResponse(goal) {
     usage: { inputTokens: 420, outputTokens: 380, estimatedCostUsd: 0.0003 },
     evaluation: { score: 0.82, passed: true, notes: 'Demo simulation passed quality checks.' },
     finishReason: 'stop',
+    poweredBy: 'Genkit-style demo simulator',
   };
 }
 
-async function runDemo(body, ip) {
-  const goal = String(body?.goal || '').trim();
+function runDemo(body, ip) {
+  const goal = String((body && body.goal) || '').trim();
   if (goal.length < 10) {
-    const err = new Error('String must contain at least 10 character(s)');
+    const err = new Error('Describe your goal in at least 10 characters.');
     err.name = 'DemoValidationError';
     throw err;
   }
-
   const rateLimit = assertRateLimit(ip);
-  return { ...buildMockResponse(goal), rateLimit, poweredBy: 'Genkit-style demo simulator' };
+  return Object.assign(buildMockResponse(goal), { rateLimit });
 }
 
 function setDemoHeaders(res) {
@@ -153,7 +114,7 @@ function setDemoHeaders(res) {
   res.setHeader('X-Demo-Disclaimer', DEMO_DISCLAIMER);
 }
 
-module.exports = async function handler(req, res) {
+module.exports = function handler(req, res) {
   setDemoHeaders(res);
 
   if (req.method === 'OPTIONS') {
@@ -168,8 +129,6 @@ module.exports = async function handler(req, res) {
       disclaimer: DEMO_DISCLAIMER,
       endpoint: '/api/volunteer-agent-demo',
       method: 'POST',
-      genkit: false,
-      note: 'Production Genkit agent available via npm run next:dev',
     });
     return;
   }
@@ -180,7 +139,7 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const result = await runDemo(req.body, clientIp(req));
+    const result = runDemo(req.body, clientIp(req));
     res.setHeader('Cache-Control', 'no-store');
     res.status(200).json(result);
   } catch (err) {
@@ -193,10 +152,6 @@ module.exports = async function handler(req, res) {
       return;
     }
     console.error('[api/volunteer-agent-demo]', err);
-    res.status(500).json({
-      ok: false,
-      demoMode: true,
-      error: err instanceof Error ? err.message : 'Demo agent failed',
-    });
+    res.status(500).json({ ok: false, demoMode: true, error: err.message || 'Demo agent failed' });
   }
 };
