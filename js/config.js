@@ -12,6 +12,6 @@ window.ABE_INC = {
   // Live agent demo on /ai-agents/ — Firebase Volunteer Coordinator (Genkit)
   agentEndpoint: 'https://us-central1-gen-lang-client-0550945038.cloudfunctions.net/volunteerCoordinator',
   // WARNING: visible in browser source — use a dedicated demo key; rotate if abused
-  agentApiKey: '',
+  agentApiKey: '5Dd1IsBPWJj7zCyZT2fQMr9w0coNLVk8v6HtFqlhaX3KRieu',
   agentDemoEventId: 'prayer-city-july-2026',
 };
