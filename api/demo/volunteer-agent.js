@@ -16,7 +16,7 @@ function setDemoHeaders(res) {
 }
 
 /** Vercel serverless — safe Genkit demo (sample data only). */
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   setDemoHeaders(res);
 
   if (req.method === 'OPTIONS') {
@@ -63,4 +63,4 @@ module.exports = async function handler(req, res) {
       error: err instanceof Error ? err.message : 'Demo agent failed',
     });
   }
-};
+}
