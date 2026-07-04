@@ -63,7 +63,7 @@
           <p class="hero-lead mt-6 text-lg sm:text-xl max-w-2xl">Custom AI agents that handle real workflows — not just chatbots. Tool-calling agents on your Firebase, Gmail, and Sheets stack, with humans approving before anything goes live.</p>
           <div class="hero-cta-row mt-10">
             <a href="../contact.html?intent=ai-audit" class="btn-primary">Get a free AI opportunity audit</a>
-            <a href="../contact.html#book-call" data-calendly-popup class="btn-secondary">Book a discovery call</a>
+            <a href="#live-demo" class="btn-secondary">Try live demo</a>
           </div>
           <div class="tech-strip mt-10 !justify-start">
             <span class="tech-badge !bg-white/10 !border-white/15 !text-slate-300">Genkit / ADK</span>
@@ -197,7 +197,54 @@
       </div>
     </section>
 
-    <section class="py-16 sm:py-20 bg-slate-50 border-y border-slate-100">
+    <section class="py-16 sm:py-20 bg-slate-50 border-y border-slate-100" id="live-demo">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="max-w-2xl">
+          <p class="section-label mb-3">Live demo</p>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Try the Volunteer Coordinator Agent.</h2>
+          <p class="mt-4 text-sm text-ink-soft leading-relaxed">Describe a coordination goal — the production agent loads rosters, proposes matches, and queues actions for human approval. Same Genkit stack we ship for clients.</p>
+        </div>
+
+        <div class="mt-10 agent-demo" id="agent-demo">
+          <div class="agent-demo__layout">
+            <div class="agent-demo__form-panel">
+              <form data-agent-demo-form novalidate>
+                <div class="space-y-4">
+                  <div class="agent-demo__field">
+                    <label for="agent-goal">Goal description</label>
+                    <textarea id="agent-goal" data-agent-demo-goal required placeholder="Match volunteers with open shifts for Saturday serve day, prioritize greeters with Spanish skills, and queue a digest email for coordinator approval before anything sends."></textarea>
+                  </div>
+                  <div class="agent-demo__field">
+                    <label for="agent-context">Event / context ID</label>
+                    <input type="text" id="agent-context" data-agent-demo-context placeholder="prayer-city-july-2026" autocomplete="off" />
+                  </div>
+                </div>
+                <button type="submit" class="btn-primary agent-demo__run" data-agent-demo-run>Run Agent</button>
+                <p class="agent-demo__disclaimer mt-4"><strong>This is a live demo powered by Genkit</strong> — real Firebase Cloud Functions, Gemini 2.5 Flash, and tool-calling. Outbound actions require human approval in production.</p>
+                <p class="agent-demo__config-warn hidden" data-agent-demo-config-warn role="status">Add <code class="text-xs bg-amber-100 px-1 rounded">agentApiKey</code> to <code class="text-xs bg-amber-100 px-1 rounded">js/config.js</code> to enable the live demo on this page.</p>
+              </form>
+            </div>
+            <div class="agent-demo__output-panel">
+              <div class="agent-demo__output-inner">
+                <p class="agent-demo__status" data-agent-demo-status aria-live="polite">Submit a goal to see reasoning steps stream here.</p>
+                <div class="agent-demo__stream" data-agent-demo-stream aria-label="Agent reasoning trace">
+                  <div class="agent-demo__stream-empty">Reasoning trace and tool calls appear after you run the agent.</div>
+                </div>
+                <div class="agent-demo__result hidden" data-agent-demo-result aria-label="Agent result"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-6 text-center text-sm text-ink-soft">
+          <a href="../projects/inquiry-triage-pipeline.html" class="text-accent font-semibold hover:underline">How this pipeline works →</a>
+          ·
+          <a href="../projects/volunteer-matching-agent.html" class="text-accent font-semibold hover:underline">Volunteer Matching case study →</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20 border-b border-slate-100">
       <div class="max-w-6xl mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-10 items-center">
           <div>
@@ -211,19 +258,9 @@
               <div class="demo-placeholder__icon" aria-hidden="true">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"/></svg>
               </div>
-              <p class="demo-placeholder__label">Agent workflow demo</p>
-              <p class="demo-placeholder__hint">Loom walkthrough loads when configured — or <a href="../projects/prayer-city-social.html" class="text-accent font-semibold">view live product →</a></p>
+              <p class="demo-placeholder__label">Agent workflow walkthrough</p>
+              <p class="demo-placeholder__hint">Loom loads when configured — or <a href="#live-demo" class="text-accent font-semibold">try the live demo above ↑</a></p>
             </div>
-          </div>
-          <div class="mt-4 grid grid-cols-2 gap-3">
-            <figure class="demo-placeholder !min-h-[100px] !p-3 rounded-xl">
-              <p class="demo-placeholder__label text-xs">Human review queue</p>
-              <p class="demo-placeholder__hint text-[0.65rem]">Approve before send</p>
-            </figure>
-            <figure class="demo-placeholder !min-h-[100px] !p-3 rounded-xl">
-              <p class="demo-placeholder__label text-xs">Tool-call audit log</p>
-              <p class="demo-placeholder__hint text-[0.65rem]">Gmail · Sheets · Firestore</p>
-            </figure>
           </div>
         </div>
       </div>
@@ -268,5 +305,6 @@
   <script src="../js/config.js"></script>
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <script src="../js/site.js"></script>
+  <script src="../js/agent-demo.js"></script>
 </body>
 </html>
