@@ -8,12 +8,23 @@
  * Requires GOOGLE_APPLICATION_CREDENTIALS or Firebase CLI login.
  */
 import { createHash } from 'node:crypto';
-import { initializeApp } from 'firebase-admin/app';
+import { readFileSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { initializeApp, applicationDefault } from 'firebase-admin/app';
 import { getFirestore, FieldValue } from 'firebase-admin/firestore';
 
 const apiKeyArg = process.argv.find((arg, i) => process.argv[i - 1] === '--api-key');
+const rootDir = join(dirname(fileURLToPath(import.meta.url)), '..');
+const firebaseRc = JSON.parse(readFileSync(join(rootDir, '.firebaserc'), 'utf8'));
+const projectId = process.env.GOOGLE_CLOUD_PROJECT || firebaseRc.projects?.default;
 
-initializeApp();
+if (!projectId) {
+  console.error('Missing Firebase project ID. Set GOOGLE_CLOUD_PROJECT or configure .firebaserc');
+  process.exit(1);
+}
+
+initializeApp({ projectId, credential: applicationDefault() });
 const db = getFirestore();
 
 const clients = [
