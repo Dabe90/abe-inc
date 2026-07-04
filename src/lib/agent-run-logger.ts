@@ -16,6 +16,12 @@ export type AgentRunLog = {
   goal: string;
   finishReason: string;
   summary: string;
+  status: 'success' | 'error';
+  clientId?: string;
+  projectId?: string;
+  userId?: string;
+  authMethod?: string;
+  durationMs?: number;
   reasoningTrace: ReasoningTraceStep[];
   usage?: {
     inputTokens?: number;
@@ -86,4 +92,20 @@ export async function logAgentRun(entry: Omit<AgentRunLog, 'createdAt'>): Promis
     console.error('[logAgentRun]', err);
     return undefined;
   }
+}
+
+export async function logAgentRunFailure(
+  entry: Omit<AgentRunLog, 'createdAt' | 'finishReason' | 'summary' | 'reasoningTrace' | 'status'> & {
+    finishReason?: string;
+    summary?: string;
+    reasoningTrace?: ReasoningTraceStep[];
+  },
+): Promise<string | undefined> {
+  return logAgentRun({
+    ...entry,
+    finishReason: entry.finishReason || 'failed',
+    summary: entry.summary || '',
+    reasoningTrace: entry.reasoningTrace || [],
+    status: 'error',
+  });
 }

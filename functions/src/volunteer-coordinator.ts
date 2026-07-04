@@ -37,7 +37,7 @@ function isAgentError(err: unknown, name: string): err is Error {
   return err instanceof Error && err.name === name;
 }
 
-/** POST { goal, eventId, sessionId? } — Volunteer Coordinator Agent (Genkit). */
+/** POST { goal, eventId, sessionId?, clientId?, projectId? } — Volunteer Coordinator Agent (Genkit). */
 export const volunteerCoordinator = onRequest(
   {
     cors: false,
@@ -68,6 +68,7 @@ export const volunteerCoordinator = onRequest(
 
       const result = await runVolunteerCoordinator(req.body, {
         authorizationHeader: authHeader,
+        requireAuth: true,
       });
 
       res.status(200).json(result);
@@ -78,6 +79,14 @@ export const volunteerCoordinator = onRequest(
       }
       if (isAgentError(err, 'AgentValidationError')) {
         res.status(400).json({ ok: false, error: err.message });
+        return;
+      }
+      if (isAgentError(err, 'AgentRateLimitError')) {
+        res.status(429).json({ ok: false, error: err.message });
+        return;
+      }
+      if (isAgentError(err, 'AgentCostLimitError')) {
+        res.status(402).json({ ok: false, error: err.message });
         return;
       }
       if (isAgentError(err, 'AgentTimeoutError')) {

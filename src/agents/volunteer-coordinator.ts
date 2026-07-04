@@ -5,6 +5,8 @@ import { getAgentSessionStore } from '../lib/session-store.js';
 import { AGENT_LIMITS } from '../lib/production-controls.js';
 
 export const coordinatorStateSchema = z.object({
+  clientId: z.string().optional(),
+  projectId: z.string().optional(),
   eventId: z.string(),
   goal: z.string(),
   phase: z

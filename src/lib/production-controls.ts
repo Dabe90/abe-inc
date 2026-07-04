@@ -49,6 +49,20 @@ export class AgentTimeoutError extends Error {
   }
 }
 
+export class AgentRateLimitError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'AgentRateLimitError';
+  }
+}
+
+export class AgentCostLimitError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'AgentCostLimitError';
+  }
+}
+
 /** Very rough Gemini Flash cost estimate for logging/alerts (not billing). */
 export function estimateRunCostUsd(inputTokens: number, outputTokens: number): number {
   const inputRate = 0.00000015;

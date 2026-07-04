@@ -10,7 +10,19 @@ service cloud.firestore {
     match /agent_sessions/{document=**} {
       allow read, write: if false;
     }
+    match /agent_session_index/{id} {
+      allow read, write: if false;
+    }
     match /agent_runs/{id} {
+      allow read, write: if false;
+    }
+    match /agent_audit_log/{id} {
+      allow read, write: if false;
+    }
+    match /agent_clients/{id} {
+      allow read, write: if false;
+    }
+    match /agent_usage/{id} {
       allow read, write: if false;
     }
     match /match_proposals/{id} {

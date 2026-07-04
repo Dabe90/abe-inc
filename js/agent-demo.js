@@ -155,6 +155,10 @@
     if (!resultEl) return;
     var evalScore = data.evaluation ? Math.round(data.evaluation.score * 100) : null;
     var cost = data.usage && data.usage.estimatedCostUsd != null ? data.usage.estimatedCostUsd.toFixed(4) : '—';
+    var dayCost =
+      data.usageSummary && data.usageSummary.dayCostUsd != null
+        ? data.usageSummary.dayCostUsd.toFixed(4)
+        : '—';
 
     resultEl.innerHTML =
       '<div class="agent-demo__result-grid">' +
@@ -186,6 +190,12 @@
       '<p class="agent-demo__result-label">Est. cost</p>' +
       '<p class="agent-demo__result-value">$' +
       escapeHtml(cost) +
+      '</p>' +
+      '</article>' +
+      '<article class="agent-demo__result-card">' +
+      '<p class="agent-demo__result-label">Today (client)</p>' +
+      '<p class="agent-demo__result-value">$' +
+      escapeHtml(dayCost) +
       '</p>' +
       '</article>' +
       '<article class="agent-demo__result-card">' +
