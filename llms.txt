@@ -11,14 +11,14 @@
 
 ## Services
 - Web applications (Next.js, React, Firebase): $3,500–$15,000+
-- Agentic AI & intelligent automation: $5,000–$12,000
+- Agentic AI & intelligent automation: $4,000–$12,000
 - Workflow automation (Gmail, Sheets, APIs): $2,000–$5,000 add-on
 - Domain, email, SEO launch included in every build
 
 ## Flagship offering
 Agentic AI & intelligent automation — multi-LLM agents, content variant pipelines, queue workers, human-in-the-loop approval. Case study: https://abestack.com/projects/agentic-publishing.html
 
-## Portfolio (8 case studies)
+## Portfolio (10 case studies)
 - Prayer City volunteer platform: https://abestack.com/projects/prayer-city.html (Shipped Feb 2025)
 - Royal Wealth Heritage: https://abestack.com/projects/royal-wealth-heritage.html (Shipped Oct 2025)
 - Prayer City Social (10-platform AI publishing): https://abestack.com/projects/prayer-city-social.html (Shipped Nov 2025)
@@ -27,7 +27,7 @@ Agentic AI & intelligent automation — multi-LLM agents, content variant pipeli
 
 ## Key pages
 - Services: https://abestack.com/services.html
-- AI Automation: https://abestack.com/services/agentic-ai.html
+- AI Automation: https://abestack.com/ai-agents/
 - Pricing: https://abestack.com/pricing.html
 - About: https://abestack.com/about.html
 - Insights: https://abestack.com/insights/

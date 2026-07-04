@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <title>Firebase + Genkit for Agentic AI — Custom AI Agents Stack | Abe Stack</title>
+  <meta name="description" content="Why Firebase + Genkit is our default for agentic AI development — custom AI agents with Gmail, Sheets, Firestore tools, and production deploy." />
+  <link rel="canonical" href="https://abestack.com/insights/firebase-genkit-agentic-ai-2026.html" />
+  <meta property="og:title" content="Firebase + Genkit for agentic AI — Abe Stack" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Firebase + Genkit: The Best Stack for Agentic AI in 2026","datePublished":"2026-01-25","author":{"@type":"Organization","name":"Abe Stack"},"publisher":{"@type":"Organization","name":"Abe Stack"},"url":"https://abestack.com/insights/firebase-genkit-agentic-ai-2026.html"}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',soft:'#64748b'},accent:{DEFAULT:'#2563eb'}}}}};</script>
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body class="bg-white text-ink antialiased">
+  <header class="site-header sticky top-0 z-50"><div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between"><a href="../index.html" class="flex items-center gap-2.5"><span class="site-logo-mark">A</span><span class="font-semibold">Abe Stack</span></a><a href="index.html" class="text-sm font-semibold text-accent">← Insights</a></div></header>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <p class="text-xs font-bold uppercase text-accent">Engineering · Jan 2026</p>
+    <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Firebase + Genkit: the best stack for agentic AI in 2026</h1>
+    <p class="mt-6 text-ink-soft leading-relaxed">Agent frameworks come and go. What clients need is stable: auth, data, scheduled jobs, and agents that call Gmail and Sheets without a separate microservice zoo. For nonprofits, small businesses, and ops teams we serve, Firebase plus Genkit is the default — not because it's trendy, but because we already run their volunteer hubs and enrollment flows on the same project.</p>
+
+    <h2 class="mt-10 text-xl font-bold">Why not a standalone agent platform?</h2>
+    <p class="mt-3 text-sm text-ink-soft leading-relaxed">Dedicated agent SaaS (or self-hosted LangChain servers) adds another vendor, another login, another bill. Your volunteer roster is already in Firestore. Your digests already run on Cloud Functions. Adding agents as Functions in the same Firebase project means shared auth, shared secrets, shared monitoring — and one handoff document for the client.</p>
+
+    <h2 class="mt-8 text-xl font-bold">What Genkit gives you</h2>
+    <ul class="mt-3 text-sm text-ink-soft space-y-2 list-disc pl-5">
+      <li><strong class="text-ink">Structured tool definitions</strong> — Firestore reads, Sheet appends, Gmail send (post-approval) as typed tools</li>
+      <li><strong class="text-ink">Model plugins</strong> — swap Groq, OpenAI, Google AI without rewriting orchestration</li>
+      <li><strong class="text-ink">Flows you can test</strong> — run agent paths locally before deploying Functions</li>
+      <li><strong class="text-ink">Telemetry hooks</strong> — trace which tool fired and what the model returned</li>
+    </ul>
+
+    <h2 class="mt-8 text-xl font-bold">Firebase pieces that matter for agents</h2>
+    <div class="mt-4 grid sm:grid-cols-2 gap-4 text-sm">
+      <div class="rounded-xl border border-slate-200 p-4">
+        <p class="font-semibold">Cloud Functions (2nd gen)</p>
+        <p class="mt-1 text-ink-soft">HTTP triggers for review UI · Pub/Sub for queue workers · scheduled triggers for batch agent runs</p>
+      </div>
+      <div class="rounded-xl border border-slate-200 p-4">
+        <p class="font-semibold">Firestore</p>
+        <p class="mt-1 text-ink-soft">Agent run logs, approval queue, roster data the tools read — real-time updates for coordinator dashboards</p>
+      </div>
+      <div class="rounded-xl border border-slate-200 p-4">
+        <p class="font-semibold">Firebase Auth</p>
+        <p class="mt-1 text-ink-soft">Only approved staff trigger agent runs or confirm outbound actions</p>
+      </div>
+      <div class="rounded-xl border border-slate-200 p-4">
+        <p class="font-semibold">Secret Manager</p>
+        <p class="mt-1 text-ink-soft">LLM API keys and Gmail service accounts — not in client-side code</p>
+      </div>
+    </div>
+
+    <h2 class="mt-8 text-xl font-bold">Reference architecture</h2>
+    <p class="mt-3 text-sm text-ink-soft leading-relaxed">Event (form submit, schedule, manual button) → Cloud Function invokes Genkit flow → agent calls tools (read Firestore, draft content) → writes proposal to <code class="text-xs bg-slate-100 px-1 rounded">approvals</code> collection → coordinator approves in hub UI → second Function executes Gmail/Sheets/publish tools → audit log updated. Same pattern on volunteer matching and enrollment triage.</p>
+
+    <h2 class="mt-8 text-xl font-bold">RAG on Firebase</h2>
+    <p class="mt-3 text-sm text-ink-soft leading-relaxed">For SOPs and FAQs, chunk documents into Firestore or Cloud Storage, embed with your chosen model, retrieve at agent runtime. Keep corpora small and scoped — "academy enrollment FAQ" not "every PDF since 2019." Grounded answers reduce hallucinated policy advice.</p>
+
+    <h2 class="mt-8 text-xl font-bold">When we'd choose something else</h2>
+    <p class="mt-3 text-sm text-ink-soft leading-relaxed">Heavy Python ML pipelines, strict on-prem requirements, or massive relational analytics might point to Cloud Run + Postgres or a dedicated data warehouse. For web apps with ops automation — the stack we ship every quarter — Firebase + Genkit stays the default.</p>
+
+    <p class="mt-6 text-sm text-ink-soft">Related: <a href="../projects/volunteer-matching-agent.html" class="text-accent font-semibold">Volunteer matching agent</a> · <a href="firebase-for-volunteer-platforms.html" class="text-accent font-semibold">Firebase for volunteer platforms</a> · <a href="production-ready-ai-agents-2026.html" class="text-accent font-semibold">Production-ready agents guide</a></p>
+
+    <div class="article-cta">
+      <p class="font-bold">Building on Firebase already?</p>
+      <p class="mt-2 text-sm text-ink-soft">We add agent layers to existing projects — typical add-on $4K–$9K.</p>
+      <div class="hero-cta-row mt-4 justify-center">
+        <a href="../ai-agents/" class="btn-primary">Agentic AI service</a>
+        <a href="../contact.html" class="btn-secondary">Get a quote</a>
+      </div>
+    </div>
+  </article>
+  <footer class="border-t border-slate-200 mt-12"><div class="max-w-3xl mx-auto px-4 py-8 text-sm text-ink-soft text-center"><p>© <span data-year></span> Abe Stack</p><p class="footer-legal mt-2"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></p></div></footer>
+  <script src="../js/config.js"></script><script src="../js/site.js"></script>
+</body>
+</html>

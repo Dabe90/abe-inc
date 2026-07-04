@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <title>Intelligent Automation vs Workflows — Agentic AI Results | Abe Stack</title>
+  <meta name="description" content="Agentic AI development vs traditional automation — real metrics from custom AI agents on Firebase, Apps Script pipelines, and production ops." />
+  <link rel="canonical" href="https://abestack.com/insights/intelligent-automation-vs-traditional-workflows.html" />
+  <meta property="og:title" content="Intelligent automation vs traditional workflows — Abe Stack" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Intelligent Automation vs Traditional Workflows: Real Results","datePublished":"2026-01-22","author":{"@type":"Organization","name":"Abe Stack"},"publisher":{"@type":"Organization","name":"Abe Stack"},"url":"https://abestack.com/insights/intelligent-automation-vs-traditional-workflows.html"}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',soft:'#64748b'},accent:{DEFAULT:'#2563eb'}}}}};</script>
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body class="bg-white text-ink antialiased">
+  <header class="site-header sticky top-0 z-50"><div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between"><a href="../index.html" class="flex items-center gap-2.5"><span class="site-logo-mark">A</span><span class="font-semibold">Abe Stack</span></a><a href="index.html" class="text-sm font-semibold text-accent">← Insights</a></div></header>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <p class="text-xs font-bold uppercase text-accent">Agentic AI · Jan 2026</p>
+    <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Intelligent automation vs traditional workflows: real results</h1>
+    <p class="mt-6 text-ink-soft leading-relaxed">We ship both: Gmail → Sheets pipelines with Apps Script <em>and</em> tool-calling agents on Firebase. The question isn't "AI or automation" — it's which layer fits the problem. Here are numbers from production projects, not slide decks.</p>
+
+    <h2 class="mt-10 text-xl font-bold">Traditional workflows: when they win</h2>
+    <p class="mt-3 text-sm text-ink-soft leading-relaxed">Deterministic triggers with fixed rules — form submit → Sheet row → scheduled Gmail digest — don't need an LLM. Prayer City's outreach automation processes 500+ emails per month with zero manual digest sends. Cost: predictable. Behavior: repeatable. Failure modes: known.</p>
+    <p class="mt-3 text-sm text-ink-soft leading-relaxed"><strong class="text-ink">Best for:</strong> roster sync, bounce handling, form routing, daily digests with static templates, webhook → API glue. <a href="../projects/prayer-city-automation.html" class="text-accent font-semibold">Automation case study →</a></p>
+
+    <h2 class="mt-8 text-xl font-bold">Intelligent automation: when rules break down</h2>
+    <p class="mt-3 text-sm text-ink-soft leading-relaxed">You need judgment: matching volunteers to shifts by skills and availability, triaging incomplete enrollment forms, rewriting one message for ten social networks with different tone and length limits. Rules either explode in complexity or get abandoned.</p>
+    <p class="mt-3 text-sm text-ink-soft leading-relaxed"><strong class="text-ink">Best for:</strong> classification, drafting, matching, variant generation, extraction from unstructured input — always with human approval before external action.</p>
+
+    <h2 class="mt-8 text-xl font-bold">Side-by-side: three real projects</h2>
+    <div class="mt-4 overflow-x-auto rounded-xl border border-slate-200">
+      <table class="compare-table min-w-[520px] text-sm">
+        <thead>
+          <tr><th>Project</th><th>Approach</th><th>Result</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Prayer City digests</td>
+            <td>Apps Script + Cloud Functions</td>
+            <td>100% digest sends automated · 500+ emails/mo</td>
+          </tr>
+          <tr>
+            <td>Volunteer matching</td>
+            <td>Genkit agent + Firestore tools</td>
+            <td>~70% less manual matching · human approves every send</td>
+          </tr>
+          <tr>
+            <td>RWH enrollment</td>
+            <td>Agent triage + Gmail drafts</td>
+            <td>~85% faster triage · 100% inquiries logged</td>
+          </tr>
+          <tr>
+            <td>Prayer City Social</td>
+            <td>Multi-agent publishing layer</td>
+            <td>10 platform variants per compose · $1.2K+/yr SaaS avoided</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="mt-8 text-xl font-bold">The hybrid pattern we recommend</h2>
+    <p class="mt-3 text-sm text-ink-soft leading-relaxed">Layer intelligent automation <em>on top of</em> traditional workflows — not instead of them. Forms still land in Sheets. Digests still schedule on Cloud Functions. The agent reads that data, proposes actions, and queues work for approval. If the LLM fails, the deterministic pipeline still runs.</p>
+    <ul class="mt-3 text-sm text-ink-soft space-y-2 list-disc pl-5">
+      <li><strong class="text-ink">Tier 1:</strong> Zapier / Apps Script for simple if-this-then-that</li>
+      <li><strong class="text-ink">Tier 2:</strong> Cloud Functions + queues for scale and retries</li>
+      <li><strong class="text-ink">Tier 3:</strong> Tool-calling agents for judgment-heavy steps with human gates</li>
+    </ul>
+
+    <h2 class="mt-8 text-xl font-bold">Cost reality check</h2>
+    <p class="mt-3 text-sm text-ink-soft leading-relaxed">Traditional automation add-ons: $2K–$5K. Intelligent agent add-ons: $4K–$12K. LLM inference adds ongoing cost — usually tens of dollars per month at nonprofit/small-business volume if you cache and batch. The ROI case is staff hours: if an agent saves 5 hours/week of coordinator time, it pays back fast.</p>
+
+    <h2 class="mt-8 text-xl font-bold">Decision checklist</h2>
+    <ul class="mt-3 text-sm text-ink-soft space-y-2 list-disc pl-5">
+      <li>Can you write the logic as if/else without edge-case nightmares? → Traditional workflow</li>
+      <li>Does the task need language understanding or multi-step reasoning? → Agent layer</li>
+      <li>Does a wrong action damage trust (email, enrollment, public post)? → Human approval required either way</li>
+      <li>Are you paying per-seat AI SaaS for something custom? → Consider owned agent stack</li>
+    </ul>
+
+    <div class="article-cta">
+      <p class="font-bold">Not sure which layer you need?</p>
+      <p class="mt-2 text-sm text-ink-soft">We'll map your workflow on a free discovery call — no hype, fixed quote after.</p>
+      <div class="hero-cta-row mt-4 justify-center">
+        <a href="../services.html" class="btn-primary">View services</a>
+        <a href="../contact.html" class="btn-secondary">Book a call</a>
+      </div>
+    </div>
+  </article>
+  <footer class="border-t border-slate-200 mt-12"><div class="max-w-3xl mx-auto px-4 py-8 text-sm text-ink-soft text-center"><p>© <span data-year></span> Abe Stack</p><p class="footer-legal mt-2"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></p></div></footer>
+  <script src="../js/config.js"></script><script src="../js/site.js"></script>
+</body>
+</html>

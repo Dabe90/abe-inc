@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <title>Volunteer Matching Agent — Custom AI Agents Firebase | Abe Stack</title>
+  <meta name="description" content="Agentic AI case study: custom AI agents on Firebase for nonprofit volunteer shift matching — 70% less manual work, Genkit tool-calling, human approval. Shipped Q2 2025." />
+  <link rel="canonical" href="https://abestack.com/projects/volunteer-matching-agent.html" />
+  <meta property="og:title" content="Volunteer Matching Agent — Abe Stack" />
+  <meta property="og:description" content="Nonprofit AI agent for shift matching with human-in-the-loop approval — 70% reduction in manual coordination." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://abestack.com/projects/volunteer-matching-agent.html" />
+  <meta property="og:image" content="https://abestack.com/images/screenshots/prayer-city/signup.png" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","@id":"https://abestack.com/projects/volunteer-matching-agent.html","headline":"Volunteer Matching Agent — Custom AI Agents on Firebase","description":"Nonprofit agentic AI for volunteer shift matching with human-in-the-loop approval.","url":"https://abestack.com/projects/volunteer-matching-agent.html","datePublished":"2025-05-01","author":{"@type":"Organization","name":"Abe Stack"},"publisher":{"@type":"Organization","name":"Abe Stack"},"about":["Agentic AI development","Custom AI agents Firebase","Volunteer matching"],"keywords":"agentic AI, Firebase, Genkit, volunteer matching"}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',muted:'#334155',soft:'#64748b'},accent:{DEFAULT:'#2563eb'}}}}};</script>
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body class="bg-white text-ink antialiased">
+  <header class="site-header sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+      <a href="../index.html" class="flex items-center gap-2.5"><span class="site-logo-mark">A</span><span class="font-semibold">Abe Stack</span></a>
+      <a href="../projects.html" class="text-sm font-semibold text-accent">← All work</a>
+    </div>
+  </header>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <p class="text-xs font-bold uppercase text-accent">Agentic AI · Shipped Q2 2025</p>
+    <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Volunteer Matching Agent</h1>
+    <p class="mt-4 text-ink-soft leading-relaxed">Nonprofit AI agent that reads volunteer roster data, proposes shift matches based on skills and availability, and queues digest emails — always with human approval before anything sends.</p>
+    <p class="mt-4"><a href="https://prayercityhtx.com" class="text-accent font-semibold" target="_blank" rel="noopener">prayercityhtx.com ↗</a> · <a href="../ai-agents/" class="text-accent font-semibold">Our Agentic AI service →</a></p>
+    <dl class="case-meta-bar mt-8 pt-6 border-t border-slate-200">
+      <div><dt>Shipped</dt><dd>Q2 2025</dd></div>
+      <div><dt>Duration</dt><dd>4 weeks</dd></div>
+      <div><dt>Client</dt><dd>Houston World Cup Prayer City</dd></div>
+    </dl>
+    <div class="case-metrics">
+      <div class="metric-card"><div class="metric-card__value">70%</div><div class="metric-card__label">Less manual matching</div></div>
+      <div class="metric-card"><div class="metric-card__value">500+</div><div class="metric-card__label">Signups processed</div></div>
+      <div class="metric-card"><div class="metric-card__value">Daily</div><div class="metric-card__label">Agent-assisted digests</div></div>
+      <div class="metric-card"><div class="metric-card__value">100%</div><div class="metric-card__label">Human approval before send</div></div>
+    </div>
+    <figure class="mt-8">
+      <img src="../images/screenshots/prayer-city/signup.png" alt="Volunteer signup data feeding the matching agent" class="w-full rounded-xl screenshot-frame border border-slate-200" width="1440" height="900" />
+      <figcaption class="mt-2 text-xs text-ink-soft text-center">Volunteer signup flow — roster data the agent reads to propose shift matches</figcaption>
+    </figure>
+    <section class="mt-10"><h2 class="text-xl font-bold">Problem</h2><p class="mt-2 text-ink-soft text-sm leading-relaxed">Volunteer coordinators spent hours each week matching skills and availability to open shifts manually. Spreadsheet exports and gut-feel assignments didn't scale as signups passed 500 in the first month.</p></section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Solution</h2>
+      <ul class="mt-2 text-ink-soft text-sm space-y-2 list-disc pl-5">
+        <li>Genkit-style agent reads Firestore roster and shift availability in real time</li>
+        <li>Proposes ranked shift matches with reasoning the coordinator can review</li>
+        <li>One-click approve / edit / reject before any email goes out</li>
+        <li>Daily digest drafts generated by the agent, sent via Gmail API after approval</li>
+        <li>Audit log of every agent recommendation and human decision</li>
+      </ul>
+    </section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Results</h2><p class="mt-2 text-ink-soft text-sm leading-relaxed">Leadership stopped hand-matching volunteers to shifts. Coordinators review agent proposals in minutes instead of rebuilding rosters from scratch. Manual matching work dropped an estimated 70% through peak serve season — with zero unsupervised outbound emails.</p></section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Technology</h2>
+      <div class="case-stack">
+        <span class="tech-badge">Firebase</span><span class="tech-badge">Cloud Functions</span><span class="tech-badge">Genkit</span><span class="tech-badge">Groq</span><span class="tech-badge">Firestore</span><span class="tech-badge">Gmail API</span>
+      </div>
+    </section>
+    <section class="mt-10"><h2 class="text-xl font-bold">Screenshots</h2>
+      <div class="mt-4 space-y-8">
+        <figure><img src="../images/screenshots/prayer-city/signup.png" alt="Volunteer signup with shift picker" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" /><figcaption class="mt-2 text-xs text-ink-soft">Signup captures skills and availability the agent uses for matching</figcaption></figure>
+        <figure><img src="../images/screenshots/prayer-city/hero.png" alt="Volunteer hub dashboard" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" /><figcaption class="mt-2 text-xs text-ink-soft">Coordinator hub — review agent proposals before digests send</figcaption></figure>
+      </div>
+    </section>
+    <blockquote class="case-testimonial"><p>"Leadership stopped hand-matching volunteers to shifts — the agent drafts matches and we approve in one click. We kept full control without the spreadsheet grind."</p><footer><strong>Prayer City Leadership</strong> · Houston World Cup Prayer City</footer></blockquote>
+    <div class="mt-10 text-center rounded-2xl bg-slate-50 border border-slate-200 p-8"><p class="font-bold">Need an AI agent for your nonprofit ops?</p><a href="../ai-agents/" class="inline-flex mt-4 btn-primary">Explore Agentic AI</a></div>
+  </article>
+  <footer class="border-t border-slate-200 mt-12"><div class="max-w-3xl mx-auto px-4 py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-ink-soft"><p>© <span data-year></span> Abe Stack</p><p class="footer-legal mt-2"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></p><div class="flex gap-6"><a href="../projects.html" class="hover:text-accent">All work</a><a href="../contact.html" class="hover:text-accent">Contact</a></div></div></footer>
+  <script src="../js/config.js"></script><script src="../js/site.js"></script>
+</body>
+</html>

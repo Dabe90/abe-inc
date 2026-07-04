@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <title>Production-Ready AI Agents in 2026 — Agentic AI Development | Abe Stack</title>
+  <meta name="description" content="Agentic AI development guide: ship custom AI agents on Firebase with human gates, tool calling, and audit logs — without the hype. By Abe Stack." />
+  <link rel="canonical" href="https://abestack.com/insights/production-ready-ai-agents-2026.html" />
+  <meta property="og:title" content="Production-ready AI agents in 2026 — Abe Stack" />
+  <meta property="og:description" content="Skip the demo. Ship agents with human approval, tool integrations, and real observability." />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"How to Build Production-Ready AI Agents in 2026 (Without the Hype)","datePublished":"2026-01-20","author":{"@type":"Organization","name":"Abe Stack"},"publisher":{"@type":"Organization","name":"Abe Stack"},"url":"https://abestack.com/insights/production-ready-ai-agents-2026.html"}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',soft:'#64748b'},accent:{DEFAULT:'#2563eb'}}}}};</script>
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body class="bg-white text-ink antialiased">
+  <header class="site-header sticky top-0 z-50"><div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between"><a href="../index.html" class="flex items-center gap-2.5"><span class="site-logo-mark">A</span><span class="font-semibold">Abe Stack</span></a><a href="index.html" class="text-sm font-semibold text-accent">← Insights</a></div></header>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <p class="text-xs font-bold uppercase text-accent">Agentic AI · Jan 2026</p>
+    <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">How to build production-ready AI agents in 2026 (without the hype)</h1>
+    <p class="mt-6 text-ink-soft leading-relaxed">Most "AI agent" content stops at a ChatGPT wrapper or a LangChain notebook. Production is different: your agent reads real data, calls real APIs, and sometimes sends email to real people. That means guardrails, logging, and a human who can say no — before anything goes live.</p>
+
+    <h2 class="mt-10 text-xl font-bold">1. Start with a workflow, not a chatbot</h2>
+    <p class="mt-3 text-sm text-ink-soft leading-relaxed">Define the job in ops terms: "When a volunteer signs up, propose shift matches for coordinator review" beats "build an AI assistant." Map inputs (Firestore roster, form fields), outputs (draft email, Sheet row, Slack message), and who approves. If you can't draw the flow on a whiteboard, you're not ready to prompt-engineer it.</p>
+
+    <h2 class="mt-8 text-xl font-bold">2. Tool-calling beats prompt-only</h2>
+    <p class="mt-3 text-sm text-ink-soft leading-relaxed">Agents that only generate text aren't agents — they're copywriters. Production agents need tools: read Firestore, append Google Sheets, send via Gmail API, call your REST endpoints. We use Genkit-style tool definitions so the model picks structured actions, not free-form guesses. Every tool call gets logged with inputs and timestamps.</p>
+
+    <h2 class="mt-8 text-xl font-bold">3. Human-in-the-loop is non-negotiable</h2>
+    <p class="mt-3 text-sm text-ink-soft leading-relaxed">Unsupervised outbound email, enrollment decisions, or social posts are liability magnets. Ship a review step: agent drafts → human approves or edits → queue executes. On Prayer City's volunteer matching agent, leadership approves matches in one click before digests send. Zero unsupervised sends, 70% less manual matching. <a href="../projects/volunteer-matching-agent.html" class="text-accent font-semibold">Case study →</a></p>
+
+    <h2 class="mt-8 text-xl font-bold">4. Multi-provider LLM routing</h2>
+    <p class="mt-3 text-sm text-ink-soft leading-relaxed">Single-provider demos break on day one when Groq rate-limits or OpenAI has an outage. Route requests across OpenAI, Groq, and DeepSeek with automatic failover. Store which provider handled each run — you'll need it when debugging bad outputs at 9pm.</p>
+
+    <h2 class="mt-8 text-xl font-bold">5. Deploy on infrastructure you already trust</h2>
+    <p class="mt-3 text-sm text-ink-soft leading-relaxed">We deploy agent workers on Firebase Cloud Functions with Firestore for state, scheduled triggers for batch jobs, and queue retries on failure. Same stack as the volunteer platform and enrollment wizard — one billing account, one monitoring surface, one handoff doc for the client. <a href="firebase-genkit-agentic-ai-2026.html" class="text-accent font-semibold">Why Firebase + Genkit →</a></p>
+
+    <h2 class="mt-8 text-xl font-bold">6. Observability from week one</h2>
+    <ul class="mt-3 text-sm text-ink-soft space-y-2 list-disc pl-5">
+      <li>Audit log: every agent run, tool call, and human decision</li>
+      <li>Cost tracking: tokens per workflow, alerts on spikes</li>
+      <li>Staging environment: test with production-like data before cutover</li>
+      <li>Rollback plan: disable agent, fall back to manual process in one config flip</li>
+    </ul>
+
+    <h2 class="mt-8 text-xl font-bold">What to skip (for now)</h2>
+    <p class="mt-3 text-sm text-ink-soft leading-relaxed">Autonomous multi-day agent loops. RAG over your entire Google Drive without chunking strategy. "Replace your team" marketing. Agents that mutate production data without approval. Build one workflow end-to-end, measure time saved, then expand.</p>
+
+    <h2 class="mt-8 text-xl font-bold">Ballpark scope &amp; cost</h2>
+    <p class="mt-3 text-sm text-ink-soft leading-relaxed">A focused single-agent workflow (triage, matching, or digest drafting) with 1–2 tool integrations typically ships in 3–4 weeks at $4K–$6K. Multi-agent systems with RAG and custom review UI land $6K–$12K. <a href="../pricing.html" class="text-accent font-semibold">See pricing tiers →</a></p>
+
+    <div class="article-cta">
+      <p class="font-bold">Ready to ship a production agent?</p>
+      <p class="mt-2 text-sm text-ink-soft">Free discovery call · Fixed quote in 48 hours</p>
+      <div class="hero-cta-row mt-4 justify-center">
+        <a href="../contact.html?intent=ai-audit" class="btn-primary">Get a free AI opportunity audit</a>
+        <a href="../ai-agents/" class="btn-secondary">Explore Agentic AI</a>
+      </div>
+    </div>
+  </article>
+  <footer class="border-t border-slate-200 mt-12"><div class="max-w-3xl mx-auto px-4 py-8 text-sm text-ink-soft text-center"><p>© <span data-year></span> Abe Stack</p><p class="footer-legal mt-2"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></p></div></footer>
+  <script src="../js/config.js"></script><script src="../js/site.js"></script>
+</body>
+</html>

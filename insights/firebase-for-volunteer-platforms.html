@@ -25,6 +25,8 @@
     <p class="mt-3 text-ink-soft text-sm leading-relaxed">Firestore stores role assignments, daily content, and gallery metadata. When coordinators update a schedule, volunteers see it immediately — no refresh hacks.</p>
     <h2 class="mt-8 text-xl font-bold">Automation on a schedule</h2>
     <p class="mt-3 text-ink-soft text-sm leading-relaxed">Cloud Functions send daily role digests, process webhooks, and run cleanup jobs. Combined with Google Apps Script for Gmail → Sheets pipelines, the ops layer runs while the team sleeps.</p>
+    <h2 class="mt-8 text-xl font-bold">Adding an agent layer</h2>
+    <p class="mt-3 text-ink-soft text-sm leading-relaxed">When matching volunteers to shifts outgrew manual rules, we added a Genkit agent on the same Firebase project — tool calls read Firestore roster data, propose matches, and queue digests after coordinator approval. Same auth, same data, no second platform. <a href="firebase-genkit-agentic-ai-2026.html" class="text-accent font-semibold">Firebase + Genkit guide →</a> · <a href="../projects/volunteer-matching-agent.html" class="text-accent font-semibold">Matching agent case study →</a></p>
     <h2 class="mt-8 text-xl font-bold">When Firebase isn't the fit</h2>
     <p class="mt-3 text-ink-soft text-sm leading-relaxed">Heavy relational reporting, complex transactions, or strict EU data residency may point you elsewhere. For event coordination, enrollment, and team dashboards, it's a strong default.</p>
     <p class="mt-8"><a href="../projects/prayer-city.html" class="text-accent font-semibold hover:underline">See the Prayer City case study →</a></p>

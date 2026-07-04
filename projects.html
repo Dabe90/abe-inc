@@ -4,8 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
-  <title>Work — Abe Stack</title>
-  <meta name="description" content="Case studies from Abe Stack — volunteer platforms, business websites, enrollment systems, and social publishing tools." />
+  <title>Case Studies — Agentic AI &amp; Custom Software | Abe Stack</title>
+  <meta name="description" content="Production case studies: custom AI agents on Firebase, volunteer matching agents, enrollment intelligence, multi-platform publishing, and web applications shipped by Abe Stack." />
+  <link rel="canonical" href="https://abestack.com/projects.html" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"CollectionPage","name":"Abe Stack Case Studies","url":"https://abestack.com/projects.html","description":"Portfolio of agentic AI and web application case studies.","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"url":"https://abestack.com/projects/volunteer-matching-agent.html","name":"Volunteer Matching Agent"},{"@type":"ListItem","position":2,"url":"https://abestack.com/projects/academy-enrollment-agent.html","name":"Academy Enrollment Intelligence"},{"@type":"ListItem","position":3,"url":"https://abestack.com/projects/agentic-publishing.html","name":"Agentic Publishing Layer"},{"@type":"ListItem","position":4,"url":"https://abestack.com/projects/prayer-city-social.html","name":"Prayer City Social"},{"@type":"ListItem","position":5,"url":"https://abestack.com/projects/prayer-city.html","name":"Prayer City Volunteer Platform"},{"@type":"ListItem","position":6,"url":"https://abestack.com/projects/royal-wealth-heritage.html","name":"Royal Wealth Heritage"},{"@type":"ListItem","position":7,"url":"https://abestack.com/projects/prayer-city-automation.html","name":"Prayer City Automation"},{"@type":"ListItem","position":8,"url":"https://abestack.com/projects/abe-stack-site.html","name":"Abe Stack Marketing Site"},{"@type":"ListItem","position":9,"url":"https://abestack.com/projects/launch-checklist.html","name":"Production Launch Checklist"},{"@type":"ListItem","position":10,"url":"https://abestack.com/projects/firebase-form-starter.html","name":"Firebase Form Starter Kit"}]}}
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',muted:'#334155',soft:'#64748b'},accent:{DEFAULT:'#2563eb',light:'#3b82f6',soft:'#dbeafe'}}}}};</script>
   <link rel="stylesheet" href="css/site.css" />
@@ -20,7 +24,7 @@
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-ink-muted" aria-label="Main">
         <a href="projects.html" class="text-accent font-semibold">Work</a>
         <a href="services.html" class="hover:text-accent transition">Services</a>
-        <a href="services/agentic-ai.html" class="hover:text-accent transition">AI Automation</a>
+        <a href="ai-agents/" class="hover:text-accent transition">AI Automation</a>
         <a href="pricing.html" class="hover:text-accent transition">Pricing</a>
         <a href="insights/index.html" class="hover:text-accent transition">Insights</a>
         <a href="about.html" class="hover:text-accent transition">About</a>
@@ -36,7 +40,7 @@
     <nav id="mobile-nav" class="hidden md:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-1" aria-label="Mobile">
       <a href="projects.html" class="mobile-nav-link !text-accent">Work</a>
       <a href="services.html" class="mobile-nav-link">Services</a>
-      <a href="services/agentic-ai.html" class="mobile-nav-link">AI Automation</a>
+      <a href="ai-agents/" class="mobile-nav-link">AI Automation</a>
       <a href="pricing.html" class="mobile-nav-link">Pricing</a>
       <a href="insights/index.html" class="mobile-nav-link">Insights</a>
       <a href="about.html" class="mobile-nav-link">About</a>
@@ -50,16 +54,28 @@
       <div class="max-w-6xl mx-auto px-4 py-14 sm:py-16">
         <p class="section-label mb-3">Portfolio</p>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Work</h1>
-        <p class="mt-4 text-ink-soft max-w-2xl leading-relaxed text-base">Eight production systems we've designed, built, and deployed — from volunteer operations to agentic AI publishing.</p>
+        <p class="mt-4 text-ink-soft max-w-2xl leading-relaxed text-base">Ten production case studies — volunteer platforms, business sites, workflow automation, and agentic AI systems we've designed, built, and deployed.</p>
       </div>
     </section>
     <div class="max-w-6xl mx-auto px-4 py-16 w-full">
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-projects-grid></div>
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-2">
+      <div class="project-filters" data-project-filters role="tablist" aria-label="Filter projects">
+        <button type="button" class="project-filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button type="button" class="project-filter" data-filter="web-apps" role="tab" aria-selected="false">Web Apps</button>
+        <button type="button" class="project-filter" data-filter="automation" role="tab" aria-selected="false">Automation</button>
+        <button type="button" class="project-filter" data-filter="agentic-ai" role="tab" aria-selected="false">Agentic AI</button>
+      </div>
+      <p class="text-sm text-ink-soft shrink-0"><span data-project-count>10 projects</span></p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-projects-grid data-enable-filter="true"></div>
 
     <div class="mt-16 rounded-2xl bg-slate-50 border border-slate-200 p-8 sm:p-10 text-center">
       <p class="font-bold text-lg">Want something like this for your team?</p>
       <p class="mt-2 text-sm text-ink-soft max-w-md mx-auto">We scope, build, and ship — from first call to production deploy.</p>
-      <a href="contact.html" class="inline-flex mt-6 btn-primary">Start a project</a>
+      <div class="hero-cta-row mt-6 justify-center">
+        <a href="contact.html?intent=ai-audit" class="btn-primary">Get a free AI opportunity audit</a>
+        <a href="contact.html" class="btn-secondary">Start a project</a>
+      </div>
     </div>
     </div>
   </main>

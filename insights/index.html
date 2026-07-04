@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
   <title>Insights — Abe Stack</title>
-  <meta name="description" content="Practical notes on web apps, automation, and shipping production software — from the Abe Stack team." />
+  <meta name="description" content="Practical notes on agentic AI development, custom AI agents on Firebase, web apps, automation, and production launches — from Abe Stack." />
+  <link rel="canonical" href="https://abestack.com/insights/" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Blog","name":"Abe Stack Insights","url":"https://abestack.com/insights/","description":"Articles on agentic AI development, Firebase, and shipping production software.","publisher":{"@type":"Organization","name":"Abe Stack"}}
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',muted:'#334155',soft:'#64748b'},accent:{DEFAULT:'#2563eb',light:'#3b82f6',soft:'#dbeafe'}}}}};</script>
   <link rel="stylesheet" href="../css/site.css" />
@@ -41,9 +45,24 @@
   <main class="flex-1 max-w-3xl mx-auto px-4 py-16 w-full">
     <p class="text-sm font-semibold uppercase tracking-widest text-accent">Insights</p>
     <h1 class="mt-2 text-3xl sm:text-4xl font-bold">Notes on building software that ships.</h1>
-    <p class="mt-4 text-ink-soft leading-relaxed">Practical thinking on web apps, automation, and production launches — from projects we're building in the field.</p>
+    <p class="mt-4 text-ink-soft leading-relaxed">Practical thinking on agentic AI, web apps, automation, and production launches — from projects we're building in the field.</p>
 
     <div class="mt-12 space-y-6">
+      <a href="production-ready-ai-agents-2026.html" class="block rounded-2xl border-2 border-accent/40 bg-accent-soft/30 p-6 hover:shadow-md transition group">
+        <p class="text-xs font-bold uppercase text-accent">Agentic AI · Jan 2026</p>
+        <h2 class="mt-2 text-xl font-bold group-hover:text-accent transition">How to build production-ready AI agents in 2026 (without the hype)</h2>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed">Human gates, tool calling, audit logs, and Firebase deploy — a practical checklist for teams past the demo stage.</p>
+      </a>
+      <a href="intelligent-automation-vs-traditional-workflows.html" class="block rounded-2xl border-2 border-accent/30 bg-accent-soft/20 p-6 hover:shadow-md transition group">
+        <p class="text-xs font-bold uppercase text-accent">Agentic AI · Jan 2026</p>
+        <h2 class="mt-2 text-xl font-bold group-hover:text-accent transition">Intelligent automation vs traditional workflows: real results</h2>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed">Apps Script vs tool-calling agents — side-by-side metrics from volunteer ops, enrollment, and publishing projects.</p>
+      </a>
+      <a href="firebase-genkit-agentic-ai-2026.html" class="block rounded-2xl border-2 border-accent/30 bg-accent-soft/20 p-6 hover:shadow-md transition group">
+        <p class="text-xs font-bold uppercase text-accent">Engineering · Jan 2026</p>
+        <h2 class="mt-2 text-xl font-bold group-hover:text-accent transition">Firebase + Genkit: the best stack for agentic AI in 2026</h2>
+        <p class="mt-2 text-sm text-ink-soft leading-relaxed">Why we deploy agents on Cloud Functions with Firestore tools, Gmail/Sheets integrations, and RAG — in the same project as your app.</p>
+      </a>
       <a href="../resources/index.html" class="block rounded-2xl border-2 border-accent bg-accent-soft/30 p-6 hover:shadow-md transition">
         <p class="text-xs font-bold uppercase text-accent">Free download</p>
         <h2 class="mt-2 text-xl font-bold">Production launch checklist</h2>

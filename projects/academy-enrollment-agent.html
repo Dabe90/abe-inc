@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <title>Academy Enrollment Intelligence — Agentic AI Case Study | Abe Stack</title>
+  <meta name="description" content="Agentic AI development case study: enrollment triage agent with Gmail tool-calling — 85% faster triage for a small business academy. Custom AI agents on Firebase." />
+  <link rel="canonical" href="https://abestack.com/projects/academy-enrollment-agent.html" />
+  <meta property="og:title" content="Academy Enrollment Intelligence — Abe Stack" />
+  <meta property="og:description" content="Intelligent enrollment automation for a Texas academy — form triage, follow-up drafts, human review before send." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://abestack.com/projects/academy-enrollment-agent.html" />
+  <meta property="og:image" content="https://abestack.com/images/screenshots/royal-wealth-heritage/enrollment.png" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Academy Enrollment Intelligence — Agentic AI for Small Business","description":"Tool-calling enrollment agent with human review before send.","url":"https://abestack.com/projects/academy-enrollment-agent.html","datePublished":"2025-11-01","author":{"@type":"Organization","name":"Abe Stack"},"publisher":{"@type":"Organization","name":"Abe Stack"},"keywords":"agentic AI development, enrollment automation, custom AI agents Firebase"}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',muted:'#334155',soft:'#64748b'},accent:{DEFAULT:'#2563eb'}}}}};</script>
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body class="bg-white text-ink antialiased">
+  <header class="site-header sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+      <a href="../index.html" class="flex items-center gap-2.5"><span class="site-logo-mark">A</span><span class="font-semibold">Abe Stack</span></a>
+      <a href="../projects.html" class="text-sm font-semibold text-accent">← All work</a>
+    </div>
+  </header>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <p class="text-xs font-bold uppercase text-accent">Agentic AI · Shipped Q4 2025</p>
+    <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Academy Enrollment Intelligence</h1>
+    <p class="mt-4 text-ink-soft leading-relaxed">Small business intelligent automation add-on for Royal Wealth Heritage — classifies enrollment submissions, flags incomplete applications, drafts personalized follow-ups, and routes everything to staff for review before send.</p>
+    <p class="mt-4"><a href="https://royalwealthheritage.com" class="text-accent font-semibold" target="_blank" rel="noopener">royalwealthheritage.com ↗</a> · <a href="royal-wealth-heritage.html" class="text-accent font-semibold">Full site case study →</a></p>
+    <dl class="case-meta-bar mt-8 pt-6 border-t border-slate-200">
+      <div><dt>Shipped</dt><dd>Q4 2025</dd></div>
+      <div><dt>Duration</dt><dd>3 weeks (add-on)</dd></div>
+      <div><dt>Client</dt><dd>Royal Wealth Heritage LLC</dd></div>
+    </dl>
+    <div class="case-metrics">
+      <div class="metric-card"><div class="metric-card__value">85%</div><div class="metric-card__label">Faster enrollment triage</div></div>
+      <div class="metric-card"><div class="metric-card__value">100%</div><div class="metric-card__label">Inquiries logged &amp; routed</div></div>
+      <div class="metric-card"><div class="metric-card__value">0</div><div class="metric-card__label">Lost PDF attachments</div></div>
+      <div class="metric-card"><div class="metric-card__value">Human</div><div class="metric-card__label">Review before every send</div></div>
+    </div>
+    <figure class="mt-8">
+      <img src="../images/screenshots/royal-wealth-heritage/enrollment.png" alt="Seven-step academy enrollment wizard" class="w-full rounded-xl screenshot-frame border border-slate-200" width="1440" height="900" />
+      <figcaption class="mt-2 text-xs text-ink-soft text-center">Enrollment wizard — structured data the agent triages and routes</figcaption>
+    </figure>
+    <section class="mt-10"><h2 class="text-xl font-bold">Problem</h2><p class="mt-2 text-ink-soft text-sm leading-relaxed">Academy inquiries arrived as unstructured form data and PDF attachments. Staff manually triaged submissions, chased missing fields, and wrote follow-up emails by hand — slowing response time and losing context between threads.</p></section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Solution</h2>
+      <ul class="mt-2 text-ink-soft text-sm space-y-2 list-disc pl-5">
+        <li>Tool-calling agent classifies each submission: complete, incomplete, or needs clarification</li>
+        <li>Flags missing enrollment fields with specific next-step prompts for staff</li>
+        <li>Drafts personalized follow-up emails in the academy's voice for human review</li>
+        <li>Logs every inquiry to Google Sheets for reporting and audit trail</li>
+        <li>Sends approved replies via Gmail API — no unsupervised outbound mail</li>
+      </ul>
+    </section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Results</h2><p class="mt-2 text-ink-soft text-sm leading-relaxed">Enrollment moved from PDF email threads to guided wizard plus intelligent follow-up. Helena's team replies faster with full context on every inquiry. Triage time dropped an estimated 85%; every submission is logged and routed — zero lost attachments.</p></section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Technology</h2>
+      <div class="case-stack">
+        <span class="tech-badge">Next.js</span><span class="tech-badge">Node.js workers</span><span class="tech-badge">OpenAI</span><span class="tech-badge">Gmail API</span><span class="tech-badge">Web3Forms</span><span class="tech-badge">Google Sheets</span>
+      </div>
+    </section>
+    <section class="mt-10"><h2 class="text-xl font-bold">Screenshots</h2>
+      <div class="mt-4 space-y-8">
+        <figure><img src="../images/screenshots/royal-wealth-heritage/enrollment.png" alt="Enrollment wizard steps" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" /><figcaption class="mt-2 text-xs text-ink-soft">Seven-step wizard captures structured enrollment data</figcaption></figure>
+        <figure><img src="../images/screenshots/royal-wealth-heritage/academy.png" alt="Academy landing page" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" /><figcaption class="mt-2 text-xs text-ink-soft">Academy page drives inquiries into the automation pipeline</figcaption></figure>
+      </div>
+    </section>
+    <blockquote class="case-testimonial"><p>"Enrollment moved from PDF email threads to a guided wizard plus intelligent follow-up — my team replies faster with full context on every inquiry."</p><footer><strong>Helena C. Puati</strong> · Founder &amp; CEO, Royal Wealth Heritage LLC</footer></blockquote>
+    <div class="mt-10 text-center rounded-2xl bg-slate-50 border border-slate-200 p-8"><p class="font-bold">Automate enrollment without losing the human touch?</p><a href="../ai-agents/" class="inline-flex mt-4 btn-primary">Explore AI automation</a></div>
+  </article>
+  <footer class="border-t border-slate-200 mt-12"><div class="max-w-3xl mx-auto px-4 py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-ink-soft"><p>© <span data-year></span> Abe Stack</p><p class="footer-legal mt-2"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></p><div class="flex gap-6"><a href="../projects.html" class="hover:text-accent">All work</a><a href="../contact.html" class="hover:text-accent">Contact</a></div></div></footer>
+  <script src="../js/config.js"></script><script src="../js/site.js"></script>
+</body>
+</html>

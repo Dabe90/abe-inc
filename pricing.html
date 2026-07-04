@@ -4,8 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
-  <title>Pricing — Abe Stack</title>
-  <meta name="description" content="Transparent project pricing for web apps, platforms, automation, and ongoing care plans. Fixed quotes — no surprise invoices." />
+  <title>Pricing — Agentic AI Development &amp; Web Apps | Abe Stack</title>
+  <meta name="description" content="Transparent pricing for agentic AI development ($4K–$12K), custom AI agents on Firebase, web applications, and workflow automation. Fixed quotes after discovery." />
+  <link rel="canonical" href="https://abestack.com/pricing.html" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Abe Stack Pricing","url":"https://abestack.com/pricing.html","description":"Pricing for agentic AI development, web apps, and automation.","mainEntity":{"@type":"OfferCatalog","name":"Abe Stack Project Pricing","itemListElement":[{"@type":"Offer","name":"AI Agent Add-on","description":"Custom AI agents on Firebase with tool-calling and human review.","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","minPrice":"4000","maxPrice":"12000"}},{"@type":"Offer","name":"Web Application","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","minPrice":"8000","maxPrice":"15000"}},{"@type":"Offer","name":"Business Site","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","minPrice":"3500","maxPrice":"6000"}}]}}
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',muted:'#334155',soft:'#64748b'},accent:{DEFAULT:'#2563eb',light:'#3b82f6',soft:'#dbeafe'}}}}};</script>
   <link rel="stylesheet" href="css/site.css" />
@@ -21,7 +25,7 @@
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-ink-muted" aria-label="Main">
         <a href="projects.html" class="hover:text-accent transition">Work</a>
         <a href="services.html" class="hover:text-accent transition">Services</a>
-        <a href="services/agentic-ai.html" class="hover:text-accent transition">AI Automation</a>
+        <a href="ai-agents/" class="hover:text-accent transition">AI Automation</a>
         <a href="pricing.html" class="text-accent font-semibold">Pricing</a>
         <a href="insights/index.html" class="hover:text-accent transition">Insights</a>
         <a href="about.html" class="hover:text-accent transition">About</a>
@@ -35,7 +39,7 @@
     <nav id="mobile-nav" class="hidden md:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-1" aria-label="Mobile">
       <a href="projects.html" class="mobile-nav-link">Work</a>
       <a href="services.html" class="mobile-nav-link">Services</a>
-      <a href="services/agentic-ai.html" class="mobile-nav-link">AI Automation</a>
+      <a href="ai-agents/" class="mobile-nav-link">AI Automation</a>
       <a href="pricing.html" class="mobile-nav-link !text-accent">Pricing</a>
       <a href="insights/index.html" class="mobile-nav-link">Insights</a>
       <a href="about.html" class="mobile-nav-link">About</a>
@@ -104,21 +108,81 @@
           <a href="contact.html" class="mt-6 block text-center rounded-full border border-slate-300 py-2.5 text-sm font-semibold hover:border-accent hover:text-accent transition">Discuss scope</a>
         </article>
 
-        <article class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col">
-          <p class="text-xs font-bold uppercase text-accent">Agentic AI</p>
-          <h2 class="mt-2 text-xl font-bold">Intelligent automation</h2>
-          <p class="mt-2 text-sm text-ink-soft flex-1">Multi-LLM agents, content pipelines, queue workers — human approval before anything goes live.</p>
-          <p class="mt-6 text-3xl font-bold">$5,000<span class="text-base font-normal text-ink-soft"> – $12,000</span></p>
+        <article class="rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent-soft/30 to-white p-6 flex flex-col ring-2 ring-accent/15">
+          <p class="text-xs font-bold uppercase text-accent">Agentic AI add-on</p>
+          <h2 class="mt-2 text-xl font-bold">AI agent systems</h2>
+          <p class="mt-2 text-sm text-ink-soft flex-1">Production agentic workflows — tool-calling agents on Gmail, Sheets, and Firestore, RAG knowledge bases, and Firebase deployment with human approval gates.</p>
+          <p class="mt-6 text-3xl font-bold">$4,000<span class="text-base font-normal text-ink-soft"> – $12,000</span></p>
+          <p class="mt-1 text-xs text-ink-soft">Standalone or add to Platform · 3–6 week typical timeline</p>
           <ul class="mt-4 space-y-2 text-sm text-ink-soft">
-            <li>✓ Multi-provider LLM routing + failover</li>
-            <li>✓ 1–2 agent workflows (content, ops, enrollment)</li>
-            <li>✓ Queue workers with retry &amp; scheduling</li>
-            <li>✓ Human review dashboard</li>
-            <li>✓ Add to Platform or standalone</li>
+            <li>✓ Discovery + agent workflow design doc</li>
+            <li>✓ 1–3 tool-calling agents (Gmail, Sheets, Firestore, APIs)</li>
+            <li>✓ RAG knowledge base over your docs / FAQs / roster data</li>
+            <li>✓ Multi-provider LLM routing (OpenAI, Groq, DeepSeek) + failover</li>
+            <li>✓ Firebase deploy: Cloud Functions, queues, retries, audit logs</li>
+            <li>✓ Human-in-the-loop review dashboard before send/publish</li>
+            <li>✓ Staging environment, handoff docs, 30-day post-launch support</li>
           </ul>
-          <a href="services/agentic-ai.html" class="mt-6 block text-center rounded-full border border-accent text-accent py-2.5 text-sm font-semibold hover:bg-accent-soft transition">Explore AI automation</a>
+          <a href="ai-agents/" class="mt-6 block text-center rounded-full bg-accent py-2.5 text-sm font-semibold text-white hover:bg-accent-light transition">Explore AI agents</a>
         </article>
       </div>
+
+      <section class="mt-16 rounded-2xl border-2 border-accent/20 bg-slate-50 p-6 sm:p-10">
+        <div class="max-w-3xl">
+          <p class="text-xs font-bold uppercase text-accent">AI Agent Add-on — detail</p>
+          <h2 class="mt-2 text-2xl font-bold">What's included at each tier</h2>
+          <p class="mt-3 text-sm text-ink-soft leading-relaxed">Agent builds are scoped after a discovery call. Pricing depends on number of agents, integrations, and whether you need RAG over a document corpus. Every tier includes production Firebase deployment — not a demo in a chat window.</p>
+        </div>
+        <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
+          <div class="rounded-xl border border-slate-200 bg-white p-5">
+            <p class="font-bold text-lg">$4,000 – $6,000</p>
+            <p class="mt-1 text-xs font-semibold text-accent uppercase">Starter agent</p>
+            <ul class="mt-4 space-y-2 text-ink-soft">
+              <li>✓ 1 agent workflow (e.g. form triage, digest drafting)</li>
+              <li>✓ 1–2 tool integrations (Gmail, Sheets, or Firestore)</li>
+              <li>✓ Human approval step before outbound actions</li>
+              <li>✓ Single LLM provider + basic error handling</li>
+              <li>✓ Firebase Cloud Functions deploy</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border-2 border-accent/30 bg-white p-5">
+            <p class="font-bold text-lg">$6,000 – $9,000</p>
+            <p class="mt-1 text-xs font-semibold text-accent uppercase">Production agent</p>
+            <ul class="mt-4 space-y-2 text-ink-soft">
+              <li>✓ 2–3 coordinated agents (orchestrator + specialists)</li>
+              <li>✓ RAG knowledge base over your SOPs / FAQs / data</li>
+              <li>✓ Multi-provider failover (OpenAI, Groq, DeepSeek)</li>
+              <li>✓ Queue workers, retries, and audit logging</li>
+              <li>✓ Review dashboard + staging environment</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-white p-5">
+            <p class="font-bold text-lg">$9,000 – $12,000+</p>
+            <p class="mt-1 text-xs font-semibold text-accent uppercase">Multi-agent platform</p>
+            <ul class="mt-4 space-y-2 text-ink-soft">
+              <li>✓ Full multi-agent system (matching, publishing, ops)</li>
+              <li>✓ 4+ tool integrations across Gmail, Sheets, Firestore, APIs</li>
+              <li>✓ Scheduled jobs, webhooks, and monitoring alerts</li>
+              <li>✓ Custom admin UI for review and override</li>
+              <li>✓ 60-day post-launch support + handoff training</li>
+            </ul>
+          </div>
+        </div>
+        <p class="mt-8 text-sm text-ink-soft">Examples: <a href="projects/volunteer-matching-agent.html" class="text-accent font-semibold hover:underline">nonprofit volunteer matching agent</a> · <a href="projects/academy-enrollment-agent.html" class="text-accent font-semibold hover:underline">small business enrollment intelligence</a> · <a href="projects/agentic-publishing.html" class="text-accent font-semibold hover:underline">multi-platform publishing layer</a></p>
+        <aside class="lead-capture-banner mt-10" aria-label="Free AI opportunity audit">
+          <div class="lead-capture-banner__inner">
+            <div>
+              <p class="lead-capture-banner__label">Unsure which tier fits?</p>
+              <h2>Get a free AI opportunity audit</h2>
+              <p>We'll scope your workflows and recommend Starter, Production, or Multi-agent — with a fixed quote, not a generic pitch deck.</p>
+            </div>
+            <div class="lead-capture-banner__actions">
+              <a href="contact.html?intent=ai-audit" class="btn-primary">Request AI audit</a>
+              <a href="ai-agents/" class="btn-secondary">Service details →</a>
+            </div>
+          </div>
+        </aside>
+      </section>
 
       <section class="mt-16 grid md:grid-cols-2 gap-8">
         <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
@@ -176,6 +240,10 @@
       <section class="mt-16 faq">
         <h2 class="text-xl font-bold mb-4">Pricing FAQ</h2>
         <div class="space-y-3 max-w-2xl">
+          <details class="rounded-xl border border-slate-200 p-4">
+            <summary class="font-semibold text-sm flex justify-between gap-4">How is AI agent pricing determined?<svg class="faq-chevron w-4 h-4 shrink-0 text-ink-soft transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <p class="mt-3 text-sm text-ink-soft">Scope drives price: number of agents, tool integrations (Gmail, Sheets, Firestore, external APIs), RAG corpus size, review UI complexity, and timeline. Most add-ons land $4K–$9K; multi-agent platforms with custom dashboards reach $12K+. <a href="ai-agents/" class="text-accent font-semibold hover:underline">See the AI service page</a> or book a discovery call for a fixed quote.</p>
+          </details>
           <details class="rounded-xl border border-slate-200 p-4">
             <summary class="font-semibold text-sm flex justify-between gap-4">Do you offer payment plans?<svg class="faq-chevron w-4 h-4 shrink-0 text-ink-soft transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
             <p class="mt-3 text-sm text-ink-soft">Typically 50% to start, 50% at launch. Larger projects can be split across milestones.</p>

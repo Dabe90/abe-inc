@@ -87,4 +87,32 @@
       el.classList.remove('hidden');
     });
   }
+
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('intent') === 'ai-audit') {
+    var serviceSelect = document.getElementById('service');
+    var messageField = document.getElementById('message');
+    if (serviceSelect) {
+      var intent = params.get('intent');
+      for (var i = 0; i < serviceSelect.options.length; i++) {
+        var optText = serviceSelect.options[i].text;
+        if (intent === 'ai-audit' && optText.indexOf('AI opportunity audit') !== -1) {
+          serviceSelect.selectedIndex = i;
+          break;
+        }
+        if (intent !== 'ai-audit' && optText.indexOf('Agentic AI') !== -1 && optText.indexOf('audit') === -1) {
+          serviceSelect.selectedIndex = i;
+          break;
+        }
+      }
+    }
+    if (messageField && !messageField.value) {
+      messageField.placeholder =
+        'Describe the workflows you want audited (e.g. enrollment triage, volunteer matching, outreach). Timeline and budget range help us scope the audit.';
+    }
+    var subjectInput = document.querySelector('form[data-form-email] input[name="_subject"]');
+    if (subjectInput) subjectInput.value = 'AI opportunity audit request — Abe Stack';
+    var auditSection = document.getElementById('ai-audit');
+    if (auditSection) auditSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 })();
