@@ -1,14 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // API routes only — static marketing site continues to deploy from root via Vercel.
-  experimental: {
-    serverComponentsExternalPackages: [
-      'genkit',
-      '@genkit-ai/firebase',
-      '@genkit-ai/google-genai',
-      '@genkit-ai/google-cloud',
-      'firebase-admin',
-    ],
+  typescript: {
+    tsconfigPath: 'tsconfig.next.json',
+  },
+  serverExternalPackages: [
+    'genkit',
+    '@genkit-ai/firebase',
+    '@genkit-ai/google-genai',
+    '@genkit-ai/google-cloud',
+    'firebase-admin',
+  ],
+  webpack: (config) => {
+    config.resolve.extensionAlias = {
+      '.js': ['.ts', '.tsx', '.js', '.jsx'],
+    };
+    return config;
   },
 };
 

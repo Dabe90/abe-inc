@@ -25,6 +25,9 @@ service cloud.firestore {
     match /agent_usage/{id} {
       allow read, write: if false;
     }
+    match /demo_agent_runs/{id} {
+      allow read, write: if false;
+    }
     match /match_proposals/{id} {
       allow read, write: if false;
     }

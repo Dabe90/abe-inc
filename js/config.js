@@ -9,9 +9,7 @@ window.ABE_INC = {
   clutchProfileUrl: '',
   siteUrl: 'https://abestack.com',
   formEndpoint: 'https://us-central1-gen-lang-client-0550945038.cloudfunctions.net/submitInquiry',
-  // Live agent demo on /ai-agents/ — Firebase Volunteer Coordinator (Genkit)
-  agentEndpoint: 'https://us-central1-gen-lang-client-0550945038.cloudfunctions.net/volunteerCoordinator',
-  // WARNING: visible in browser source — use a dedicated demo key; rotate if abused
-  agentApiKey: '5Dd1IsBPWJj7zCyZT2fQMr9w0coNLVk8v6HtFqlhaX3KRieu',
-  agentDemoEventId: 'prayer-city-july-2026',
+  // Safe public demo — Next.js / Vercel API, sample data only (no API key)
+  agentDemoEndpoint: '/api/demo/volunteer-agent',
+  agentDemoEventId: 'demo-serve-day-2026',
 };

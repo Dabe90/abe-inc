@@ -200,9 +200,9 @@
     <section class="py-16 sm:py-20 bg-slate-50 border-y border-slate-100" id="live-demo">
       <div class="max-w-6xl mx-auto px-4">
         <div class="max-w-2xl">
-          <p class="section-label mb-3">Live demo</p>
-          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Try the Volunteer Coordinator Agent.</h2>
-          <p class="mt-4 text-sm text-ink-soft leading-relaxed">Describe a coordination goal — the production agent loads rosters, proposes matches, and queues actions for human approval. Same Genkit stack we ship for clients.</p>
+          <p class="section-label mb-3">Try it yourself</p>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Volunteer Coordinator Agent — interactive demo.</h2>
+          <p class="mt-4 text-sm text-ink-soft leading-relaxed">Describe a coordination goal and watch Genkit reason through roster loading, matching, and human-in-the-loop approval — powered by Gemini with fictional sample data only.</p>
         </div>
 
         <div class="mt-10 agent-demo" id="agent-demo">
@@ -215,13 +215,13 @@
                     <textarea id="agent-goal" data-agent-demo-goal required placeholder="Match volunteers with open shifts for Saturday serve day, prioritize greeters with Spanish skills, and queue a digest email for coordinator approval before anything sends."></textarea>
                   </div>
                   <div class="agent-demo__field">
-                    <label for="agent-context">Event / context ID</label>
-                    <input type="text" id="agent-context" data-agent-demo-context placeholder="prayer-city-july-2026" autocomplete="off" />
+                    <label for="agent-context">Event ID <span class="text-ink-soft font-normal">(demo uses sample data)</span></label>
+                    <input type="text" id="agent-context" data-agent-demo-context placeholder="demo-serve-day-2026" autocomplete="off" readonly class="!bg-slate-50 !text-ink-soft" />
                   </div>
                 </div>
-                <button type="submit" class="btn-primary agent-demo__run" data-agent-demo-run>Run Agent</button>
-                <p class="agent-demo__disclaimer mt-4"><strong>This is a live demo powered by Genkit</strong> — real Firebase Cloud Functions, Gemini 2.5 Flash, and tool-calling. Outbound actions require human approval in production.</p>
-                <p class="agent-demo__config-warn hidden" data-agent-demo-config-warn role="status">Add <code class="text-xs bg-amber-100 px-1 rounded">agentApiKey</code> to <code class="text-xs bg-amber-100 px-1 rounded">js/config.js</code> to enable the live demo on this page.</p>
+                <button type="submit" class="btn-primary agent-demo__run" data-agent-demo-run>Run Demo Agent</button>
+                <p class="agent-demo__disclaimer mt-4 agent-demo__disclaimer--demo"><strong>Demo mode — not real client data.</strong> Powered by Firebase Genkit + Gemini. Fictional volunteers and shifts only; outbound actions are queued for human review and never sent.</p>
+                <p class="agent-demo__config-warn hidden" data-agent-demo-config-warn role="status">Demo API unavailable. Deploy to Vercel or run <code class="text-xs bg-amber-100 px-1 rounded">npm run next:dev</code> locally.</p>
               </form>
             </div>
             <div class="agent-demo__output-panel">

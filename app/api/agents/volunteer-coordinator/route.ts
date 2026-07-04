@@ -6,7 +6,7 @@ import {
   AgentRateLimitError,
   AgentTimeoutError,
   AgentValidationError,
-} from '../../../../src/handlers/volunteer-coordinator-handler.js';
+} from '../../../../src/handlers/volunteer-coordinator-handler';
 
 export const runtime = 'nodejs';
 export const maxDuration = 60;

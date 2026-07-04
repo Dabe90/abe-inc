@@ -12,23 +12,18 @@
   var resultEl = root.querySelector('[data-agent-demo-result]');
   var configWarn = root.querySelector('[data-agent-demo-config-warn]');
 
-  var endpoint = cfg.agentEndpoint || '';
-  var apiKey = cfg.agentApiKey || '';
-  var defaultEventId = cfg.agentDemoEventId || 'prayer-city-july-2026';
+  var endpoint = cfg.agentDemoEndpoint || '/api/demo/volunteer-agent';
+  var defaultEventId = cfg.agentDemoEventId || 'demo-serve-day-2026';
 
-  if (contextInput && !contextInput.value) {
-    contextInput.placeholder = defaultEventId;
-  }
-
-  if (!endpoint || !apiKey) {
-    if (configWarn) configWarn.classList.remove('hidden');
+  if (contextInput) {
+    contextInput.value = defaultEventId;
   }
 
   var loadingSteps = [
-    { label: 'Connecting to Volunteer Coordinator Agent', detail: 'Firebase Cloud Functions · Genkit' },
-    { label: 'Loading event roster', detail: 'getEventRoster tool' },
-    { label: 'Proposing shift matches', detail: 'proposeVolunteerMatches tool' },
-    { label: 'Queueing human review', detail: 'queueCoordinatorAction tool' },
+    { label: 'Starting Genkit demo agent', detail: 'Gemini 2.5 Flash · sample data only' },
+    { label: 'Loading demo roster', detail: 'demoGetEventRoster (fictional volunteers)' },
+    { label: 'Proposing shift matches', detail: 'demoProposeVolunteerMatches tool' },
+    { label: 'Queueing human review', detail: 'demoQueueCoordinatorAction — nothing sends automatically' },
   ];
 
   function escapeHtml(str) {
@@ -42,11 +37,12 @@
   function setRunning(running) {
     if (runBtn) {
       runBtn.disabled = running;
-      runBtn.textContent = running ? 'Agent running…' : 'Run Agent';
+      runBtn.textContent = running ? 'Demo running…' : 'Run Demo Agent';
       runBtn.setAttribute('aria-busy', running ? 'true' : 'false');
     }
     if (form) {
       form.querySelectorAll('input, textarea').forEach(function (el) {
+        if (el.hasAttribute('readonly')) return;
         el.disabled = running;
       });
     }
@@ -110,8 +106,9 @@
 
     streamEl.innerHTML =
       '<div class="agent-demo__stream-header">' +
+      '<span class="agent-demo__mode-badge">Demo mode</span>' +
       '<span class="agent-demo__live-dot agent-demo__live-dot--pulse" aria-hidden="true"></span>' +
-      '<span>Live reasoning trace</span></div>';
+      '<span>Reasoning trace</span></div>';
 
     var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var delay = reducedMotion ? 0 : 280;
@@ -151,13 +148,34 @@
     return s.length > max ? s.slice(0, max) + '…' : s;
   }
 
+  function renderFinalActions(actions) {
+    if (!actions || !actions.length) {
+      return '<p class="agent-demo__result-summary text-slate-400">No queued actions returned.</p>';
+    }
+    return (
+      '<div class="agent-demo__actions-list">' +
+      actions
+        .map(function (action) {
+          return (
+            '<div class="agent-demo__action-item">' +
+            '<strong>' +
+            escapeHtml(action.actionType || 'action') +
+            '</strong> · ' +
+            escapeHtml(action.summary || '') +
+            '</div>'
+          );
+        })
+        .join('') +
+      '</div>'
+    );
+  }
+
   function renderResult(data) {
     if (!resultEl) return;
     var evalScore = data.evaluation ? Math.round(data.evaluation.score * 100) : null;
-    var cost = data.usage && data.usage.estimatedCostUsd != null ? data.usage.estimatedCostUsd.toFixed(4) : '—';
-    var dayCost =
-      data.usageSummary && data.usageSummary.dayCostUsd != null
-        ? data.usageSummary.dayCostUsd.toFixed(4)
+    var cost =
+      data.usage && data.usage.estimatedCostUsd != null
+        ? data.usage.estimatedCostUsd.toFixed(4)
         : '—';
 
     resultEl.innerHTML =
@@ -167,6 +185,10 @@
       '<p class="agent-demo__result-summary">' +
       escapeHtml(data.result && data.result.summary ? data.result.summary : 'No summary returned.') +
       '</p>' +
+      '</article>' +
+      '<article class="agent-demo__result-card agent-demo__result-card--primary">' +
+      '<p class="agent-demo__result-label">Queued for human review</p>' +
+      renderFinalActions(data.finalActions) +
       '</article>' +
       '<article class="agent-demo__result-card">' +
       '<p class="agent-demo__result-label">Phase</p>' +
@@ -190,12 +212,6 @@
       '<p class="agent-demo__result-label">Est. cost</p>' +
       '<p class="agent-demo__result-value">$' +
       escapeHtml(cost) +
-      '</p>' +
-      '</article>' +
-      '<article class="agent-demo__result-card">' +
-      '<p class="agent-demo__result-label">Today (client)</p>' +
-      '<p class="agent-demo__result-value">$' +
-      escapeHtml(dayCost) +
       '</p>' +
       '</article>' +
       '<article class="agent-demo__result-card">' +
@@ -236,24 +252,15 @@
           return;
         }
         advanceLoadingStep(step);
-      }, 2200);
+      }, 1800);
     });
   }
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    if (!endpoint) {
-      showError('Demo endpoint not configured in js/config.js (agentEndpoint).');
-      return;
-    }
-    if (!apiKey) {
-      showError('Demo API key not configured. Add agentApiKey to js/config.js to run the live agent.');
-      return;
-    }
-
     var goal = (goalInput && goalInput.value.trim()) || '';
-    var eventId = (contextInput && contextInput.value.trim()) || defaultEventId;
+    var eventId = defaultEventId;
 
     if (goal.length < 10) {
       showError('Describe your goal in at least 10 characters.');
@@ -262,21 +269,19 @@
 
     clearOutput();
     setRunning(true);
-    if (statusEl) statusEl.textContent = 'Running production agent — first request may take up to 60 seconds…';
+    if (statusEl) {
+      statusEl.textContent =
+        'Running Genkit demo agent — sample data only, first request may take ~30 seconds…';
+    }
 
     var fetchDone = false;
     var loadingDone = runLoadingAnimation(function () {
       return fetchDone;
     });
 
-    var headers = {
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + apiKey,
-    };
-
     var fetchPromise = fetch(endpoint, {
       method: 'POST',
-      headers: headers,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ goal: goal, eventId: eventId }),
     })
       .then(function (res) {
@@ -285,7 +290,7 @@
           try {
             body = text ? JSON.parse(text) : {};
           } catch (parseErr) {
-            throw new Error('Invalid response from agent endpoint.');
+            throw new Error('Invalid response from demo API.');
           }
           return { ok: res.ok, status: res.status, body: body };
         });
@@ -303,15 +308,27 @@
             'Request failed with status ' + response.status;
           throw new Error(errMsg);
         }
-        if (statusEl) statusEl.textContent = 'Agent completed — streaming reasoning trace…';
+        if (statusEl) {
+          statusEl.textContent =
+            (response.body.disclaimer || 'Demo mode') + ' — streaming reasoning trace…';
+        }
         renderTraceSteps(response.body.reasoningTrace || [], function () {
           renderResult(response.body);
-          if (statusEl) statusEl.textContent = 'Done. Matches queued for human review in production.';
+          if (statusEl) {
+            statusEl.textContent =
+              'Done. Queued actions require human approval — demo mode, not real client data.';
+          }
           setRunning(false);
         });
       })
       .catch(function (err) {
-        showError(err.message || 'Agent request failed.');
+        var msg = err.message || 'Demo agent request failed.';
+        if (/failed to fetch|network/i.test(msg)) {
+          msg =
+            'Demo API unavailable. On production this runs at /api/demo/volunteer-agent — locally use npm run next:dev.';
+          if (configWarn) configWarn.classList.remove('hidden');
+        }
+        showError(msg);
         setRunning(false);
       });
   });

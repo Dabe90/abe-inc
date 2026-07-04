@@ -14,5 +14,5 @@
     "noEmit": true
   },
   "include": ["genkit.config.ts", "src/**/*.ts"],
-  "exclude": ["node_modules", "dist", "app", "functions"]
+  "exclude": ["node_modules", "dist", "app", "api", "functions"]
 }
