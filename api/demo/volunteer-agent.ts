@@ -1,10 +1,10 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import {
-  runDemoVolunteerAgent,
-  DemoRateLimitError,
-  DemoValidationError,
-  DEMO_DISCLAIMER,
-} from '../../src/demo/run-demo-volunteer-agent.js';
+
+export const config = {
+  maxDuration: 60,
+};
+
+const DEMO_DISCLAIMER = 'Demo mode — not real client data';
 
 function clientIp(req: VercelRequest): string {
   const forwarded = req.headers['x-forwarded-for'];
@@ -13,13 +13,17 @@ function clientIp(req: VercelRequest): string {
   return req.socket?.remoteAddress || 'unknown';
 }
 
-/** Vercel serverless entry — works alongside static HTML on abestack.com */
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+function setDemoHeaders(res: VercelResponse): void {
   res.setHeader('Access-Control-Allow-Origin', 'https://abestack.com');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   res.setHeader('X-Demo-Mode', 'true');
   res.setHeader('X-Demo-Disclaimer', DEMO_DISCLAIMER);
+}
+
+/** Vercel serverless entry — works alongside static HTML on abestack.com */
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  setDemoHeaders(res);
 
   if (req.method === 'OPTIONS') {
     res.status(204).end();
@@ -43,16 +47,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
+    const { runDemoVolunteerAgent, DemoRateLimitError, DemoValidationError } = await import(
+      '../../src/demo/run-demo-volunteer-agent.js'
+    );
     const result = await runDemoVolunteerAgent(req.body, { ip: clientIp(req) });
     res.setHeader('Cache-Control', 'no-store');
     res.status(200).json(result);
   } catch (err) {
-    if (err instanceof DemoValidationError) {
-      res.status(400).json({ ok: false, error: err.message, demoMode: true });
+    const name = err instanceof Error ? err.name : '';
+    if (name === 'DemoValidationError') {
+      res.status(400).json({ ok: false, error: (err as Error).message, demoMode: true });
       return;
     }
-    if (err instanceof DemoRateLimitError) {
-      res.status(429).json({ ok: false, error: err.message, demoMode: true });
+    if (name === 'DemoRateLimitError') {
+      res.status(429).json({ ok: false, error: (err as Error).message, demoMode: true });
       return;
     }
 

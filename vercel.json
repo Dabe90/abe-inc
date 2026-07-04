@@ -3,7 +3,8 @@
   "trailingSlash": false,
   "functions": {
     "api/demo/volunteer-agent.ts": {
-      "maxDuration": 60
+      "maxDuration": 60,
+      "memory": 1024
     }
   }
 }
