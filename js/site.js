@@ -44,13 +44,17 @@
 
   const calendlyUrl = cfg.calendlyUrl;
   if (calendlyUrl && !calendlyUrl.includes('REPLACE')) {
+    const bookCallUrl = siteBase + '/contact.html#book-call';
+
     document.querySelectorAll('[data-calendly-inline]').forEach((el) => {
       el.setAttribute('data-url', calendlyUrl);
     });
     document.querySelectorAll('[data-calendly-popup]').forEach((el) => {
+      el.href = bookCallUrl;
       el.addEventListener('click', (e) => {
+        if (!window.Calendly) return;
         e.preventDefault();
-        if (window.Calendly) Calendly.initPopupWidget({ url: calendlyUrl });
+        Calendly.initPopupWidget({ url: calendlyUrl });
       });
     });
     const initCalendly = () => {
