@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
-  <title>Volunteer Matching Agent — Custom AI Agents Firebase | Abe Stack</title>
-  <meta name="description" content="Agentic AI case study: custom AI agents on Firebase for nonprofit volunteer shift matching — 70% less manual work, Genkit tool-calling, human approval. Shipped Q2 2025." />
+  <title>Daily Digest Intelligence Agent — Custom AI Agents Firebase | Abe Stack</title>
+  <meta name="description" content="Production Genkit agent for nonprofit volunteer ops: reads daily digests, analyzes 54+ volunteers with Gemini, suggests coordinator actions, logs to Firestore — human approval before send." />
   <link rel="canonical" href="https://abestack.com/projects/volunteer-matching-agent.html" />
-  <meta property="og:title" content="Volunteer Matching Agent — Abe Stack" />
-  <meta property="og:description" content="Nonprofit AI agent for shift matching with human-in-the-loop approval — 70% reduction in manual coordination." />
+  <meta property="og:title" content="Daily Digest Intelligence Agent — Abe Stack" />
+  <meta property="og:description" content="Genkit + Firebase agent that analyzes volunteer digests, flags staffing gaps, and queues safe reminders — dry-run first, full Firestore audit trail." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://abestack.com/projects/volunteer-matching-agent.html" />
-  <meta property="og:image" content="https://abestack.com/images/screenshots/prayer-city/signup.png" />
+  <meta property="og:image" content="https://abestack.com/images/screenshots/digest-intelligence/dashboard.png" />
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","@id":"https://abestack.com/projects/volunteer-matching-agent.html","headline":"Volunteer Matching Agent — Custom AI Agents on Firebase","description":"Nonprofit agentic AI for volunteer shift matching with human-in-the-loop approval.","url":"https://abestack.com/projects/volunteer-matching-agent.html","datePublished":"2025-05-01","author":{"@type":"Organization","name":"Abe Stack"},"publisher":{"@type":"Organization","name":"Abe Stack"},"about":["Agentic AI development","Custom AI agents Firebase","Volunteer matching"],"keywords":"agentic AI, Firebase, Genkit, volunteer matching"}
+  {"@context":"https://schema.org","@type":"Article","@id":"https://abestack.com/projects/volunteer-matching-agent.html","headline":"Daily Digest Intelligence Agent — Custom AI Agents on Firebase","description":"Production Genkit agent for volunteer digest analysis with human-in-the-loop approval and Firestore audit logging.","url":"https://abestack.com/projects/volunteer-matching-agent.html","datePublished":"2025-07-01","author":{"@type":"Organization","name":"Abe Stack"},"publisher":{"@type":"Organization","name":"Abe Stack"},"about":["Agentic AI development","Custom AI agents Firebase","Volunteer operations"],"keywords":"agentic AI, Firebase, Genkit, Gemini, volunteer operations"}
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{colors:{ink:{DEFAULT:'#0f172a',muted:'#334155',soft:'#64748b'},accent:{DEFAULT:'#2563eb'}}}}};</script>
@@ -27,49 +27,79 @@
     </div>
   </header>
   <article class="max-w-3xl mx-auto px-4 py-12">
-    <p class="text-xs font-bold uppercase text-accent">Agentic AI · Shipped Q2 2025</p>
-    <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Volunteer Matching Agent</h1>
-    <p class="mt-4 text-ink-soft leading-relaxed">Nonprofit AI agent that reads volunteer roster data, proposes shift matches based on skills and availability, and queues digest emails — always with human approval before anything sends.</p>
-    <p class="mt-4"><a href="https://prayercityhtx.com" class="text-accent font-semibold" target="_blank" rel="noopener">prayercityhtx.com ↗</a> · <a href="../ai-agents/" class="text-accent font-semibold">Our Agentic AI service →</a></p>
+    <p class="text-xs font-bold uppercase text-accent">Agentic AI · Shipped July 2025</p>
+    <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Daily Digest Intelligence Agent</h1>
+    <p class="mt-4 text-ink-soft leading-relaxed">Production Genkit agent on Firebase that runs after the 7am volunteer digest — reads the full roster, reasons with Gemini about gaps and mismatches, suggests coordinator actions, and logs every run to Firestore. <strong class="text-ink">dryRun</strong> and <strong class="text-ink">autoSend</strong> gates keep humans in control.</p>
+    <p class="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+      <a href="https://prayercityhtx.com/digest-intelligence-demo.html" class="text-accent font-semibold" target="_blank" rel="noopener">Live demo ↗</a>
+      <a href="https://prayercityhtx.com/digest-intelligence-ops.html" class="text-accent font-semibold" target="_blank" rel="noopener">Ops console ↗</a>
+      <a href="prayer-city.html" class="text-accent font-semibold">Prayer City platform →</a>
+      <a href="../ai-agents/" class="text-accent font-semibold">Our Agentic AI service →</a>
+    </p>
     <dl class="case-meta-bar mt-8 pt-6 border-t border-slate-200">
-      <div><dt>Shipped</dt><dd>Q2 2025</dd></div>
-      <div><dt>Duration</dt><dd>4 weeks</dd></div>
+      <div><dt>Shipped</dt><dd>July 2025</dd></div>
+      <div><dt>Duration</dt><dd>2 weeks</dd></div>
       <div><dt>Client</dt><dd>Houston World Cup Prayer City</dd></div>
     </dl>
     <div class="case-metrics">
-      <div class="metric-card"><div class="metric-card__value">70%</div><div class="metric-card__label">Less manual matching</div></div>
-      <div class="metric-card"><div class="metric-card__value">500+</div><div class="metric-card__label">Signups processed</div></div>
-      <div class="metric-card"><div class="metric-card__value">Daily</div><div class="metric-card__label">Agent-assisted digests</div></div>
-      <div class="metric-card"><div class="metric-card__value">100%</div><div class="metric-card__label">Human approval before send</div></div>
+      <div class="metric-card"><div class="metric-card__value">54</div><div class="metric-card__label">Volunteers analyzed / run</div></div>
+      <div class="metric-card"><div class="metric-card__value">5</div><div class="metric-card__label">Genkit production tools</div></div>
+      <div class="metric-card"><div class="metric-card__value">8:30</div><div class="metric-card__label">AM scheduled (after digest)</div></div>
+      <div class="metric-card"><div class="metric-card__value">0</div><div class="metric-card__label">Unsupervised sends (dry run)</div></div>
     </div>
     <figure class="mt-8">
-      <img src="../images/screenshots/prayer-city/signup.png" alt="Volunteer signup data feeding the matching agent" class="w-full rounded-xl screenshot-frame border border-slate-200" width="1440" height="900" />
-      <figcaption class="mt-2 text-xs text-ink-soft text-center">Volunteer signup flow — roster data the agent reads to propose shift matches</figcaption>
+      <img src="../images/screenshots/digest-intelligence/dashboard.png" alt="Daily Digest Intelligence Agent — pipeline, volunteer metrics, and AI summary from a production dry run" class="w-full rounded-xl screenshot-frame border border-slate-200" width="1440" height="1200" />
+      <figcaption class="mt-2 text-xs text-ink-soft text-center">Production dry run — 54 volunteers, AI summary, opportunities / mismatches / risks (July 4 serve day)</figcaption>
     </figure>
-    <section class="mt-10"><h2 class="text-xl font-bold">Problem</h2><p class="mt-2 text-ink-soft text-sm leading-relaxed">Volunteer coordinators spent hours each week matching skills and availability to open shifts manually. Spreadsheet exports and gut-feel assignments didn't scale as signups passed 500 in the first month.</p></section>
+    <section class="mt-10"><h2 class="text-xl font-bold">Problem</h2><p class="mt-2 text-ink-soft text-sm leading-relaxed">The 7am digest emails each volunteer their personal role content — but nobody was looking across the <em>whole</em> roster. Coordinators couldn't easily spot unscheduled volunteers, blocked emails with upcoming shifts, tent mismatches, or staffing gaps before doors opened.</p></section>
     <section class="mt-8"><h2 class="text-xl font-bold">Solution</h2>
-      <ul class="mt-2 text-ink-soft text-sm space-y-2 list-disc pl-5">
-        <li>Genkit-style agent reads Firestore roster and shift availability in real time</li>
-        <li>Proposes ranked shift matches with reasoning the coordinator can review</li>
-        <li>One-click approve / edit / reject before any email goes out</li>
-        <li>Daily digest drafts generated by the agent, sent via Gmail API after approval</li>
-        <li>Audit log of every agent recommendation and human decision</li>
+      <p class="mt-2 text-ink-soft text-sm leading-relaxed">An intelligence layer on top of existing Firebase + Gmail automation — not a replacement for the digest.</p>
+      <ul class="mt-3 text-ink-soft text-sm space-y-2 list-disc pl-5">
+        <li><strong class="text-ink">readDailyDigest</strong> — merges Firestore onboarding + volunteer records and today's digest preview</li>
+        <li><strong class="text-ink">analyzeDigestWithAI</strong> — Gemini finds opportunities, mismatches, and risks across the team</li>
+        <li><strong class="text-ink">suggestVolunteerActions</strong> — up to 8 structured actions with priority and <code class="text-xs bg-slate-100 px-1 rounded">autoSendSafe</code> flags</li>
+        <li><strong class="text-ink">updateVolunteerFirestore</strong> — coordinator flags and notes on volunteer records</li>
+        <li><strong class="text-ink">sendSmartNotifications</strong> — targeted Gmail via existing Apps Script bridge (only when autoSend enabled)</li>
+      </ul>
+      <p class="mt-3 text-ink-soft text-sm">Scheduled <strong class="text-ink">8:30 AM CT</strong> after digests · Callable for admins · Full audit in <code class="text-xs bg-slate-100 px-1 rounded">digest_intelligence_runs</code></p>
+    </section>
+    <section class="mt-8"><h2 class="text-xl font-bold">Results</h2><p class="mt-2 text-ink-soft text-sm leading-relaxed">On the first production dry run (July 4, 2026), the agent flagged a critical schedule discrepancy (0 reported slots vs 5 volunteers with shifts), 15 blocked emails, 14 unscheduled volunteers, and drafted tent reminders — all without sending a single email. Coordinators get a daily ops brief instead of re-reading 54 inboxes.</p></section>
+    <section class="mt-8 rounded-2xl border border-accent/20 bg-accent-soft/20 p-6 sm:p-8">
+      <p class="text-xs font-bold uppercase text-accent mb-1">Try it live</p>
+      <h2 class="text-xl font-bold">Demo &amp; ops console</h2>
+      <ul class="mt-3 text-ink-soft text-sm space-y-2 list-disc pl-5">
+        <li><a href="https://prayercityhtx.com/digest-intelligence-demo.html" class="text-accent font-semibold hover:underline" target="_blank" rel="noopener">Static demo</a> — portfolio-ready output from a real dry run</li>
+        <li><a href="https://prayercityhtx.com/digest-intelligence-ops.html" class="text-accent font-semibold hover:underline" target="_blank" rel="noopener">Ops console</a> — Firebase Auth admins trigger a fresh dry run (~2–4 min)</li>
+        <li><a href="https://console.firebase.google.com/project/bible-study-dashboard-99f2d/firestore/databases/-default-/data/~2Fdigest_intelligence_runs" class="text-accent font-semibold hover:underline" target="_blank" rel="noopener">Firestore audit log</a> — watch <code class="text-xs">status: running → completed</code></li>
       </ul>
     </section>
-    <section class="mt-8"><h2 class="text-xl font-bold">Results</h2><p class="mt-2 text-ink-soft text-sm leading-relaxed">Leadership stopped hand-matching volunteers to shifts. Coordinators review agent proposals in minutes instead of rebuilding rosters from scratch. Manual matching work dropped an estimated 70% through peak serve season — with zero unsupervised outbound emails.</p></section>
     <section class="mt-8"><h2 class="text-xl font-bold">Technology</h2>
       <div class="case-stack">
-        <span class="tech-badge">Firebase</span><span class="tech-badge">Cloud Functions</span><span class="tech-badge">Genkit</span><span class="tech-badge">Groq</span><span class="tech-badge">Firestore</span><span class="tech-badge">Gmail API</span>
+        <span class="tech-badge">Firebase Genkit</span><span class="tech-badge">Gemini</span><span class="tech-badge">Cloud Functions</span><span class="tech-badge">Firestore</span><span class="tech-badge">Firebase Auth</span><span class="tech-badge">Google Apps Script</span><span class="tech-badge">Gmail</span>
       </div>
     </section>
     <section class="mt-10"><h2 class="text-xl font-bold">Screenshots</h2>
       <div class="mt-4 space-y-8">
-        <figure><img src="../images/screenshots/prayer-city/signup.png" alt="Volunteer signup with shift picker" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" /><figcaption class="mt-2 text-xs text-ink-soft">Signup captures skills and availability the agent uses for matching</figcaption></figure>
-        <figure><img src="../images/screenshots/prayer-city/hero.png" alt="Volunteer hub dashboard" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" /><figcaption class="mt-2 text-xs text-ink-soft">Coordinator hub — review agent proposals before digests send</figcaption></figure>
+        <figure>
+          <img src="../images/screenshots/digest-intelligence/dashboard.png" alt="Agent dashboard with pipeline steps, volunteer metrics, and AI analysis summary" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" />
+          <figcaption class="mt-2 text-xs text-ink-soft">Dry-run output — summary, opportunities, mismatches, and risks</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/screenshots/digest-intelligence/suggested-actions.png" alt="Eight suggested coordinator actions with priority and autoSendSafe flags" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" />
+          <figcaption class="mt-2 text-xs text-ink-soft">Suggested actions — high-priority flags and safe tent reminders (not auto-sent in dry run)</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/screenshots/prayer-city/digest-intelligence-demo.png" alt="Prayer City digest intelligence demo page" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" />
+          <figcaption class="mt-2 text-xs text-ink-soft">Public demo page on prayercityhtx.com — for portfolio and stakeholder walkthroughs</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/screenshots/prayer-city/digest-intelligence-ops.png" alt="Admin ops console to trigger dry analysis with Firebase Auth" class="w-full rounded-xl screenshot-frame border border-slate-200" loading="lazy" />
+          <figcaption class="mt-2 text-xs text-ink-soft">Admin ops console — trigger live dry runs and link to Firestore logs</figcaption>
+        </figure>
       </div>
     </section>
-    <blockquote class="case-testimonial"><p>"Leadership stopped hand-matching volunteers to shifts — the agent drafts matches and we approve in one click. We kept full control without the spreadsheet grind."</p><footer><strong>Prayer City Leadership</strong> · Houston World Cup Prayer City</footer></blockquote>
-    <div class="mt-10 text-center rounded-2xl bg-slate-50 border border-slate-200 p-8"><p class="font-bold">Need an AI agent for your nonprofit ops?</p><a href="../ai-agents/" class="inline-flex mt-4 btn-primary">Explore Agentic AI</a></div>
+    <blockquote class="case-testimonial"><p>"The 7am digest tells each volunteer their tasks. The intelligence agent tells us what we missed — blocked emails, tent gaps, and who's not scheduled before serve day."</p><footer><strong>Prayer City Leadership</strong> · Houston World Cup Prayer City</footer></blockquote>
+    <div class="mt-10 text-center rounded-2xl bg-slate-50 border border-slate-200 p-8"><p class="font-bold">Need an AI agent on top of your ops stack?</p><a href="../ai-agents/" class="inline-flex mt-4 btn-primary">Explore Agentic AI</a></div>
   </article>
   <footer class="border-t border-slate-200 mt-12"><div class="max-w-3xl mx-auto px-4 py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-ink-soft"><p>© <span data-year></span> Abe Stack</p><p class="footer-legal mt-2"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></p><div class="flex gap-6"><a href="../projects.html" class="hover:text-accent">All work</a><a href="../contact.html" class="hover:text-accent">Contact</a></div></div></footer>
   <script src="../js/config.js"></script><script src="../js/site.js"></script>

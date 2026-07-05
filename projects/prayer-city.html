@@ -30,7 +30,7 @@
     <p class="text-xs font-bold uppercase text-accent">Nonprofit · Shipped Q1 2025</p>
     <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Houston World Cup Prayer City</h1>
     <p class="mt-4 text-ink-soft leading-relaxed">Volunteer operations platform for World Cup serve days — signup, authenticated hub, daily role digests, media gallery, and Gmail/Sheets automation that runs without manual babysitting.</p>
-    <p class="mt-4"><a href="https://prayercityhtx.com" class="text-accent font-semibold" target="_blank" rel="noopener">prayercityhtx.com ↗</a> · <a href="volunteer-matching-agent.html" class="text-accent font-semibold">AI matching agent →</a></p>
+    <p class="mt-4"><a href="https://prayercityhtx.com" class="text-accent font-semibold" target="_blank" rel="noopener">prayercityhtx.com ↗</a> · <a href="volunteer-matching-agent.html" class="text-accent font-semibold">Digest intelligence agent →</a></p>
     <dl class="case-meta-bar mt-8 pt-6 border-t border-slate-200">
       <div><dt>Shipped</dt><dd>Q1 2025</dd></div>
       <div><dt>Duration</dt><dd>6 weeks</dd></div>
@@ -60,12 +60,12 @@
     <!-- Agentic AI layer — extended portfolio detail -->
     <section class="mt-8 rounded-2xl border border-accent/20 bg-accent-soft/20 p-6 sm:p-8">
       <p class="text-xs font-bold uppercase text-accent mb-1">Agentic AI layer</p>
-      <h2 class="text-xl font-bold">Volunteer matching agent on top of the platform</h2>
-      <p class="mt-2 text-ink-soft text-sm leading-relaxed">Built on the same Firestore roster and Gmail pipelines, a Genkit agent now proposes shift matches from signup data — coordinators approve before any digest sends. Handles 500+ volunteer shifts with an estimated 70% reduction in manual matching. <a href="volunteer-matching-agent.html" class="text-accent font-semibold hover:underline">Read the matching agent case study →</a></p>
+      <h2 class="text-xl font-bold">Daily Digest Intelligence Agent</h2>
+      <p class="mt-2 text-ink-soft text-sm leading-relaxed">Built on the same Firestore roster and Gmail pipelines, a Genkit agent runs after the 7am digest — analyzes the full volunteer roster with Gemini, flags gaps and blocked emails, and logs suggested actions to Firestore. Coordinators approve before anything sends. <a href="volunteer-matching-agent.html" class="text-accent font-semibold hover:underline">Read the agent case study →</a></p>
       <ul class="mt-4 text-ink-soft text-sm space-y-2 list-disc pl-5">
-        <li>Tool-calling: getEventRoster, proposeMatches, queueDigestEmail</li>
-        <li>Human-in-the-loop approval — zero unsupervised outbound email</li>
-        <li>Structured audit log of every agent recommendation</li>
+        <li>Tools: readDailyDigest, analyzeDigestWithAI, suggestVolunteerActions, updateVolunteerFirestore, sendSmartNotifications</li>
+        <li>Human-in-the-loop — dryRun and autoSend gates; zero unsupervised outbound email</li>
+        <li>Structured audit log in <code class="text-xs bg-white/80 px-1 rounded">digest_intelligence_runs</code></li>
       </ul>
     </section>
     <section class="mt-8"><h2 class="text-xl font-bold">Technology</h2>
