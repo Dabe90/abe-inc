@@ -1109,16 +1109,70 @@ body {
 }
 
 .logo-strip__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
   font-size: 0.875rem;
   font-weight: 700;
   color: var(--ink-muted);
-  opacity: 0.75;
+  opacity: 0.85;
   transition: opacity 0.2s ease, color 0.2s ease;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid transparent;
 }
 
 .logo-strip__item:hover {
   opacity: 1;
   color: var(--accent);
+  border-color: var(--border);
+  background: var(--surface);
+}
+
+.logo-strip__name {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.logo-strip__tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+/* Enterprise positioning blocks */
+.enterprise-pillar-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .enterprise-pillar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .enterprise-pillar-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.enterprise-pillar {
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 1.25rem;
+}
+
+.enterprise-pillar h2,
+.enterprise-pillar h3 {
+  font-size: 1rem;
 }
 
 /* ——— Article CTA ——— */

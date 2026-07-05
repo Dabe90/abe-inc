@@ -265,7 +265,7 @@ window.ABE_PROJECTS = [
     shippedLabel: 'Shipped June 2026',
     shippedISO: '2026-06-28',
     duration: '2 weeks',
-    featured: true,
+    featured: false,
     sortOrder: 11,
     url: 'https://abestack.com/contact.html',
     image: 'images/og-image.png',

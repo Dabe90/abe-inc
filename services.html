@@ -54,8 +54,8 @@
     <section class="page-hero">
       <div class="max-w-6xl mx-auto px-4 py-14 sm:py-16">
         <p class="section-label mb-3">Services</p>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight max-w-3xl">Everything from homepage to production ops.</h1>
-        <p class="mt-4 text-ink-soft max-w-2xl leading-relaxed text-base">Custom software, cloud infrastructure, and automation — plus the launch details most studios skip. <a href="pricing.html" class="text-accent font-bold hover:underline">View pricing →</a></p>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight max-w-3xl">Production platforms, agentic AI, and governed automation.</h1>
+        <p class="mt-4 text-ink-soft max-w-2xl leading-relaxed text-base">Custom software, cloud infrastructure, and multi-workflow agent systems — with staging gates, audit trails, and handoff documentation enterprise teams expect. <a href="pricing.html" class="text-accent font-bold hover:underline">View pricing →</a> · <a href="security.html" class="text-accent font-bold hover:underline">Security →</a></p>
       </div>
     </section>
     <div class="max-w-6xl mx-auto px-4 py-16 w-full">
@@ -115,9 +115,21 @@
     </div>
 
     <section class="mt-16 rounded-2xl bg-slate-50 border border-slate-200 p-8">
+      <h2 class="text-xl font-bold">Governance &amp; security</h2>
+      <p class="mt-2 text-sm text-ink-soft max-w-3xl">Agent builds include human approval queues, Firestore audit logs, staging → production deploy, and secrets in environment variables — not hardcoded keys. We complete security questionnaires and provide architecture docs for procurement review.</p>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
+        <div><p class="font-semibold">Human-in-the-loop</p><p class="mt-1 text-ink-soft">Outbound actions queue for coordinator approval before send or publish.</p></div>
+        <div><p class="font-semibold">Audit trails</p><p class="mt-1 text-ink-soft">Session traces, tool calls, and eval results logged to Firestore.</p></div>
+        <div><p class="font-semibold">Owned infrastructure</p><p class="mt-1 text-ink-soft">Your Firebase/GCP project, GitHub repo, and deployment pipeline.</p></div>
+        <div><p class="font-semibold">Change control</p><p class="mt-1 text-ink-soft">Staging previews, versioned prompts, and documented runbooks.</p></div>
+      </div>
+      <p class="mt-6 text-sm"><a href="security.html" class="text-accent font-bold hover:underline">Full security &amp; data handling →</a></p>
+    </section>
+
+    <section class="mt-16 rounded-2xl bg-slate-50 border border-slate-200 p-8">
       <h2 class="text-xl font-bold">How we deliver</h2>
       <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
-        <div><p class="font-semibold">Daily Loom updates</p><p class="mt-1 text-ink-soft">See real progress every build day — no black box.</p></div>
+        <div><p class="font-semibold">Structured updates</p><p class="mt-1 text-ink-soft">Weekly written status and shared project board — async Loom on request.</p></div>
         <div><p class="font-semibold">Staging previews</p><p class="mt-1 text-ink-soft">Review on a live URL before DNS cutover.</p></div>
         <div><p class="font-semibold">Fixed timeline</p><p class="mt-1 text-ink-soft">Scope and delivery date agreed before code starts.</p></div>
         <div><p class="font-semibold">Full handoff</p><p class="mt-1 text-ink-soft">GitHub repo, env docs, and redeploy instructions.</p></div>
@@ -147,9 +159,14 @@
   </main>
 
   <footer class="site-footer mt-auto">
-    <div class="max-w-6xl mx-auto px-4 py-8 text-center text-sm">
+    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm">
       <p class="text-slate-500">© <span data-year></span> Abe Stack · abestack.com</p>
-      <p class="footer-legal mt-2"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></p>
+      <div class="flex flex-wrap gap-4 sm:gap-6">
+        <a href="security.html">Security</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
     </div>
   </footer>
   <script src="js/config.js"></script>
