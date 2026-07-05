@@ -285,12 +285,15 @@
       var decoder = new TextDecoder();
       var buffer = '';
       var completeData = null;
+      var traceSteps = [];
 
       function pump() {
         return reader.read().then(function (chunk) {
           if (chunk.done) {
-            if (completeData) finishSuccess(completeData);
-            else throw new Error('Demo stream ended without a result.');
+            renderTraceStepsAnimated(traceSteps, function () {
+              if (completeData) finishSuccess(completeData);
+              else throw new Error('Demo stream ended without a result.');
+            });
             return;
           }
           buffer += decoder.decode(chunk.value, { stream: true });
@@ -299,7 +302,7 @@
           lines.forEach(function (line) {
             if (!line.trim()) return;
             var msg = parseJsonResponse(line);
-            if (msg.type === 'trace' && msg.step) appendTraceStep(msg.step);
+            if (msg.type === 'trace' && msg.step) traceSteps.push(msg.step);
             if (msg.type === 'complete' && msg.data) completeData = msg.data;
           });
           return pump();

@@ -26,7 +26,6 @@ const DEMO_ROSTER = {
 
 const buckets = new Map();
 const HOURLY_LIMIT = Number(process.env.DEMO_AGENT_RATE_LIMIT || 12);
-const STREAM_STEP_MS = Number(process.env.DEMO_STREAM_STEP_MS || 320);
 
 function clientIp(req) {
   const forwarded = req.headers['x-forwarded-for'];
@@ -55,8 +54,9 @@ function assertRateLimit(ip) {
 
 function wantsStream(req, body) {
   if (body && body.stream === true) return true;
-  const q = req.query && (req.query.stream || req.query['stream']);
-  return q === '1' || q === 'true';
+  const q = req.query || {};
+  const val = q.stream;
+  return val === '1' || val === 'true';
 }
 
 /** Parse POST body on Vercel (pre-parsed object or raw string). */
@@ -228,21 +228,19 @@ function delay(ms) {
   });
 }
 
-async function streamDemoResponse(res, body, ip) {
+function streamDemoResponse(res, body, ip) {
   const result = runDemo(body, ip);
   res.setHeader('Content-Type', 'application/x-ndjson; charset=utf-8');
   res.setHeader('Cache-Control', 'no-store');
-  res.setHeader('Transfer-Encoding', 'chunked');
 
   for (var i = 0; i < result.reasoningTrace.length; i++) {
     res.write(JSON.stringify({ type: 'trace', step: result.reasoningTrace[i] }) + '\n');
-    await delay(STREAM_STEP_MS);
   }
   res.write(JSON.stringify({ type: 'complete', data: result }) + '\n');
   res.end();
 }
 
-module.exports = async function handler(req, res) {
+module.exports = function handler(req, res) {
   const origin = req.headers.origin || '';
   setDemoHeaders(res, origin);
 
@@ -274,7 +272,7 @@ module.exports = async function handler(req, res) {
     const ip = clientIp(req);
 
     if (wantsStream(req, body)) {
-      await streamDemoResponse(res, body, ip);
+      streamDemoResponse(res, body, ip);
       return;
     }
 
