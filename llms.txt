@@ -19,9 +19,9 @@
 Agentic AI & intelligent automation — multi-LLM agents, content variant pipelines, queue workers, human-in-the-loop approval. Case study: https://abestack.com/projects/agentic-publishing.html
 
 ## Portfolio (12 case studies)
-- Prayer City volunteer platform: https://abestack.com/projects/prayer-city.html (Shipped Q1 2025)
-- Volunteer Matching Agent: https://abestack.com/projects/volunteer-matching-agent.html (Shipped Q2 2025)
-- Prayer City Social (10-platform AI publishing): https://abestack.com/projects/prayer-city-social.html (Shipped Q4 2025)
+- Prayer City volunteer platform: https://abestack.com/projects/prayer-city.html (Shipped Feb 2026)
+- Daily Digest Intelligence Agent: https://abestack.com/projects/volunteer-matching-agent.html (Shipped July 2026)
+- Prayer City Social (10-platform AI publishing): https://abestack.com/projects/prayer-city-social.html (Shipped Aug 2026)
 - Coordinator Operations Agent: https://abestack.com/projects/coordinator-ops-agent.html (Shipped June 2026)
 - Inquiry Triage Pipeline: https://abestack.com/projects/inquiry-triage-pipeline.html (Shipped Q3 2026)
 - Agentic publishing layer: https://abestack.com/projects/agentic-publishing.html
