@@ -1,1 +1,2 @@
-api/volunteer-agent-demo.js text eol=lf
+api/**/*.js text eol=lf encoding=utf-8
+*.js text eol=lf
