@@ -102,6 +102,14 @@
     });
   }
 
+  const linkedinUrl = cfg.linkedinCompanyUrl;
+  if (linkedinUrl) {
+    document.querySelectorAll('[data-linkedin-link]').forEach((el) => {
+      el.href = linkedinUrl;
+      el.classList.remove('hidden');
+    });
+  }
+
   var params = new URLSearchParams(window.location.search);
   var intent = params.get('intent');
   if (intent === 'ai-audit' || intent === 'enterprise') {

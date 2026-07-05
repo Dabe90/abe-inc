@@ -7,8 +7,10 @@ window.ABE_INC = {
   loomEmbedUrl: 'https://www.loom.com/embed/80c8b1f4a03343ab8e65afe6e0aee615',
   // Agent dry-run walkthrough (Daily Digest Intelligence Agent)
   agentLoomEmbedUrl: 'https://www.loom.com/embed/c4094d94670c42c3af172944a5dfddb7',
-  // Clutch: create profile at clutch.co → paste profile URL when ready
+  // Clutch: create profile at clutch.co → paste public profile URL below (shows in footer when set)
   clutchProfileUrl: '',
+  // LinkedIn: company page URL (e.g. https://www.linkedin.com/company/abe-stack) — shows in footer when set
+  linkedinCompanyUrl: '',
   siteUrl: 'https://abestack.com',
   formEndpoint: 'https://us-central1-gen-lang-client-0550945038.cloudfunctions.net/submitInquiry',
   // Safe public demo — Next.js / Vercel API, sample data only (no API key)
