@@ -80,12 +80,16 @@
   }
 
   const loomUrl = cfg.loomEmbedUrl;
-  if (loomUrl) {
+  const agentLoomUrl = cfg.agentLoomEmbedUrl || loomUrl;
+  if (loomUrl || agentLoomUrl) {
     document.querySelectorAll('[data-loom-embed]').forEach((el) => {
+      const variant = el.getAttribute('data-loom-embed');
+      const url = variant === 'agent' ? agentLoomUrl : loomUrl;
+      if (!url) return;
       el.innerHTML =
         '<div class="relative w-full" style="padding-bottom:56.25%;height:0;">' +
-        '<iframe src="' + loomUrl + '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen ' +
-        'class="absolute inset-0 w-full h-full rounded-xl" title="Project walkthrough"></iframe></div>';
+        '<iframe src="' + url + '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen ' +
+        'class="absolute inset-0 w-full h-full rounded-xl" title="Agent workflow walkthrough"></iframe></div>';
       el.classList.remove('video-placeholder');
     });
   }

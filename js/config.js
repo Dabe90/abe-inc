@@ -5,6 +5,8 @@ window.ABE_INC = {
   calendlyUrl: 'https://calendly.com/hello-abestack/discovery-call',
   // Loom: record a 60–90s walkthrough → Share → Embed → paste embed URL below
   loomEmbedUrl: 'https://www.loom.com/embed/80c8b1f4a03343ab8e65afe6e0aee615',
+  // Agent dry-run walkthrough (Daily Digest Intelligence Agent)
+  agentLoomEmbedUrl: 'https://www.loom.com/embed/c4094d94670c42c3af172944a5dfddb7',
   // Clutch: create profile at clutch.co → paste profile URL when ready
   clutchProfileUrl: '',
   siteUrl: 'https://abestack.com',

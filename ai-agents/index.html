@@ -248,8 +248,16 @@
       <div class="max-w-6xl mx-auto px-4">
         <p class="section-label mb-3">Agents in production</p>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Screenshots from shipped agent workflows</h2>
-        <p class="mt-4 text-sm text-ink-soft max-w-2xl">Real interfaces from Prayer City ops and multi-platform publishing — not mockups. Replace with your own screenshots as you customize metrics.</p>
+        <p class="mt-4 text-sm text-ink-soft max-w-2xl">Real agent consoles from Prayer City ops — digest intelligence dry runs, volunteer matching, and multi-platform publishing.</p>
         <div class="agent-gallery mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <figure class="agent-gallery__item sm:col-span-2 lg:col-span-1">
+            <img src="../images/screenshots/digest-intelligence/dashboard.png" alt="Daily Digest Intelligence Agent dry run — pipeline, metrics, and AI analysis summary" class="w-full rounded-xl screenshot-frame border border-slate-200 aspect-video object-cover object-top" loading="lazy" width="640" height="400" />
+            <figcaption class="mt-2 text-xs text-ink-soft"><strong class="text-ink">Daily Digest Intelligence Agent</strong> · Genkit + Firebase · dry run (no emails sent)</figcaption>
+          </figure>
+          <figure class="agent-gallery__item">
+            <img src="../images/screenshots/digest-intelligence/suggested-actions.png" alt="Agent-suggested actions with priority flags and human approval gates" class="w-full rounded-xl screenshot-frame border border-slate-200 aspect-video object-cover object-top" loading="lazy" width="640" height="400" />
+            <figcaption class="mt-2 text-xs text-ink-soft">Suggested actions — FLAG_MISMATCH, NOTIFY_ORGANIZER, ASSIGN_TENT_REMINDER with approval gates</figcaption>
+          </figure>
           <figure class="agent-gallery__item">
             <img src="../images/screenshots/prayer-city/signup.png" alt="Volunteer signup data feeding the matching agent roster tool" class="w-full rounded-xl screenshot-frame border border-slate-200 aspect-video object-cover object-top" loading="lazy" width="640" height="400" />
             <figcaption class="mt-2 text-xs text-ink-soft"><a href="../projects/volunteer-matching-agent.html" class="text-accent font-semibold hover:underline">Volunteer Matching Agent</a> · 70% less manual matching</figcaption>
@@ -271,17 +279,17 @@
         <div class="grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <p class="section-label mb-3">See it in action</p>
-            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Production agents, not slideware.</h2>
-            <p class="mt-4 text-sm text-ink-soft leading-relaxed">Walk through Prayer City Social and our agentic publishing layer — real software serving real users across ten social platforms.</p>
-            <p class="mt-4"><a href="../projects/agentic-publishing.html" class="text-accent font-bold text-sm hover:underline">Read the Agentic Publishing case study →</a></p>
+            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Agent dry run — Daily Digest Intelligence.</h2>
+            <p class="mt-4 text-sm text-ink-soft leading-relaxed">Watch a real dry run: the agent reads the volunteer roster, runs Gemini analysis, surfaces mismatches and risks, and queues suggested actions — <strong class="text-ink">dryRun: true</strong>, no emails sent until a coordinator approves.</p>
+            <p class="mt-4"><a href="../projects/prayer-city-automation.html" class="text-accent font-bold text-sm hover:underline">Prayer City automation case study →</a></p>
           </div>
-          <div data-loom-embed class="video-placeholder rounded-2xl overflow-hidden min-h-[240px] border border-slate-200 shadow-md">
+          <div data-loom-embed="agent" class="video-placeholder rounded-2xl overflow-hidden min-h-[240px] border border-slate-200 shadow-md">
             <div class="demo-placeholder min-h-[280px] rounded-2xl">
               <div class="demo-placeholder__icon" aria-hidden="true">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"/></svg>
               </div>
-              <p class="demo-placeholder__label">Agent workflow walkthrough</p>
-              <p class="demo-placeholder__hint">Loom loads when configured — or <a href="#live-demo" class="text-accent font-semibold">try the live demo above ↑</a></p>
+              <p class="demo-placeholder__label">Agent dry-run walkthrough</p>
+              <p class="demo-placeholder__hint">Loading Loom… or <a href="#live-demo" class="text-accent font-semibold">try the live demo above ↑</a></p>
             </div>
           </div>
         </div>
