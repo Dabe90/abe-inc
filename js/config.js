@@ -13,5 +13,6 @@ window.ABE_INC = {
   formEndpoint: 'https://us-central1-gen-lang-client-0550945038.cloudfunctions.net/submitInquiry',
   // Safe public demo — Next.js / Vercel API, sample data only (no API key)
   agentDemoEndpoint: '/api/volunteer-agent-demo',
+  agentDemoStream: true,
   agentDemoEventId: 'demo-serve-day-2026',
 };

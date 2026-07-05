@@ -57,9 +57,10 @@ export async function GET() {
   return NextResponse.json({
     ok: true,
     demoMode: true,
-    disclaimer: 'Demo mode — not real client data',
-      endpoint: '/api/volunteer-agent-demo',
+    disclaimer: 'Demo mode — fictional data only',
+    endpoint: '/api/volunteer-agent-demo',
     method: 'POST',
-    body: { goal: 'string (min 10 chars)', eventId: 'optional — ignored, uses demo data' },
+    stream: 'Add ?stream=1 or body.stream:true for NDJSON reasoning steps',
+    body: { goal: 'string (min 10 chars)', eventId: 'optional — uses demo data' },
   });
 }

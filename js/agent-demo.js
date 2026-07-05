@@ -1,3 +1,7 @@
+/**
+ * Volunteer Coordinator Agent — interactive demo UI for /ai-agents/
+ * Calls /api/volunteer-agent-demo with NDJSON streaming (production-safe simulator).
+ */
 (function () {
   var cfg = window.ABE_INC || {};
   var root = document.getElementById('agent-demo');
@@ -12,19 +16,13 @@
   var resultEl = root.querySelector('[data-agent-demo-result]');
   var configWarn = root.querySelector('[data-agent-demo-config-warn]');
 
-  var endpoint = cfg.agentDemoEndpoint || '/api/demo/volunteer-agent';
+  var endpoint = cfg.agentDemoEndpoint || '/api/volunteer-agent-demo';
+  var useStream = cfg.agentDemoStream !== false;
   var defaultEventId = cfg.agentDemoEventId || 'demo-serve-day-2026';
 
   if (contextInput) {
     contextInput.value = defaultEventId;
   }
-
-  var loadingSteps = [
-    { label: 'Starting Genkit demo agent', detail: 'Gemini 2.5 Flash · sample data only' },
-    { label: 'Loading demo roster', detail: 'demoGetEventRoster (fictional volunteers)' },
-    { label: 'Proposing shift matches', detail: 'demoProposeVolunteerMatches tool' },
-    { label: 'Queueing human review', detail: 'demoQueueCoordinatorAction — nothing sends automatically' },
-  ];
 
   function escapeHtml(str) {
     return String(str)
@@ -37,7 +35,7 @@
   function setRunning(running) {
     if (runBtn) {
       runBtn.disabled = running;
-      runBtn.textContent = running ? 'Demo running…' : 'Run Demo Agent';
+      runBtn.textContent = running ? 'Agent running…' : 'Run Demo Agent';
       runBtn.setAttribute('aria-busy', running ? 'true' : 'false');
     }
     if (form) {
@@ -55,40 +53,16 @@
       resultEl.classList.add('hidden');
     }
     if (statusEl) statusEl.textContent = '';
+    if (configWarn) configWarn.classList.add('hidden');
   }
 
-  function renderLoadingStream() {
+  function initStreamPanel() {
     if (!streamEl) return;
     streamEl.innerHTML =
       '<div class="agent-demo__stream-header">' +
-      '<span class="agent-demo__live-dot" aria-hidden="true"></span>' +
-      '<span>Agent reasoning trace</span>' +
-      '</div>' +
-      loadingSteps
-        .map(function (step, i) {
-          return (
-            '<div class="agent-demo__step" data-loading-step="' +
-            i +
-            '">' +
-            '<div class="agent-demo__step-icon" aria-hidden="true">○</div>' +
-            '<div><p class="agent-demo__step-title">' +
-            escapeHtml(step.label) +
-            '</p>' +
-            '<p class="agent-demo__step-detail">' +
-            escapeHtml(step.detail) +
-            '</p></div></div>'
-          );
-        })
-        .join('');
-  }
-
-  function advanceLoadingStep(index) {
-    if (!streamEl) return;
-    streamEl.querySelectorAll('[data-loading-step]').forEach(function (el, i) {
-      el.classList.remove('agent-demo__step--active', 'agent-demo__step--done');
-      if (i < index) el.classList.add('agent-demo__step--done');
-      if (i === index) el.classList.add('agent-demo__step--active');
-    });
+      '<span class="agent-demo__mode-badge">Demo mode</span>' +
+      '<span class="agent-demo__live-dot agent-demo__live-dot--pulse" aria-hidden="true"></span>' +
+      '<span>Reasoning trace</span></div>';
   }
 
   function stepIcon(type) {
@@ -98,54 +72,55 @@
     return '•';
   }
 
-  function renderTraceSteps(trace, onComplete) {
+  function truncate(str, max) {
+    var s = String(str || '');
+    return s.length > max ? s.slice(0, max) + '…' : s;
+  }
+
+  function appendTraceStep(step) {
+    if (!streamEl) return;
+    var el = document.createElement('div');
+    el.className = 'agent-demo__step agent-demo__step--reveal agent-demo__step--done';
+    el.innerHTML =
+      '<div class="agent-demo__step-icon agent-demo__step-icon--' +
+      escapeHtml(step.type) +
+      '" aria-hidden="true">' +
+      stepIcon(step.type) +
+      '</div>' +
+      '<div><p class="agent-demo__step-title">' +
+      (step.toolName ? escapeHtml(step.toolName) : escapeHtml(step.type)) +
+      '</p>' +
+      '<p class="agent-demo__step-detail">' +
+      escapeHtml(truncate(step.content, 280)) +
+      '</p></div>';
+    streamEl.appendChild(el);
+    streamEl.scrollTop = streamEl.scrollHeight;
+  }
+
+  function renderTraceStepsAnimated(trace, onComplete) {
     if (!streamEl || !trace || !trace.length) {
       if (onComplete) onComplete();
       return;
     }
-
-    streamEl.innerHTML =
-      '<div class="agent-demo__stream-header">' +
-      '<span class="agent-demo__mode-badge">Demo mode</span>' +
-      '<span class="agent-demo__live-dot agent-demo__live-dot--pulse" aria-hidden="true"></span>' +
-      '<span>Reasoning trace</span></div>';
-
+    initStreamPanel();
     var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var delay = reducedMotion ? 0 : 280;
     var i = 0;
-
     function addNext() {
       if (i >= trace.length) {
         if (onComplete) onComplete();
         return;
       }
-      var step = trace[i];
-      var el = document.createElement('div');
-      el.className = 'agent-demo__step agent-demo__step--reveal agent-demo__step--done';
-      el.innerHTML =
-        '<div class="agent-demo__step-icon agent-demo__step-icon--' +
-        escapeHtml(step.type) +
-        '" aria-hidden="true">' +
-        stepIcon(step.type) +
-        '</div>' +
-        '<div><p class="agent-demo__step-title">' +
-        (step.toolName ? escapeHtml(step.toolName) : escapeHtml(step.type)) +
-        '</p>' +
-        '<p class="agent-demo__step-detail">' +
-        escapeHtml(truncate(step.content, 220)) +
-        '</p></div>';
-      streamEl.appendChild(el);
-      streamEl.scrollTop = streamEl.scrollHeight;
+      appendTraceStep(trace[i]);
       i += 1;
       setTimeout(addNext, delay);
     }
-
     addNext();
   }
 
-  function truncate(str, max) {
-    var s = String(str || '');
-    return s.length > max ? s.slice(0, max) + '…' : s;
+  function statusBadge(status) {
+    var label = status === 'pending_human_review' ? 'Awaiting approval' : escapeHtml(status || '');
+    return '<span class="agent-demo__action-status">' + label + '</span>';
   }
 
   function renderFinalActions(actions) {
@@ -158,15 +133,41 @@
         .map(function (action) {
           return (
             '<div class="agent-demo__action-item">' +
+            '<div class="agent-demo__action-head">' +
             '<strong>' +
             escapeHtml(action.actionType || 'action') +
-            '</strong> · ' +
+            '</strong>' +
+            statusBadge(action.status) +
+            '</div>' +
+            '<p class="agent-demo__action-summary">' +
             escapeHtml(action.summary || '') +
-            '</div>'
+            '</p></div>'
           );
         })
         .join('') +
       '</div>'
+    );
+  }
+
+  function renderMatches(matches) {
+    if (!matches || !matches.length) return '';
+    return (
+      '<ul class="agent-demo__matches mt-3 space-y-2">' +
+      matches
+        .map(function (m) {
+          return (
+            '<li class="text-sm text-slate-200">' +
+            '<strong class="text-white">' +
+            escapeHtml(m.volunteer) +
+            '</strong> → ' +
+            escapeHtml(m.shift) +
+            '<span class="block text-xs text-slate-400 mt-0.5">' +
+            escapeHtml(m.reason || '') +
+            '</span></li>'
+          );
+        })
+        .join('') +
+      '</ul>'
     );
   }
 
@@ -177,6 +178,7 @@
       data.usage && data.usage.estimatedCostUsd != null
         ? data.usage.estimatedCostUsd.toFixed(4)
         : '—';
+    var matches = (data.result && data.result.proposedMatches) || [];
 
     resultEl.innerHTML =
       '<div class="agent-demo__result-grid">' +
@@ -185,6 +187,7 @@
       '<p class="agent-demo__result-summary">' +
       escapeHtml(data.result && data.result.summary ? data.result.summary : 'No summary returned.') +
       '</p>' +
+      renderMatches(matches) +
       '</article>' +
       '<article class="agent-demo__result-card agent-demo__result-card--primary">' +
       '<p class="agent-demo__result-label">Queued for human review</p>' +
@@ -194,32 +197,22 @@
       '<p class="agent-demo__result-label">Phase</p>' +
       '<p class="agent-demo__result-value">' +
       escapeHtml((data.result && data.result.phase) || '—') +
-      '</p>' +
-      '</article>' +
+      '</p></article>' +
       '<article class="agent-demo__result-card">' +
       '<p class="agent-demo__result-label">Quality score</p>' +
       '<p class="agent-demo__result-value">' +
       (evalScore != null ? evalScore + '/100' : '—') +
-      '</p>' +
-      '</article>' +
+      '</p></article>' +
       '<article class="agent-demo__result-card">' +
       '<p class="agent-demo__result-label">Tools called</p>' +
       '<p class="agent-demo__result-value">' +
       escapeHtml(String((data.result && data.result.toolRequestCount) || 0)) +
-      '</p>' +
-      '</article>' +
+      '</p></article>' +
       '<article class="agent-demo__result-card">' +
       '<p class="agent-demo__result-label">Est. cost</p>' +
       '<p class="agent-demo__result-value">$' +
       escapeHtml(cost) +
-      '</p>' +
-      '</article>' +
-      '<article class="agent-demo__result-card">' +
-      '<p class="agent-demo__result-label">Session</p>' +
-      '<p class="agent-demo__result-value agent-demo__result-mono">' +
-      escapeHtml(truncate(data.sessionId || '—', 28)) +
-      '</p>' +
-      '</article>' +
+      '</p></article>' +
       '</div>';
     resultEl.classList.remove('hidden');
   }
@@ -234,25 +227,106 @@
     }
   }
 
-  function runLoadingAnimation(onAbort) {
-    return new Promise(function (resolve) {
-      renderLoadingStream();
-      var step = 0;
-      advanceLoadingStep(0);
-      var interval = setInterval(function () {
-        if (onAbort && onAbort()) {
-          clearInterval(interval);
-          resolve();
-          return;
-        }
-        step += 1;
-        if (step >= loadingSteps.length) {
-          clearInterval(interval);
-          resolve();
-          return;
-        }
-        advanceLoadingStep(step);
-      }, 1800);
+  function parseJsonResponse(text) {
+    try {
+      return text ? JSON.parse(text) : {};
+    } catch (e) {
+      throw new Error('Invalid response from demo API.');
+    }
+  }
+
+  function handleApiError(response, body) {
+    var errMsg =
+      (body && body.error) || 'Request failed with status ' + response.status;
+    throw new Error(errMsg);
+  }
+
+  function finishSuccess(data) {
+    if (statusEl) {
+      statusEl.textContent =
+        (data.disclaimer || 'Demo mode') +
+        ' — queued actions require coordinator approval before send.';
+    }
+    renderResult(data);
+    setRunning(false);
+  }
+
+  /** NDJSON stream: trace steps arrive live from the API simulator */
+  function runStreamingDemo(goal, eventId) {
+    var url = endpoint + (endpoint.indexOf('?') >= 0 ? '&' : '?') + 'stream=1';
+    initStreamPanel();
+    if (statusEl) {
+      statusEl.textContent = 'Streaming reasoning trace — fictional demo data only…';
+    }
+
+    return fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/x-ndjson',
+      },
+      body: JSON.stringify({ goal: goal, eventId: eventId, stream: true }),
+    }).then(function (res) {
+      if (!res.ok) {
+        return res.text().then(function (text) {
+          handleApiError(res, parseJsonResponse(text));
+        });
+      }
+      if (!res.body || !res.body.getReader) {
+        return res.text().then(function (text) {
+          var data = parseJsonResponse(text);
+          renderTraceStepsAnimated(data.reasoningTrace || [], function () {
+            finishSuccess(data);
+          });
+        });
+      }
+
+      var reader = res.body.getReader();
+      var decoder = new TextDecoder();
+      var buffer = '';
+      var completeData = null;
+
+      function pump() {
+        return reader.read().then(function (chunk) {
+          if (chunk.done) {
+            if (completeData) finishSuccess(completeData);
+            else throw new Error('Demo stream ended without a result.');
+            return;
+          }
+          buffer += decoder.decode(chunk.value, { stream: true });
+          var lines = buffer.split('\n');
+          buffer = lines.pop() || '';
+          lines.forEach(function (line) {
+            if (!line.trim()) return;
+            var msg = parseJsonResponse(line);
+            if (msg.type === 'trace' && msg.step) appendTraceStep(msg.step);
+            if (msg.type === 'complete' && msg.data) completeData = msg.data;
+          });
+          return pump();
+        });
+      }
+
+      return pump();
+    });
+  }
+
+  /** Fallback JSON response with client-side trace animation */
+  function runJsonDemo(goal, eventId) {
+    if (statusEl) {
+      statusEl.textContent = 'Running demo agent — fictional sample data only…';
+    }
+    return fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ goal: goal, eventId: eventId }),
+    }).then(function (res) {
+      return res.text().then(function (text) {
+        var body = parseJsonResponse(text);
+        if (!res.ok) handleApiError(res, body);
+        renderTraceStepsAnimated(body.reasoningTrace || [], function () {
+          finishSuccess(body);
+        });
+      });
     });
   }
 
@@ -269,67 +343,20 @@
 
     clearOutput();
     setRunning(true);
-    if (statusEl) {
-      statusEl.textContent =
-        'Running Genkit demo agent — sample data only, first request may take ~30 seconds…';
-    }
 
-    var fetchDone = false;
-    var loadingDone = runLoadingAnimation(function () {
-      return fetchDone;
+    var run = useStream ? runStreamingDemo(goal, eventId) : runJsonDemo(goal, eventId);
+
+    run.catch(function (err) {
+      var msg = err.message || 'Demo agent request failed.';
+      if (/failed to fetch|network/i.test(msg)) {
+        msg =
+          'Demo API unavailable. Production endpoint: ' +
+          endpoint +
+          ' — locally run npx serve or npm run next:dev.';
+        if (configWarn) configWarn.classList.remove('hidden');
+      }
+      showError(msg);
+      setRunning(false);
     });
-
-    var fetchPromise = fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ goal: goal, eventId: eventId }),
-    })
-      .then(function (res) {
-        return res.text().then(function (text) {
-          var body;
-          try {
-            body = text ? JSON.parse(text) : {};
-          } catch (parseErr) {
-            throw new Error('Invalid response from demo API.');
-          }
-          return { ok: res.ok, status: res.status, body: body };
-        });
-      })
-      .finally(function () {
-        fetchDone = true;
-      });
-
-    Promise.all([loadingDone, fetchPromise])
-      .then(function (results) {
-        var response = results[1];
-        if (!response.ok) {
-          var errMsg =
-            (response.body && response.body.error) ||
-            'Request failed with status ' + response.status;
-          throw new Error(errMsg);
-        }
-        if (statusEl) {
-          statusEl.textContent =
-            (response.body.disclaimer || 'Demo mode') + ' — streaming reasoning trace…';
-        }
-        renderTraceSteps(response.body.reasoningTrace || [], function () {
-          renderResult(response.body);
-          if (statusEl) {
-            statusEl.textContent =
-              'Done. Queued actions require human approval — demo mode, not real client data.';
-          }
-          setRunning(false);
-        });
-      })
-      .catch(function (err) {
-        var msg = err.message || 'Demo agent request failed.';
-        if (/failed to fetch|network/i.test(msg)) {
-          msg =
-            'Demo API unavailable. On production this runs at /api/demo/volunteer-agent — locally use npm run next:dev.';
-          if (configWarn) configWarn.classList.remove('hidden');
-        }
-        showError(msg);
-        setRunning(false);
-      });
   });
 })();

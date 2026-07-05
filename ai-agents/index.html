@@ -202,7 +202,7 @@
         <div class="max-w-2xl">
           <p class="section-label mb-3">Try it yourself</p>
           <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Volunteer Coordinator Agent — interactive demo.</h2>
-          <p class="mt-4 text-sm text-ink-soft leading-relaxed">Describe a coordination goal and watch Genkit reason through roster loading, matching, and human-in-the-loop approval — powered by Gemini with fictional sample data only.</p>
+          <p class="mt-4 text-sm text-ink-soft leading-relaxed">Describe a coordination goal and watch the agent stream reasoning steps — roster load, shift matching, and human-in-the-loop approval queue. Fictional sample data only; production uses Genkit + Firebase.</p>
         </div>
 
         <div class="mt-10 agent-demo" id="agent-demo">
@@ -220,7 +220,7 @@
                   </div>
                 </div>
                 <button type="submit" class="btn-primary agent-demo__run" data-agent-demo-run>Run Demo Agent</button>
-                <p class="agent-demo__disclaimer mt-4 agent-demo__disclaimer--demo"><strong>Demo mode — not real client data.</strong> Production uses Genkit + Gemini on Firebase; this public demo streams a Genkit-style reasoning simulator with fictional volunteers and shifts only. Outbound actions are queued for human review and never sent.</p>
+                <p class="agent-demo__disclaimer mt-4 agent-demo__disclaimer--demo"><strong>Demo mode — fictional data only.</strong> Streams a Genkit-style simulator via <code class="text-xs bg-slate-800/10 px-1 rounded">/api/volunteer-agent-demo</code>. No real volunteers, emails, or outbound sends — all actions queue for human approval.</p>
                 <p class="agent-demo__config-warn hidden" data-agent-demo-config-warn role="status">Demo API unavailable. Deploy to Vercel or run <code class="text-xs bg-amber-100 px-1 rounded">npm run next:dev</code> locally.</p>
               </form>
             </div>

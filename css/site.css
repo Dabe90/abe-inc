@@ -1167,6 +1167,79 @@ body {
   margin-bottom: 0.25rem;
 }
 
+.work-card__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+}
+
+.work-card__stack-chip {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.35rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.portfolio-stats__item {
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
+  padding: 1rem 1.1rem;
+  text-align: center;
+}
+
+.portfolio-stats__item strong {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.2;
+}
+
+.portfolio-stats__item span {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.7rem;
+  color: var(--ink-soft, #64748b);
+  line-height: 1.3;
+}
+
+.agent-demo__action-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.agent-demo__action-status {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 9999px;
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.agent-demo__action-summary {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  line-height: 1.45;
+}
+
+.agent-demo__matches {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 /* AI agents page screenshot gallery */
 .agent-gallery__item img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;

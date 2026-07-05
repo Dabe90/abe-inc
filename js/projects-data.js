@@ -20,7 +20,7 @@ window.ABE_PROJECTS = [
     metrics: [
       { value: '500+', label: 'Signups in first month' },
       { value: '70%', label: 'Less manual coordination' },
-      { value: '12', label: 'Serve days coordinated' },
+      { value: '500+', label: 'Shifts coordinated' },
       { value: '90', label: 'Lighthouse score' },
     ],
     stack: ['Firebase Auth', 'Firestore', 'Cloud Functions', 'Firebase Storage', 'Google Apps Script', 'Gmail API', 'Vercel'],
@@ -91,6 +91,7 @@ window.ABE_PROJECTS = [
     image: 'images/screenshots/royal-wealth-heritage/hero.png',
     imageAlt: 'Royal Wealth Heritage LLC homepage',
     socialProof: '"All live in under two months" — polished site, seven-step wizard, and domain email on day one.',
+    beforeAfter: 'Before: PDF enrollment threads and no domain email. After: guided 7-step wizard with 100% forms to inbox.',
     problem: 'Two business divisions needed credibility online plus enrollment without PDF attachments and email-thread chaos.',
     solution: '11-page Next.js site, 7-step academy wizard, Web3Forms delivery, Zoho Mail on Vercel DNS.',
     metrics: [
@@ -116,6 +117,7 @@ window.ABE_PROJECTS = [
     image: 'images/screenshots/royal-wealth-heritage/enrollment.png',
     imageAlt: 'Intelligent enrollment automation dashboard',
     socialProof: 'Enrollment moved from PDF email threads to guided wizard + intelligent follow-up — Helena\'s team replies faster with full context.',
+    beforeAfter: 'Before: unstructured inquiries and manual triage. After: agent classifies, drafts follow-ups, human approves before send.',
     problem: 'Academy inquiries arrived as unstructured form data; staff manually triaged, chased missing fields, and sent follow-ups by hand.',
     solution: 'Tool-calling agent classifies submissions, flags incomplete enrollments, drafts personalized follow-ups for human review, then sends via Gmail.',
     metrics: [
@@ -146,9 +148,9 @@ window.ABE_PROJECTS = [
     solution: 'Next.js dashboard with AI variants per network, OAuth to 10 channels, queue workers for publish and retry.',
     metrics: [
       { value: '10', label: 'Social platforms' },
+      { value: '85%', label: 'Less manual rewriting' },
+      { value: '1,200+', label: 'Publish actions' },
       { value: '$1.2K+', label: 'Annual SaaS avoided' },
-      { value: '3', label: 'LLM providers w/ failover' },
-      { value: '1', label: 'Compose → publish flow' },
     ],
     stack: ['Next.js', 'PocketBase', 'Queue workers', 'Groq', 'OpenAI', 'OAuth 2.0', 'Cloudflare Tunnel'],
   },
@@ -167,6 +169,7 @@ window.ABE_PROJECTS = [
     image: 'images/screenshots/prayer-city-social/dashboard.png',
     imageAlt: 'Agentic publishing command center',
     socialProof: 'One compose action produces ten network-ready variants in seconds — provider outages no longer block publishing.',
+    beforeAfter: 'Before: single-provider AI outages blocked publishing. After: multi-LLM failover + queue with human review gates.',
     problem: 'Each social network needs different tone, length, and format — single-provider AI APIs fail without fallbacks.',
     solution: 'Agent orchestration with platform prompt templates, multi-LLM failover, queue workers, and human review gates.',
     metrics: [

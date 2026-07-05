@@ -1,21 +1,32 @@
-const DEMO_DISCLAIMER = 'Demo mode - not real client data';
+/**
+ * Production-safe Volunteer Coordinator demo API (Vercel serverless).
+ * Genkit-style simulator with fictional roster — no GEMINI_API_KEY required.
+ * Supports JSON (default) or NDJSON streaming (?stream=1 or body.stream: true).
+ */
+const DEMO_DISCLAIMER = 'Demo mode — fictional data only';
 const DEMO_EVENT_ID = 'demo-serve-day-2026';
 
-const ROSTER = {
+/** Fictional in-memory roster — not real client data */
+const DEMO_ROSTER = {
+  eventId: DEMO_EVENT_ID,
+  volunteerCount: 12,
+  openShiftCount: 8,
   volunteers: [
-    { id: 'demo-v1', name: 'Alex R.', skills: ['greeter', 'spanish'] },
-    { id: 'demo-v2', name: 'Jordan M.', skills: ['logistics', 'driving'] },
-    { id: 'demo-v3', name: 'Sam T.', skills: ['kids', 'first-aid'] },
+    { id: 'demo-v1', name: 'Alex R.', skills: ['greeter', 'spanish'], availability: 'Saturday AM' },
+    { id: 'demo-v2', name: 'Jordan M.', skills: ['logistics', 'driving'], availability: 'Saturday AM' },
+    { id: 'demo-v3', name: 'Sam T.', skills: ['kids', 'first-aid'], availability: 'Saturday PM' },
+    { id: 'demo-v4', name: 'Riley K.', skills: ['greeter', 'setup'], availability: 'Saturday AM' },
   ],
   openShifts: [
-    { id: 'demo-s1', title: 'Welcome desk' },
-    { id: 'demo-s2', title: 'Parking and logistics' },
-    { id: 'demo-s3', title: 'Kids ministry helper' },
+    { id: 'demo-s1', title: 'Welcome desk', needs: ['greeter', 'spanish'] },
+    { id: 'demo-s2', title: 'Parking and logistics', needs: ['logistics', 'driving'] },
+    { id: 'demo-s3', title: 'Kids ministry helper', needs: ['kids'] },
   ],
 };
 
 const buckets = new Map();
 const HOURLY_LIMIT = Number(process.env.DEMO_AGENT_RATE_LIMIT || 12);
+const STREAM_STEP_MS = Number(process.env.DEMO_STREAM_STEP_MS || 320);
 
 function clientIp(req) {
   const forwarded = req.headers['x-forwarded-for'];
@@ -42,56 +53,149 @@ function assertRateLimit(ip) {
   return { remaining: HOURLY_LIMIT - existing.count, resetAt: existing.resetAt };
 }
 
-function buildMockResponse(goal) {
+function wantsStream(req, body) {
+  if (body && body.stream === true) return true;
+  const q = req.query && (req.query.stream || req.query['stream']);
+  return q === '1' || q === 'true';
+}
+
+/** Parse POST body on Vercel (pre-parsed object or raw string). */
+function parseBody(req) {
+  if (!req.body) return {};
+  if (typeof req.body === 'object') return req.body;
+  if (typeof req.body === 'string' && req.body.trim()) {
+    try {
+      return JSON.parse(req.body);
+    } catch {
+      return {};
+    }
+  }
+  return {};
+}
+
+function buildReasoningTrace(goal, matches) {
+  return [
+    {
+      step: 1,
+      type: 'reasoning',
+      content:
+        'Parsing coordinator goal against fictional demo roster for ' +
+        DEMO_EVENT_ID +
+        '. Human approval required before any outbound action.',
+    },
+    {
+      step: 2,
+      type: 'tool_request',
+      toolName: 'getEventRoster',
+      content: JSON.stringify({ eventId: DEMO_EVENT_ID, source: 'demo_firestore' }),
+    },
+    {
+      step: 3,
+      type: 'tool_response',
+      toolName: 'getEventRoster',
+      content: JSON.stringify({
+        volunteerCount: DEMO_ROSTER.volunteerCount,
+        openShiftCount: DEMO_ROSTER.openShiftCount,
+        sample: DEMO_ROSTER.volunteers.slice(0, 3).map(function (v) {
+          return v.name;
+        }),
+      }),
+    },
+    {
+      step: 4,
+      type: 'reasoning',
+      content: goal.match(/spanish|bilingual|greeter/i)
+        ? 'Prioritizing Spanish-speaking greeters for Welcome desk per goal.'
+        : 'Ranking volunteers by skills and Saturday availability.',
+    },
+    {
+      step: 5,
+      type: 'tool_request',
+      toolName: 'proposeMatches',
+      content: JSON.stringify({ proposed: matches.length, status: 'draft' }),
+    },
+    {
+      step: 6,
+      type: 'tool_response',
+      toolName: 'proposeMatches',
+      content: JSON.stringify({ matches: matches, reviewRequired: true }),
+    },
+    {
+      step: 7,
+      type: 'tool_request',
+      toolName: 'queueAction',
+      content: JSON.stringify({ actionType: 'send_digest', autoSend: false }),
+    },
+    {
+      step: 8,
+      type: 'tool_response',
+      toolName: 'queueAction',
+      content: JSON.stringify({ queued: true, status: 'pending_human_review' }),
+    },
+  ];
+}
+
+function buildMockResponse(goal, rateLimit) {
   const sessionId = 'demo-' + Date.now();
   const wantsSpanish = /spanish|bilingual|greeter/i.test(goal);
-  const match1 = wantsSpanish ? 'Alex R.' : 'Riley K.';
-  const match2 = 'Jordan M.';
+  const match1 = wantsSpanish
+    ? { volunteer: 'Alex R.', shift: 'Welcome desk', reason: 'Spanish greeter skills' }
+    : { volunteer: 'Riley K.', shift: 'Welcome desk', reason: 'Greeter + setup experience' };
+  const match2 = { volunteer: 'Jordan M.', shift: 'Parking and logistics', reason: 'Logistics + driving' };
+  const matches = [match1, match2];
 
-  const reasoningTrace = [
-    { step: 1, type: 'reasoning', content: 'Parsing coordinator goal. Using fictional demo roster only.' },
-    { step: 2, type: 'tool_request', toolName: 'demoGetEventRoster', content: JSON.stringify({ eventId: DEMO_EVENT_ID }) },
-    { step: 3, type: 'tool_response', toolName: 'demoGetEventRoster', content: JSON.stringify({ source: 'demo', volunteerCount: 3, openShiftCount: 3 }) },
-    { step: 4, type: 'tool_request', toolName: 'demoProposeVolunteerMatches', content: JSON.stringify({ matches: 2 }) },
-    { step: 5, type: 'tool_response', toolName: 'demoProposeVolunteerMatches', content: JSON.stringify({ status: 'pending_human_review' }) },
-    { step: 6, type: 'tool_request', toolName: 'demoQueueCoordinatorAction', content: JSON.stringify({ actionType: 'send_digest' }) },
-    { step: 7, type: 'tool_response', toolName: 'demoQueueCoordinatorAction', content: JSON.stringify({ reviewRequired: true }) },
-  ];
+  const reasoningTrace = buildReasoningTrace(goal, matches);
 
   const summary = [
     'Demo coordinator run for ' + DEMO_EVENT_ID + '.',
-    'Proposed ' + match1 + ' for Welcome desk and ' + match2 + ' for Parking and logistics.',
+    'Proposed ' + match1.volunteer + ' for ' + match1.shift + ' and ' + match2.volunteer + ' for ' + match2.shift + '.',
     wantsSpanish ? 'Prioritized Spanish-speaking greeter skills.' : '',
-    'Digest queued for human approval. Nothing was sent automatically.',
-  ].join(' ');
+    'Digest queued for human approval — nothing sent automatically.',
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   return {
     ok: true,
     demoMode: true,
     disclaimer: DEMO_DISCLAIMER,
-    sessionId,
+    sessionId: sessionId,
     clientId: 'demo',
     projectId: 'demo',
     result: {
-      summary,
+      summary: summary,
       phase: 'queued',
       reasoning: '',
       toolRequestCount: 3,
-      pendingHumanActions: ['Coordinator digest awaiting approval'],
+      pendingHumanActions: ['Coordinator digest awaiting approval', '2 shift matches pending review'],
+      proposedMatches: matches,
     },
     finalActions: [
       {
-        actionId: 'demo_action_' + Date.now(),
-        actionType: 'send_digest',
-        summary: 'Email digest with proposed shift matches (demo - not sent)',
+        actionId: 'demo_match_' + Date.now() + '_1',
+        actionType: 'propose_match',
+        summary: match1.volunteer + ' → ' + match1.shift + ' (' + match1.reason + ')',
+        status: 'pending_human_review',
+      },
+      {
+        actionId: 'demo_match_' + Date.now() + '_2',
+        actionType: 'propose_match',
+        summary: match2.volunteer + ' → ' + match2.shift + ' (' + match2.reason + ')',
+        status: 'pending_human_review',
+      },
+      {
+        actionId: 'demo_digest_' + Date.now(),
+        actionType: 'queue_digest',
+        summary: 'Email digest with proposed shift matches — demo, not sent',
         status: 'pending_human_review',
       },
     ],
-    reasoningTrace,
-    usage: { inputTokens: 420, outputTokens: 380, estimatedCostUsd: 0.0003 },
-    evaluation: { score: 0.82, passed: true, notes: 'Demo simulation passed quality checks.' },
+    reasoningTrace: reasoningTrace,
+    usage: { inputTokens: 520, outputTokens: 410, estimatedCostUsd: 0.0004 },
+    evaluation: { score: 0.86, passed: true, notes: 'Demo simulation passed quality checks.' },
     finishReason: 'stop',
     poweredBy: 'Genkit-style demo simulator',
+    rateLimit: rateLimit,
   };
 }
 
@@ -103,19 +207,44 @@ function runDemo(body, ip) {
     throw err;
   }
   const rateLimit = assertRateLimit(ip);
-  return Object.assign(buildMockResponse(goal), { rateLimit });
+  return buildMockResponse(goal, rateLimit);
 }
 
-function setDemoHeaders(res) {
-  res.setHeader('Access-Control-Allow-Origin', 'https://abestack.com');
+function setDemoHeaders(res, origin) {
+  const allowed =
+    origin && /^https?:\/\/(localhost(:\d+)?|127\.0\.0\.1(:\d+)?|abestack\.com)/.test(origin)
+      ? origin
+      : 'https://abestack.com';
+  res.setHeader('Access-Control-Allow-Origin', allowed);
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Accept');
   res.setHeader('X-Demo-Mode', 'true');
   res.setHeader('X-Demo-Disclaimer', DEMO_DISCLAIMER);
 }
 
-module.exports = function handler(req, res) {
-  setDemoHeaders(res);
+function delay(ms) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, ms);
+  });
+}
+
+async function streamDemoResponse(res, body, ip) {
+  const result = runDemo(body, ip);
+  res.setHeader('Content-Type', 'application/x-ndjson; charset=utf-8');
+  res.setHeader('Cache-Control', 'no-store');
+  res.setHeader('Transfer-Encoding', 'chunked');
+
+  for (var i = 0; i < result.reasoningTrace.length; i++) {
+    res.write(JSON.stringify({ type: 'trace', step: result.reasoningTrace[i] }) + '\n');
+    await delay(STREAM_STEP_MS);
+  }
+  res.write(JSON.stringify({ type: 'complete', data: result }) + '\n');
+  res.end();
+}
+
+module.exports = async function handler(req, res) {
+  const origin = req.headers.origin || '';
+  setDemoHeaders(res, origin);
 
   if (req.method === 'OPTIONS') {
     res.status(204).end();
@@ -129,6 +258,8 @@ module.exports = function handler(req, res) {
       disclaimer: DEMO_DISCLAIMER,
       endpoint: '/api/volunteer-agent-demo',
       method: 'POST',
+      stream: 'Add ?stream=1 or body.stream:true for NDJSON reasoning steps',
+      body: { goal: 'string (min 10 chars)', eventId: 'optional — uses demo data' },
     });
     return;
   }
@@ -139,7 +270,15 @@ module.exports = function handler(req, res) {
   }
 
   try {
-    const result = runDemo(req.body, clientIp(req));
+    const body = parseBody(req);
+    const ip = clientIp(req);
+
+    if (wantsStream(req, body)) {
+      await streamDemoResponse(res, body, ip);
+      return;
+    }
+
+    const result = runDemo(body, ip);
     res.setHeader('Cache-Control', 'no-store');
     res.status(200).json(result);
   } catch (err) {

@@ -16,7 +16,7 @@
     return (
       '<div class="work-card__metrics">' +
       metrics
-        .slice(0, 3)
+        .slice(0, 4)
         .map(function (m) {
           return (
             '<span class="work-card__metric"><strong>' +
@@ -25,6 +25,20 @@
             escapeHtml(m.label) +
             '</span>'
           );
+        })
+        .join('') +
+      '</div>'
+    );
+  }
+
+  function stackChips(stack) {
+    if (!stack || !stack.length) return '';
+    return (
+      '<div class="work-card__stack">' +
+      stack
+        .slice(0, 4)
+        .map(function (t) {
+          return '<span class="work-card__stack-chip">' + escapeHtml(t) + '</span>';
         })
         .join('') +
       '</div>'
@@ -90,6 +104,7 @@
       metricChips(project.metrics) +
       beforeAfter +
       solution +
+      stackChips(project.stack) +
       proof +
       '<p class="work-card__link mt-4 text-sm font-bold text-accent group-hover:underline">View full case study →</p>' +
       '</div>';
