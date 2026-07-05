@@ -171,6 +171,19 @@
     );
   }
 
+  function renderThemes(themes) {
+    if (!themes || !themes.length) return '';
+    return (
+      '<p class="agent-demo__themes mt-3 flex flex-wrap gap-2" aria-label="Detected themes">' +
+      themes
+        .map(function (t) {
+          return '<span class="agent-demo__theme-chip">' + escapeHtml(t) + '</span>';
+        })
+        .join('') +
+      '</p>'
+    );
+  }
+
   function renderResult(data) {
     if (!resultEl) return;
     var evalScore = data.evaluation ? Math.round(data.evaluation.score * 100) : null;
@@ -179,6 +192,7 @@
         ? data.usage.estimatedCostUsd.toFixed(4)
         : '—';
     var matches = (data.result && data.result.proposedMatches) || [];
+    var themes = (data.result && data.result.detectedThemes) || [];
 
     resultEl.innerHTML =
       '<div class="agent-demo__result-grid">' +
@@ -187,6 +201,7 @@
       '<p class="agent-demo__result-summary">' +
       escapeHtml(data.result && data.result.summary ? data.result.summary : 'No summary returned.') +
       '</p>' +
+      renderThemes(themes) +
       renderMatches(matches) +
       '</article>' +
       '<article class="agent-demo__result-card agent-demo__result-card--primary">' +

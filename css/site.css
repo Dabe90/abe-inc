@@ -1240,6 +1240,18 @@ body {
   margin: 0;
 }
 
+.agent-demo__theme-chip {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #7dd3fc;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
 /* AI agents page screenshot gallery */
 .agent-gallery__item img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;

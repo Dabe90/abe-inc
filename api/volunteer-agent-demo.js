@@ -60,33 +60,102 @@ function wantsStream(req, body) {
   return q.stream === '1' || q.stream === 'true';
 }
 
+/** Short excerpt of the coordinator goal for the reasoning trace */
+function excerptGoal(goal, maxLen) {
+  const g = String(goal).replace(/\s+/g, ' ').trim();
+  if (g.length <= maxLen) return g;
+  return g.slice(0, maxLen - 1) + '\u2026';
+}
+
+/**
+ * Fictional shift rules — first match per shift wins (order = priority).
+ * Production demo only; not a live LLM or real roster.
+ */
+const DEMO_MATCH_RULES = [
+  { theme: 'Bilingual greeters', patterns: /spanish|bilingual|espa\u00f1ol|habla/i, volunteer: 'Alex R.', shift: 'Welcome desk', reason: 'Spanish + greeter skills on roster' },
+  { theme: 'Welcome & check-in', patterns: /welcome|greeter|front desk|check.?in|greet/i, volunteer: 'Riley K.', shift: 'Welcome desk', reason: 'Greeter experience and setup' },
+  { theme: 'Parking & traffic', patterns: /parking|lot|traffic|shuttle|valet|logistics/i, volunteer: 'Jordan M.', shift: 'Parking and logistics', reason: 'Logistics lead + driving on file' },
+  { theme: 'Kids ministry', patterns: /kids|children|nursery|youth|ministry|toddler|childcare/i, volunteer: 'Sam T.', shift: 'Kids ministry helper', reason: 'Background check + kids safety cert' },
+  { theme: 'Setup & staging', patterns: /setup|set.?up|tear.?down|staging|breakdown|chairs|tables/i, volunteer: 'Casey L.', shift: 'Setup crew', reason: 'Staging and teardown experience' },
+  { theme: 'First aid', patterns: /first.?aid|medical|cpr|emt|nurse|health|safety/i, volunteer: 'Morgan P.', shift: 'First aid station', reason: 'CPR / first-aid certified' },
+  { theme: 'Hospitality & food', patterns: /food|snack|coffee|hospitality|catering|meal|refreshment/i, volunteer: 'Jamie W.', shift: 'Hospitality / snacks', reason: 'Food service + hospitality team' },
+  { theme: 'Tech & AV', patterns: /tech|sound|audio|av|livestream|stream|slides|propresenter|camera/i, volunteer: 'Taylor N.', shift: 'Tech booth', reason: 'AV and livestream experience' },
+  { theme: 'Prayer room', patterns: /prayer|intercession|praying/i, volunteer: 'Priya D.', shift: 'Prayer room', reason: 'Intercession team coordinator' },
+  { theme: 'Ushers & seating', patterns: /usher|seating|crowd|overflow|escort/i, volunteer: 'Chris H.', shift: 'Ushers', reason: 'Crowd flow and seating' },
+];
+
+/** Pick volunteer matches from goal keywords; defaults when nothing specific matches */
+function detectMatches(goal) {
+  const seenShifts = {};
+  const themes = [];
+  const matches = [];
+
+  DEMO_MATCH_RULES.forEach(function (rule) {
+    if (!rule.patterns.test(goal)) return;
+    if (seenShifts[rule.shift]) return;
+    seenShifts[rule.shift] = true;
+    themes.push(rule.theme);
+    matches.push({ volunteer: rule.volunteer, shift: rule.shift, reason: rule.reason });
+  });
+
+  if (!matches.length) {
+    themes.push('General serve day');
+    matches.push(
+      { volunteer: 'Riley K.', shift: 'Welcome desk', reason: 'Available greeter — default demo match' },
+      { volunteer: 'Jordan M.', shift: 'Parking and logistics', reason: 'Available logistics — default demo match' }
+    );
+  }
+
+  return { matches: matches.slice(0, 3), themes: themes };
+}
+
 function buildMockResponse(goal) {
   const sessionId = 'demo-' + Date.now();
-  const wantsSpanish = /spanish|bilingual|greeter/i.test(goal);
-  const match1 = wantsSpanish
-    ? { volunteer: 'Alex R.', shift: 'Welcome desk', reason: 'Spanish greeter skills' }
-    : { volunteer: 'Riley K.', shift: 'Welcome desk', reason: 'Greeter + setup' };
-  const match2 = { volunteer: 'Jordan M.', shift: 'Parking and logistics', reason: 'Logistics + driving' };
-  const matches = [match1, match2];
+  const parsed = detectMatches(goal);
+  const matches = parsed.matches;
+  const themes = parsed.themes;
+  const goalEcho = excerptGoal(goal, 100);
+  const volunteerCount = 10 + matches.length;
+  const openShiftCount = 6 + matches.length;
+  const matchCount = matches.length;
+  const evalScore = Math.min(0.94, 0.84 + matchCount * 0.03 + (themes.length > 1 ? 0.02 : 0));
+
+  const matchSummary = matches
+    .map(function (m) {
+      return m.volunteer + ' for ' + m.shift;
+    })
+    .join('; ');
 
   const reasoningTrace = [
-    { step: 1, type: 'reasoning', content: 'Parsing coordinator goal. Fictional demo roster only.' },
-    { step: 2, type: 'tool_request', toolName: 'getEventRoster', content: JSON.stringify({ eventId: DEMO_EVENT_ID }) },
-    { step: 3, type: 'tool_response', toolName: 'getEventRoster', content: JSON.stringify({ volunteerCount: 12, openShiftCount: 8 }) },
-    { step: 4, type: 'tool_request', toolName: 'proposeMatches', content: JSON.stringify({ proposed: 2 }) },
+    { step: 1, type: 'reasoning', content: 'Parsing goal: "' + goalEcho + '". Themes detected: ' + themes.join(', ') + '. Fictional roster only.' },
+    { step: 2, type: 'tool_request', toolName: 'getEventRoster', content: JSON.stringify({ eventId: DEMO_EVENT_ID, focus: themes }) },
+    { step: 3, type: 'tool_response', toolName: 'getEventRoster', content: JSON.stringify({ volunteerCount: volunteerCount, openShiftCount: openShiftCount }) },
+    { step: 4, type: 'tool_request', toolName: 'proposeMatches', content: JSON.stringify({ proposed: matchCount, themes: themes }) },
     { step: 5, type: 'tool_response', toolName: 'proposeMatches', content: JSON.stringify({ matches: matches, status: 'pending_human_review' }) },
     { step: 6, type: 'tool_request', toolName: 'queueAction', content: JSON.stringify({ actionType: 'send_digest', autoSend: false }) },
     { step: 7, type: 'tool_response', toolName: 'queueAction', content: JSON.stringify({ queued: true, reviewRequired: true }) },
   ];
 
   const summary = [
-    'Demo coordinator run for ' + DEMO_EVENT_ID + '.',
-    'Proposed ' + match1.volunteer + ' for ' + match1.shift + ' and ' + match2.volunteer + ' for ' + match2.shift + '.',
-    wantsSpanish ? 'Prioritized Spanish-speaking greeter skills.' : '',
+    'Demo run for ' + DEMO_EVENT_ID + ' — ' + themes.join(' + ') + '.',
+    'Proposed: ' + matchSummary + '.',
     'Digest queued for human approval. Nothing was sent automatically.',
-  ]
-    .filter(Boolean)
-    .join(' ');
+  ].join(' ');
+
+  const finalActions = matches.map(function (m, idx) {
+    return {
+      actionId: 'demo_match_' + (idx + 1) + '_' + Date.now(),
+      actionType: 'propose_match',
+      summary: m.volunteer + ' -> ' + m.shift,
+      status: 'pending_human_review',
+    };
+  });
+  finalActions.push({
+    actionId: 'demo_digest_' + Date.now(),
+    actionType: 'queue_digest',
+    summary: 'Email digest with ' + matchCount + ' proposed shift match(es) (demo - not sent)',
+    status: 'pending_human_review',
+  });
 
   return {
     ok: true,
@@ -97,35 +166,29 @@ function buildMockResponse(goal) {
     projectId: 'demo',
     result: {
       summary: summary,
+      goalEcho: goalEcho,
+      detectedThemes: themes,
       phase: 'queued',
       reasoning: '',
       toolRequestCount: 3,
-      pendingHumanActions: ['Coordinator digest awaiting approval', '2 shift matches pending review'],
+      pendingHumanActions: [
+        matchCount + ' shift match(es) pending review',
+        'Coordinator digest awaiting approval',
+      ],
       proposedMatches: matches,
     },
-    finalActions: [
-      {
-        actionId: 'demo_match_1_' + Date.now(),
-        actionType: 'propose_match',
-        summary: match1.volunteer + ' -> ' + match1.shift,
-        status: 'pending_human_review',
-      },
-      {
-        actionId: 'demo_match_2_' + Date.now(),
-        actionType: 'propose_match',
-        summary: match2.volunteer + ' -> ' + match2.shift,
-        status: 'pending_human_review',
-      },
-      {
-        actionId: 'demo_digest_' + Date.now(),
-        actionType: 'queue_digest',
-        summary: 'Email digest with proposed shift matches (demo - not sent)',
-        status: 'pending_human_review',
-      },
-    ],
+    finalActions: finalActions,
     reasoningTrace: reasoningTrace,
-    usage: { inputTokens: 520, outputTokens: 410, estimatedCostUsd: 0.0004 },
-    evaluation: { score: 0.86, passed: true, notes: 'Demo simulation passed quality checks.' },
+    usage: {
+      inputTokens: 380 + goal.length * 2,
+      outputTokens: 280 + matchCount * 45,
+      estimatedCostUsd: 0.0003 + matchCount * 0.00005,
+    },
+    evaluation: {
+      score: evalScore,
+      passed: true,
+      notes: 'Demo simulation matched ' + matchCount + ' shift(s) from goal keywords.',
+    },
     finishReason: 'stop',
     poweredBy: 'Genkit-style demo simulator',
   };
@@ -183,6 +246,7 @@ module.exports = function handler(req, res) {
       endpoint: '/api/volunteer-agent-demo',
       method: 'POST',
       stream: 'Add ?stream=1 or body.stream:true for NDJSON steps',
+      keywords: 'Try goals mentioning spanish, kids, parking, tech, first aid, setup, prayer, or food',
     });
     return;
   }
