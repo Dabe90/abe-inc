@@ -546,6 +546,111 @@ body {
   background: linear-gradient(180deg, #fff 0%, #eff6ff 100%);
 }
 
+/* ——— Audience entry paths (homepage) ——— */
+.audience-paths {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.audience-path-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.audience-path-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: rgba(37, 99, 235, 0.35);
+}
+
+.audience-path-card--featured {
+  border: 2px solid var(--accent);
+  background: linear-gradient(180deg, #fff 0%, #eff6ff 100%);
+  box-shadow: var(--shadow-glow);
+}
+
+.audience-path-card__label {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.audience-path-card__title {
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.audience-path-card__desc {
+  margin-top: 0.625rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  flex: 1;
+}
+
+.audience-path-card__list {
+  margin-top: 1rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.audience-path-card__list li {
+  position: relative;
+  padding-left: 1rem;
+  margin-top: 0.375rem;
+}
+
+.audience-path-card__list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.audience-path-card__price {
+  margin-top: 1.25rem;
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.audience-path-card__cta {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.audience-path-card:hover .audience-path-card__cta {
+  text-decoration: underline;
+}
+
+.business-site-spotlight .btn-secondary {
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--border);
+}
+
+.business-site-spotlight .btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* ——— Lighthouse ——— */
 .lighthouse-badge {
   display: flex;
