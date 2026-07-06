@@ -19,11 +19,15 @@
   --shadow-glow: 0 0 0 1px rgba(37, 99, 235, 0.15), 0 20px 40px rgba(37, 99, 235, 0.15);
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
 
 body {
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   color: var(--ink);
+  overflow-x: clip;
 }
 
 /* ——— Layout chrome ——— */
@@ -198,9 +202,48 @@ body {
   box-shadow: 0 0 8px rgba(52, 211, 153, 0.8);
 }
 
-.hero-premium h1 {
+.hero-premium h1,
+.hero-headline {
   letter-spacing: -0.03em;
   line-height: 1.05;
+}
+
+.hero-headline {
+  font-size: clamp(1.75rem, 5.5vw, 3.25rem);
+  text-wrap: balance;
+}
+
+.hero-headline__lead,
+.hero-headline__rest {
+  display: block;
+}
+
+.hero-headline__lead {
+  color: #fff;
+  margin-bottom: 0.2em;
+}
+
+.hero-headline__rest {
+  color: #e2e8f0;
+}
+
+@media (min-width: 768px) {
+  .hero-headline__lead,
+  .hero-headline__rest {
+    display: inline;
+  }
+
+  .hero-headline__lead {
+    margin-bottom: 0;
+  }
+}
+
+.hero-visual-mobile {
+  margin-top: 2rem;
+}
+
+.hero-visual-mobile .hero-visual__frame {
+  max-width: 100%;
 }
 
 .hero-premium .hero-lead {
@@ -804,18 +847,50 @@ body {
 }
 
 @media (max-width: 639px) {
-  .hero-premium__inner {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+  .site-logo-lockup {
+    height: 2.35rem;
   }
 
-  .hero-premium h1 {
-    font-size: 1.875rem;
-    line-height: 1.15;
+  .site-header .max-w-6xl {
+    padding-inline: max(1rem, env(safe-area-inset-left)) max(1rem, env(safe-area-inset-right));
+  }
+
+  .hero-premium__inner {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero-premium__badge {
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
+    max-width: 100%;
+    white-space: normal;
+    text-align: left;
+    line-height: 1.35;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.5rem, 6.8vw, 1.875rem);
+    line-height: 1.18;
+  }
+
+  .hero-headline__lead {
+    margin-bottom: 0.35em;
   }
 
   .hero-premium .hero-lead {
-    font-size: 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .hero-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.375rem;
+  }
+
+  .hero-links__sep {
+    display: none;
   }
 
   .hero-float-card {
@@ -824,6 +899,7 @@ body {
 
   .hero-cta-row {
     flex-direction: column;
+    gap: 0.75rem;
   }
 
   .hero-cta-row .btn-primary,
@@ -831,6 +907,97 @@ body {
     width: 100%;
     justify-content: center;
     min-height: 48px;
+  }
+
+  .tech-strip {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.25rem;
+  }
+
+  .tech-strip::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tech-strip .tech-badge {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .logo-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.625rem;
+    justify-content: stretch;
+  }
+
+  .logo-strip__item {
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+    font-size: 0.8125rem;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    opacity: 1;
+  }
+
+  .logo-strip__tag {
+    font-size: 0.5625rem;
+    line-height: 1.35;
+    text-align: left;
+  }
+
+  .page-hero h1 {
+    font-size: 1.75rem;
+    line-height: 1.15;
+  }
+
+  .page-hero {
+    padding-bottom: 0.5rem;
+  }
+
+  .flagship-ai .hero-cta-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .flagship-ai .hero-cta-row .btn-primary,
+  .flagship-ai .hero-cta-row .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+    text-align: center;
+  }
+
+  .enterprise-pillar {
+    padding: 1rem;
+  }
+
+  .process-rail {
+    gap: 1.5rem;
+  }
+
+  .agent-demo {
+    padding-inline: 0;
+  }
+
+  .agent-demo__form-panel,
+  .agent-demo__output-panel {
+    padding: 1rem;
+  }
+
+  .agent-demo__result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .agent-demo__action-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
   }
 
   .cta-band .flex.flex-wrap {
@@ -851,6 +1018,11 @@ body {
 
   .stat-value {
     font-size: 1.75rem !important;
+  }
+
+  .stat-card p.mt-1 {
+    font-size: 0.8125rem;
+    line-height: 1.35;
   }
 
   .lead-magnet-band .flex {
