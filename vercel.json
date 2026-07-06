@@ -3,5 +3,14 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/insights/:slug", "destination": "/insights/:slug.html" }
+  ],
+  "redirects": [
+    { "source": "/production-ready-ai-agents-2026", "destination": "/insights/production-ready-ai-agents-2026", "permanent": true },
+    { "source": "/intelligent-automation-vs-traditional-workflows", "destination": "/insights/intelligent-automation-vs-traditional-workflows", "permanent": true },
+    { "source": "/firebase-genkit-agentic-ai-2026", "destination": "/insights/firebase-genkit-agentic-ai-2026", "permanent": true },
+    { "source": "/agentic-ai-for-ops-teams", "destination": "/insights/agentic-ai-for-ops-teams", "permanent": true },
+    { "source": "/owned-software-vs-saas", "destination": "/insights/owned-software-vs-saas", "permanent": true },
+    { "source": "/production-launch-checklist", "destination": "/insights/production-launch-checklist", "permanent": true },
+    { "source": "/firebase-for-volunteer-platforms", "destination": "/insights/firebase-for-volunteer-platforms", "permanent": true }
   ]
 }
