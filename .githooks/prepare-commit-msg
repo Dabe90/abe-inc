@@ -1,0 +1,8 @@
+#!/bin/sh
+# Strips automated co-author trailers from commit messages (prepare-commit-msg hook).
+COMMIT_MSG_FILE=$1
+if [ -f "$COMMIT_MSG_FILE" ]; then
+  sed -i.bak '/^Co-authored-by:.*cursoragent@cursor\.com>$/d' "$COMMIT_MSG_FILE" 2>/dev/null || \
+  sed -i '' '/^Co-authored-by:.*cursoragent@cursor\.com>$/d' "$COMMIT_MSG_FILE" 2>/dev/null
+  rm -f "${COMMIT_MSG_FILE}.bak"
+fi

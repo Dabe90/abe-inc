@@ -192,7 +192,7 @@ window.ABE_PROJECTS = [
     duration: 'Reference kit',
     featured: false,
     sortOrder: 8,
-    url: 'https://github.com/Dabe90',
+    url: 'https://abestack.com/open-source/',
     image: 'images/screenshots/royal-wealth-heritage/enrollment.png',
     imageAlt: 'Form enrollment pattern from starter kit',
     socialProof: 'Reusable pattern shipped on multiple client projects — prospects inspect the code before hiring.',
