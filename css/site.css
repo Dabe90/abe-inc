@@ -48,9 +48,39 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.group:hover .site-logo-mark {
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  text-decoration: none;
+}
+
+.site-logo-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.site-logo-wordmark {
+  width: auto;
+  height: 1.375rem;
+  object-fit: contain;
+}
+
+.site-brand--footer .site-logo-icon--sm {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.site-brand--footer .site-logo-wordmark--sm {
+  height: 1.125rem;
+}
+
+.group:hover .site-logo-icon,
+.site-brand:hover .site-logo-icon {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
 }
 
 .btn-primary {
