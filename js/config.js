@@ -10,7 +10,7 @@ window.ABE_INC = {
   // Clutch: create profile at clutch.co → paste public profile URL below (shows in footer when set)
   clutchProfileUrl: '',
   // LinkedIn: company page URL (e.g. https://www.linkedin.com/company/abe-stack) — shows in footer when set
-  linkedinCompanyUrl: '',
+  linkedinCompanyUrl: 'https://www.linkedin.com/company/abestack/',
   siteUrl: 'https://abestack.com',
   formEndpoint: 'https://us-central1-gen-lang-client-0550945038.cloudfunctions.net/submitInquiry',
   // Safe public demo — Next.js / Vercel API, sample data only (no API key)
