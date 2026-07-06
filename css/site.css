@@ -51,8 +51,20 @@ body {
 .site-brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.625rem;
+  gap: 0.5rem;
   text-decoration: none;
+}
+
+.site-logo-lockup {
+  height: 3rem;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.site-brand--footer .site-logo-lockup {
+  height: 2.25rem;
 }
 
 .site-logo-icon {
@@ -65,19 +77,12 @@ body {
 
 .site-logo-wordmark {
   width: auto;
-  height: 1.375rem;
+  height: 1.125rem;
   object-fit: contain;
 }
 
-.site-brand--footer .site-logo-icon--sm {
-  width: 1.75rem;
-  height: 1.75rem;
-}
-
-.site-brand--footer .site-logo-wordmark--sm {
-  height: 1.125rem;
-}
-
+.group:hover .site-logo-lockup,
+.site-brand:hover .site-logo-lockup,
 .group:hover .site-logo-icon,
 .site-brand:hover .site-logo-icon {
   transform: translateY(-1px);
