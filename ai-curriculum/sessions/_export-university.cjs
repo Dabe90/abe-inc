@@ -11,12 +11,17 @@ const outPath = path.join(__dirname, "..", "..", "js", "university-data.js");
 function parseLink(raw) {
   const m = String(raw).match(/\[([^\]]+)\]\(([^)]+)\)/);
   if (m) {
-    let href = m[2].trim();
-    // Local curriculum md → keep as note refs (not site URLs)
-    if (href.startsWith("../../") || href.startsWith("../") || !/^https?:\/\//i.test(href)) {
-      return { label: m[1], href: href.startsWith("http") ? href : null, note: m[1] };
+    const label = m[1];
+    let target = m[2].trim();
+    // External links open in a new tab
+    if (/^https?:\/\//i.test(target)) return { label, href: target };
+    // Local curriculum markdown → resolve to a real, in-app viewable path
+    if (/\.md$/i.test(target)) {
+      const clean = target.replace(/^(\.\.\/)+/, "").replace(/^\/+/, "");
+      return { label, href: "/ai-curriculum/" + clean, internal: true };
     }
-    return { label: m[1], href };
+    // Plain reference (e.g. "local spreadsheet") → non-clickable note
+    return { label, href: null, note: label };
   }
   const t = String(raw).replace(/^[-*]\s*/, "").trim();
   if (/^https?:\/\//i.test(t)) return { label: t, href: t };

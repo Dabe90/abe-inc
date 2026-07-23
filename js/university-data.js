@@ -45,8 +45,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "00-start-here.md",
-                  "href": null,
-                  "note": "00-start-here.md"
+                  "href": "/ai-curriculum/00-start-here.md",
+                  "internal": true
                 },
                 {
                   "label": "3Blue1Brown LA Ch.1 Vectors",
@@ -158,13 +158,13 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-0/01-math.md",
-                  "href": null,
-                  "note": "year-0/01-math.md"
+                  "href": "/ai-curriculum/year-0/01-math.md",
+                  "internal": true
                 },
                 {
                   "label": "year-0/02-python.md",
-                  "href": null,
-                  "note": "year-0/02-python.md"
+                  "href": "/ai-curriculum/year-0/02-python.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -271,8 +271,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-0/03-ml-basics.md",
-                  "href": null,
-                  "note": "year-0/03-ml-basics.md"
+                  "href": "/ai-curriculum/year-0/03-ml-basics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -287,8 +287,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "projects/milestone-rubrics.md",
-                  "href": null,
-                  "note": "projects/milestone-rubrics.md"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -463,8 +463,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-0/03-ml-basics.md",
-                  "href": null,
-                  "note": "year-0/03-ml-basics.md"
+                  "href": "/ai-curriculum/year-0/03-ml-basics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -523,8 +523,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "milestone-rubrics P2",
-                  "href": null,
-                  "note": "milestone-rubrics P2"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -585,8 +585,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-0/02-python.md",
-                  "href": null,
-                  "note": "year-0/02-python.md"
+                  "href": "/ai-curriculum/year-0/02-python.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -696,8 +696,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-0/checklist.md",
-                  "href": null,
-                  "note": "year-0/checklist.md"
+                  "href": "/ai-curriculum/year-0/checklist.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -738,8 +738,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -754,8 +754,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-1/README.md",
-                  "href": null,
-                  "note": "year-1/README.md"
+                  "href": "/ai-curriculum/year-1/README.md",
+                  "internal": true
                 },
                 {
                   "label": "Karpathy Zero to Hero",
@@ -817,8 +817,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-0/02-python.md",
-                  "href": null,
-                  "note": "year-0/02-python.md"
+                  "href": "/ai-curriculum/year-0/02-python.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -875,8 +875,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-0/02-python.md",
-                  "href": null,
-                  "note": "year-0/02-python.md"
+                  "href": "/ai-curriculum/year-0/02-python.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -933,8 +933,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-0/02-python.md",
-                  "href": null,
-                  "note": "year-0/02-python.md"
+                  "href": "/ai-curriculum/year-0/02-python.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -991,8 +991,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-0/02-python.md",
-                  "href": null,
-                  "note": "year-0/02-python.md"
+                  "href": "/ai-curriculum/year-0/02-python.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1049,8 +1049,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-0/02-python.md",
-                  "href": null,
-                  "note": "year-0/02-python.md"
+                  "href": "/ai-curriculum/year-0/02-python.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1107,8 +1107,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-0/02-python.md",
-                  "href": null,
-                  "note": "year-0/02-python.md"
+                  "href": "/ai-curriculum/year-0/02-python.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1165,8 +1165,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-0/02-python.md",
-                  "href": null,
-                  "note": "year-0/02-python.md"
+                  "href": "/ai-curriculum/year-0/02-python.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1223,8 +1223,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-0/02-python.md",
-                  "href": null,
-                  "note": "year-0/02-python.md"
+                  "href": "/ai-curriculum/year-0/02-python.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1282,8 +1282,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-0/02-python.md",
-                  "href": null,
-                  "note": "year-0/02-python.md"
+                  "href": "/ai-curriculum/year-0/02-python.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1340,8 +1340,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-0/02-python.md",
-                  "href": null,
-                  "note": "year-0/02-python.md"
+                  "href": "/ai-curriculum/year-0/02-python.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1367,8 +1367,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "Write operator case study",
-                  "href": null,
-                  "note": "Write operator case study"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1399,8 +1399,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-0/02-python.md",
-                  "href": null,
-                  "note": "year-0/02-python.md"
+                  "href": "/ai-curriculum/year-0/02-python.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1426,8 +1426,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "Year 0 final audit",
-                  "href": null,
-                  "note": "Year 0 final audit"
+                  "href": "/ai-curriculum/year-0/checklist.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1458,8 +1458,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-0/02-python.md",
-                  "href": null,
-                  "note": "year-0/02-python.md"
+                  "href": "/ai-curriculum/year-0/02-python.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1529,8 +1529,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1587,8 +1587,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1649,8 +1649,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1711,8 +1711,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1773,8 +1773,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1831,8 +1831,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1889,8 +1889,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -1947,8 +1947,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2009,8 +2009,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2036,8 +2036,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "rubrics",
-                  "href": null,
-                  "note": "rubrics"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2053,8 +2053,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "rubrics",
-                  "href": null,
-                  "note": "rubrics"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2069,8 +2069,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2127,8 +2127,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2185,8 +2185,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2247,8 +2247,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2305,8 +2305,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2363,8 +2363,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2425,8 +2425,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2452,8 +2452,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-1/03-finetune-evals.md",
-                  "href": null,
-                  "note": "year-1/03-finetune-evals.md"
+                  "href": "/ai-curriculum/year-1/03-finetune-evals.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2469,8 +2469,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-1/03-finetune-evals.md",
-                  "href": null,
-                  "note": "year-1/03-finetune-evals.md"
+                  "href": "/ai-curriculum/year-1/03-finetune-evals.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2485,8 +2485,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2543,8 +2543,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2601,8 +2601,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2659,8 +2659,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2717,8 +2717,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2779,8 +2779,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2837,8 +2837,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2864,8 +2864,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-1/checklist.md",
-                  "href": null,
-                  "note": "year-1/checklist.md"
+                  "href": "/ai-curriculum/year-1/checklist.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2881,8 +2881,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-1/checklist.md",
-                  "href": null,
-                  "note": "year-1/checklist.md"
+                  "href": "/ai-curriculum/year-1/checklist.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2897,8 +2897,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -2967,8 +2967,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3024,8 +3024,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3081,8 +3081,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3138,8 +3138,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3195,8 +3195,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3256,8 +3256,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3313,8 +3313,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3372,8 +3372,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3399,8 +3399,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "rubrics P6",
-                  "href": null,
-                  "note": "rubrics P6"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3415,8 +3415,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "rubrics P6",
-                  "href": null,
-                  "note": "rubrics P6"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3431,8 +3431,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3488,8 +3488,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3545,8 +3545,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3602,8 +3602,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3659,8 +3659,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3718,8 +3718,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3745,8 +3745,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-2 notes",
-                  "href": null,
-                  "note": "year-2 notes"
+                  "href": "/ai-curriculum/year-2/02-data-agents-safety.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3761,8 +3761,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-2 notes",
-                  "href": null,
-                  "note": "year-2 notes"
+                  "href": "/ai-curriculum/year-2/02-data-agents-safety.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3777,8 +3777,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3804,8 +3804,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "rubrics",
-                  "href": null,
-                  "note": "rubrics"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3820,8 +3820,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "rubrics",
-                  "href": null,
-                  "note": "rubrics"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3836,8 +3836,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3893,8 +3893,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -3950,8 +3950,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4007,8 +4007,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4066,8 +4066,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4125,8 +4125,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4182,8 +4182,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4209,8 +4209,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-2/checklist.md",
-                  "href": null,
-                  "note": "year-2/checklist.md"
+                  "href": "/ai-curriculum/year-2/checklist.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4225,8 +4225,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-2/checklist.md",
-                  "href": null,
-                  "note": "year-2/checklist.md"
+                  "href": "/ai-curriculum/year-2/checklist.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4241,8 +4241,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4268,8 +4268,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-3/README.md",
-                  "href": null,
-                  "note": "year-3/README.md"
+                  "href": "/ai-curriculum/year-3/README.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4284,8 +4284,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-3/README.md",
-                  "href": null,
-                  "note": "year-3/README.md"
+                  "href": "/ai-curriculum/year-3/README.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4300,8 +4300,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4340,8 +4340,8 @@ window.ABE_UNIVERSITY = {
                 },
                 {
                   "label": "TEMPLATE-paper.md",
-                  "href": null,
-                  "note": "TEMPLATE-paper.md"
+                  "href": "/ai-curriculum/my-notes/TEMPLATE-paper.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4370,8 +4370,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin Template E",
-                  "href": null,
-                  "note": "linkedin Template E"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4401,8 +4401,8 @@ window.ABE_UNIVERSITY = {
                 },
                 {
                   "label": "TEMPLATE-paper.md",
-                  "href": null,
-                  "note": "TEMPLATE-paper.md"
+                  "href": "/ai-curriculum/my-notes/TEMPLATE-paper.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4431,8 +4431,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin Template E",
-                  "href": null,
-                  "note": "linkedin Template E"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4462,8 +4462,8 @@ window.ABE_UNIVERSITY = {
                 },
                 {
                   "label": "TEMPLATE-paper.md",
-                  "href": null,
-                  "note": "TEMPLATE-paper.md"
+                  "href": "/ai-curriculum/my-notes/TEMPLATE-paper.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4492,8 +4492,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin Template E",
-                  "href": null,
-                  "note": "linkedin Template E"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4523,8 +4523,8 @@ window.ABE_UNIVERSITY = {
                 },
                 {
                   "label": "TEMPLATE-paper.md",
-                  "href": null,
-                  "note": "TEMPLATE-paper.md"
+                  "href": "/ai-curriculum/my-notes/TEMPLATE-paper.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4553,8 +4553,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin Template E",
-                  "href": null,
-                  "note": "linkedin Template E"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4584,8 +4584,8 @@ window.ABE_UNIVERSITY = {
                 },
                 {
                   "label": "TEMPLATE-paper.md",
-                  "href": null,
-                  "note": "TEMPLATE-paper.md"
+                  "href": "/ai-curriculum/my-notes/TEMPLATE-paper.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4614,8 +4614,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin Template E",
-                  "href": null,
-                  "note": "linkedin Template E"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4645,8 +4645,8 @@ window.ABE_UNIVERSITY = {
                 },
                 {
                   "label": "TEMPLATE-paper.md",
-                  "href": null,
-                  "note": "TEMPLATE-paper.md"
+                  "href": "/ai-curriculum/my-notes/TEMPLATE-paper.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4675,8 +4675,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin Template E",
-                  "href": null,
-                  "note": "linkedin Template E"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4706,8 +4706,8 @@ window.ABE_UNIVERSITY = {
                 },
                 {
                   "label": "TEMPLATE-paper.md",
-                  "href": null,
-                  "note": "TEMPLATE-paper.md"
+                  "href": "/ai-curriculum/my-notes/TEMPLATE-paper.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4736,8 +4736,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin Template E",
-                  "href": null,
-                  "note": "linkedin Template E"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4767,8 +4767,8 @@ window.ABE_UNIVERSITY = {
                 },
                 {
                   "label": "TEMPLATE-paper.md",
-                  "href": null,
-                  "note": "TEMPLATE-paper.md"
+                  "href": "/ai-curriculum/my-notes/TEMPLATE-paper.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4797,8 +4797,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin Template E",
-                  "href": null,
-                  "note": "linkedin Template E"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4828,8 +4828,8 @@ window.ABE_UNIVERSITY = {
                 },
                 {
                   "label": "TEMPLATE-paper.md",
-                  "href": null,
-                  "note": "TEMPLATE-paper.md"
+                  "href": "/ai-curriculum/my-notes/TEMPLATE-paper.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4858,8 +4858,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin Template E",
-                  "href": null,
-                  "note": "linkedin Template E"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4889,8 +4889,8 @@ window.ABE_UNIVERSITY = {
                 },
                 {
                   "label": "TEMPLATE-paper.md",
-                  "href": null,
-                  "note": "TEMPLATE-paper.md"
+                  "href": "/ai-curriculum/my-notes/TEMPLATE-paper.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4919,8 +4919,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin Template E",
-                  "href": null,
-                  "note": "linkedin Template E"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4946,13 +4946,13 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-3/01-papers-scaling-moe.md",
-                  "href": null,
-                  "note": "year-3/01-papers-scaling-moe.md"
+                  "href": "/ai-curriculum/year-3/01-papers-scaling-moe.md",
+                  "internal": true
                 },
                 {
                   "label": "rubrics P8",
-                  "href": null,
-                  "note": "rubrics P8"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -4977,8 +4977,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5004,13 +5004,13 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-3/01-papers-scaling-moe.md",
-                  "href": null,
-                  "note": "year-3/01-papers-scaling-moe.md"
+                  "href": "/ai-curriculum/year-3/01-papers-scaling-moe.md",
+                  "internal": true
                 },
                 {
                   "label": "rubrics P8",
-                  "href": null,
-                  "note": "rubrics P8"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5035,8 +5035,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5062,13 +5062,13 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-3/01-papers-scaling-moe.md",
-                  "href": null,
-                  "note": "year-3/01-papers-scaling-moe.md"
+                  "href": "/ai-curriculum/year-3/01-papers-scaling-moe.md",
+                  "internal": true
                 },
                 {
                   "label": "rubrics P8",
-                  "href": null,
-                  "note": "rubrics P8"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5093,8 +5093,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5120,13 +5120,13 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-3/01-papers-scaling-moe.md",
-                  "href": null,
-                  "note": "year-3/01-papers-scaling-moe.md"
+                  "href": "/ai-curriculum/year-3/01-papers-scaling-moe.md",
+                  "internal": true
                 },
                 {
                   "label": "rubrics P8",
-                  "href": null,
-                  "note": "rubrics P8"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5151,8 +5151,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5178,13 +5178,13 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-3/01-papers-scaling-moe.md",
-                  "href": null,
-                  "note": "year-3/01-papers-scaling-moe.md"
+                  "href": "/ai-curriculum/year-3/01-papers-scaling-moe.md",
+                  "internal": true
                 },
                 {
                   "label": "rubrics P8",
-                  "href": null,
-                  "note": "rubrics P8"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5209,8 +5209,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5236,13 +5236,13 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-3/01-papers-scaling-moe.md",
-                  "href": null,
-                  "note": "year-3/01-papers-scaling-moe.md"
+                  "href": "/ai-curriculum/year-3/01-papers-scaling-moe.md",
+                  "internal": true
                 },
                 {
                   "label": "rubrics P8",
-                  "href": null,
-                  "note": "rubrics P8"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5267,8 +5267,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5294,13 +5294,13 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-3/01-papers-scaling-moe.md",
-                  "href": null,
-                  "note": "year-3/01-papers-scaling-moe.md"
+                  "href": "/ai-curriculum/year-3/01-papers-scaling-moe.md",
+                  "internal": true
                 },
                 {
                   "label": "rubrics P8",
-                  "href": null,
-                  "note": "rubrics P8"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5325,8 +5325,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5352,13 +5352,13 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-3/01-papers-scaling-moe.md",
-                  "href": null,
-                  "note": "year-3/01-papers-scaling-moe.md"
+                  "href": "/ai-curriculum/year-3/01-papers-scaling-moe.md",
+                  "internal": true
                 },
                 {
                   "label": "rubrics P8",
-                  "href": null,
-                  "note": "rubrics P8"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5383,8 +5383,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "linkedin/templates.md",
-                  "href": null,
-                  "note": "linkedin/templates.md"
+                  "href": "/ai-curriculum/linkedin/templates.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5414,8 +5414,8 @@ window.ABE_UNIVERSITY = {
                 },
                 {
                   "label": "rubrics P9",
-                  "href": null,
-                  "note": "rubrics P9"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5470,8 +5470,8 @@ window.ABE_UNIVERSITY = {
                 },
                 {
                   "label": "rubrics P9",
-                  "href": null,
-                  "note": "rubrics P9"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5526,8 +5526,8 @@ window.ABE_UNIVERSITY = {
                 },
                 {
                   "label": "rubrics P9",
-                  "href": null,
-                  "note": "rubrics P9"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5582,8 +5582,8 @@ window.ABE_UNIVERSITY = {
                 },
                 {
                   "label": "rubrics P9",
-                  "href": null,
-                  "note": "rubrics P9"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5638,8 +5638,8 @@ window.ABE_UNIVERSITY = {
                 },
                 {
                   "label": "rubrics P9",
-                  "href": null,
-                  "note": "rubrics P9"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5694,8 +5694,8 @@ window.ABE_UNIVERSITY = {
                 },
                 {
                   "label": "rubrics P9",
-                  "href": null,
-                  "note": "rubrics P9"
+                  "href": "/ai-curriculum/projects/milestone-rubrics.md",
+                  "internal": true
                 }
               ],
               "todos": [
@@ -5756,8 +5756,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -5814,8 +5814,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -5872,8 +5872,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -5930,8 +5930,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -5988,8 +5988,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -6046,8 +6046,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -6104,8 +6104,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -6162,8 +6162,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -6220,8 +6220,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -6278,8 +6278,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -6336,8 +6336,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -6394,8 +6394,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -6452,8 +6452,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -6510,8 +6510,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -6568,8 +6568,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -6626,8 +6626,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -6684,8 +6684,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -6742,8 +6742,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -6800,8 +6800,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -6858,8 +6858,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -6916,8 +6916,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -6974,8 +6974,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -7032,8 +7032,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
@@ -7090,8 +7090,8 @@ window.ABE_UNIVERSITY = {
               "links": [
                 {
                   "label": "year-4-5/01-ceo-lab.md",
-                  "href": null,
-                  "note": "year-4-5/01-ceo-lab.md"
+                  "href": "/ai-curriculum/year-4-5/01-ceo-lab.md",
+                  "internal": true
                 },
                 {
                   "label": "YC Startup School",
