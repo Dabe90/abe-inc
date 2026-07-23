@@ -32,6 +32,7 @@
         <a href="../projects.html" class="hover:text-accent transition">Work</a>
         <a href="../services.html" class="hover:text-accent transition">Services</a>
         <a href="index.html" class="text-accent font-semibold">AI Agents</a>
+        <a href="../university/" class="hover:text-accent transition">University</a>
         <a href="../pricing.html" class="hover:text-accent transition">Pricing</a>
         <a href="../insights/index.html" class="hover:text-accent transition">Insights</a>
         <a href="../about.html" class="hover:text-accent transition">About</a>
@@ -47,6 +48,8 @@
       <a href="../services.html" class="mobile-nav-link">Services</a>
       <a href="index.html" class="mobile-nav-link !text-accent">AI Agents</a>
       <a href="../pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="../university/" class="mobile-nav-link">University</a>
+      <a href="../insights/index.html" class="mobile-nav-link">Insights</a>
       <a href="../about.html" class="mobile-nav-link">About</a>
       <a href="../contact.html" class="mobile-nav-link">Contact</a>
     </nav>
@@ -199,7 +202,10 @@
       <div class="max-w-6xl mx-auto px-4">
         <div class="max-w-2xl">
           <p class="section-label mb-3">Try it yourself</p>
-          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Volunteer Coordinator Agent — interactive demo.</h2>
+          <div class="flex flex-wrap items-center gap-3">
+            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Volunteer Coordinator Agent — interactive demo.</h2>
+            <span class="agent-demo__live-pill" data-agent-demo-live-pill hidden>● Live</span>
+          </div>
           <p class="mt-4 text-sm text-ink-soft leading-relaxed">Describe a coordination goal and watch the agent stream reasoning steps — roster load, shift matching, and human-in-the-loop approval queue. Fictional sample data only; production uses Genkit + Firebase.</p>
         </div>
 
@@ -218,8 +224,8 @@
                   </div>
                 </div>
                 <button type="submit" class="btn-primary agent-demo__run" data-agent-demo-run>Run Demo Agent</button>
-                <p class="agent-demo__disclaimer mt-4 agent-demo__disclaimer--demo"><strong>Demo mode — fictional data only.</strong> Responses adapt to keywords in your goal (try <em>Spanish greeters</em>, <em>kids ministry</em>, <em>parking</em>, <em>tech booth</em>, or <em>first aid</em>). Streams via <code class="text-xs bg-slate-800/10 px-1 rounded">/api/volunteer-agent-demo</code> — no real sends; all actions queue for approval.</p>
-                <p class="agent-demo__config-warn hidden" data-agent-demo-config-warn role="status">Demo API unavailable. Deploy to Vercel or run <code class="text-xs bg-amber-100 px-1 rounded">npm run next:dev</code> locally.</p>
+                <p class="agent-demo__disclaimer mt-4 agent-demo__disclaimer--demo"><strong>Live public demo.</strong> Responses adapt to keywords in your goal (try <em>Spanish greeters</em>, <em>kids ministry</em>, <em>parking</em>, <em>tech booth</em>, or <em>first aid</em>). Fictional sample data only — no real sends; all actions queue for coordinator approval.</p>
+                <p class="agent-demo__config-warn hidden" data-agent-demo-config-warn role="status">Demo temporarily unavailable — <a href="../contact.html#book-call" class="text-accent font-semibold underline">book a live walkthrough</a> instead.</p>
               </form>
             </div>
             <div class="agent-demo__output-panel">

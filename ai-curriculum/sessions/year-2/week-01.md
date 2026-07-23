@@ -1,0 +1,62 @@
+# Year 2 — Week 01: GPU memory model
+
+**Goal this week:** GPU memory model
+
+## Sessions
+
+### Session A — Study (~100 min)
+
+**Watch / read**
+- [FSDL](https://fullstackdeeplearning.com/)
+- [PyTorch perf notes](https://pytorch.org/tutorials/recipes/recipes/tuning_guide.html)
+
+**Do**
+- [ ] Draw memory pie: weights/act/optim
+- [ ] Session note
+
+**Write in my-notes/** (copy TEMPLATE-session.md)
+- One-sentence learning
+- Confusion
+- What you built
+
+### Session B — Build (~120 min)
+
+**Watch / read**
+- [FSDL](https://fullstackdeeplearning.com/)
+
+**Do**
+- [ ] Implement / run until green
+- [ ] Commit
+
+**Write in my-notes/** (copy TEMPLATE-session.md)
+- One-sentence learning
+- Confusion
+- What you built
+
+### Session C — Share (~40 min)
+
+**Watch / read**
+- [linkedin/templates.md](../../linkedin/templates.md)
+
+**Do**
+- [ ] Draft post with a number ($ or tok/s)
+
+**Write in my-notes/** (copy TEMPLATE-session.md)
+- One-sentence learning
+- Confusion
+- What you built
+
+
+## LinkedIn (end of week)
+
+Numbers-first post this week.
+
+## Project touch
+
+P6 prep
+
+## Done?
+
+- [ ] All sessions A–C complete
+- [ ] Session note files saved under `my-notes/`
+- [ ] LinkedIn drafted or posted

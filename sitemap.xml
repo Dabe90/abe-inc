@@ -8,6 +8,7 @@
   <url><loc>https://abestack.com/pricing.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://abestack.com/about.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://abestack.com/contact.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://abestack.com/university/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
   <url><loc>https://abestack.com/insights/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://abestack.com/insights/agentic-ai-for-ops-teams.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://abestack.com/insights/production-ready-ai-agents-2026.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>

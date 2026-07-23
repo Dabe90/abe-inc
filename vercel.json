@@ -2,6 +2,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
+    { "source": "/university", "destination": "/university/index.html" },
+    { "source": "/university/", "destination": "/university/index.html" },
     { "source": "/insights/:slug", "destination": "/insights/:slug.html" }
   ],
   "redirects": [

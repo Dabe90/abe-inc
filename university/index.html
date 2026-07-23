@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../images/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Abe Stack University — Frontier AI Builder Curriculum</title>
+  <meta name="description" content="Free interactive PhD-depth AI curriculum: 120 weeks of sessions, labs, flashcards, and progress tracking. Math → deep learning → agents → lab founder skills." />
+  <meta property="og:title" content="Abe Stack University — Frontier AI Builder Curriculum" />
+  <meta property="og:description" content="Learn, build, evaluate, share, lead — interactive curriculum with vector labs, flashcards, and 360 session plans." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://abestack.com/university/" />
+  <meta property="og:image" content="https://abestack.com/images/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: {
+      ink: { DEFAULT: '#0b1220', muted: '#334155', soft: '#64748b' },
+      accent: { DEFAULT: '#2563eb', light: '#3b82f6', soft: '#dbeafe' },
+    }}}};
+  </script>
+  <link rel="stylesheet" href="../css/site.css" />
+  <link rel="stylesheet" href="../css/university.css" />
+</head>
+<body class="uni-page text-ink antialiased flex flex-col min-h-screen">
+  <header class="site-header sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+      <a href="../index.html" class="site-brand group" aria-label="Abe Stack home"><img src="../images/abestack-lockup.png" alt="Abe Stack" class="site-logo-lockup" width="85" height="40" decoding="async" /></a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-ink-muted" aria-label="Main">
+        <a href="../projects.html" class="hover:text-accent transition">Work</a>
+        <a href="../services.html" class="hover:text-accent transition">Services</a>
+        <a href="../ai-agents/" class="hover:text-accent transition">AI Automation</a>
+        <a href="./" class="text-accent transition">University</a>
+        <a href="../insights/index.html" class="hover:text-accent transition">Insights</a>
+        <a href="../about.html" class="hover:text-accent transition">About</a>
+        <a href="../contact.html" class="hover:text-accent transition">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="../contact.html" class="hidden sm:inline-flex btn-primary !py-2 !px-4 !text-sm">Start a project</a>
+        <button id="nav-toggle" type="button" class="md:hidden p-2.5 rounded-lg border border-slate-200 text-ink-muted hover:border-slate-300 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-nav" class="hidden md:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-1" aria-label="Mobile">
+      <a href="../projects.html" class="mobile-nav-link">Work</a>
+      <a href="../services.html" class="mobile-nav-link">Services</a>
+      <a href="../ai-agents/" class="mobile-nav-link">AI Automation</a>
+      <a href="./" class="mobile-nav-link !text-accent">University</a>
+      <a href="../insights/index.html" class="mobile-nav-link">Insights</a>
+      <a href="../about.html" class="mobile-nav-link">About</a>
+      <a href="../contact.html" class="mobile-nav-link">Contact</a>
+      <a href="../contact.html" class="block mt-2 text-center btn-primary !py-3">Start a project</a>
+    </nav>
+  </header>
+
+  <main class="flex-1">
+    <section class="uni-hero">
+      <div class="uni-hero__grid" aria-hidden="true"></div>
+      <div class="max-w-6xl mx-auto px-4 pt-10 pb-8 sm:pt-14 sm:pb-10 relative">
+        <div class="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
+          <div class="flex-1">
+            <p class="uni-kicker">Abe Stack University</p>
+            <h1 class="uni-title mt-3">Build frontier AI skills — then lead the lab.</h1>
+            <p class="uni-lead mt-4">A free, interactive PhD-depth path: math → deep learning → agents → systems → founder craft. Progress saves in your browser. Ship proof, not vibes.</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <button type="button" class="btn-primary" data-uni-goto="curriculum">Start Year 0 →</button>
+              <button type="button" class="btn-secondary !bg-white/80" data-uni-goto="labs">Open labs</button>
+            </div>
+          </div>
+          <div class="flex items-center gap-6">
+            <div class="uni-progress-ring" aria-label="Curriculum progress">
+              <svg viewBox="0 0 100 100" width="120" height="120" aria-hidden="true">
+                <circle class="uni-progress-ring__track" cx="50" cy="50" r="42" />
+                <circle id="uni-ring-value" class="uni-progress-ring__value" cx="50" cy="50" r="42" stroke-dasharray="264" stroke-dashoffset="264" />
+              </svg>
+              <span id="uni-ring-pct" class="uni-progress-ring__pct">0%</span>
+            </div>
+            <div class="text-sm text-ink-muted leading-relaxed max-w-[11rem]">
+              <strong class="text-ink block mb-1">Your progress</strong>
+              Checkboxes sync locally. Come back anytime — same browser, same streak.
+            </div>
+          </div>
+        </div>
+
+        <div class="uni-stat-row mt-8">
+          <div class="uni-stat"><div class="uni-stat__n" id="uni-stat-units">0/120</div><div class="uni-stat__l">Weeks / months done</div></div>
+          <div class="uni-stat"><div class="uni-stat__n" id="uni-stat-checks">0</div><div class="uni-stat__l">Tasks completed</div></div>
+          <div class="uni-stat"><div class="uni-stat__n" id="uni-stat-sessions">360</div><div class="uni-stat__l">Session plans</div></div>
+          <div class="uni-stat"><div class="uni-stat__n" id="uni-stat-streak">0</div><div class="uni-stat__l">Study streak (days)</div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-6xl mx-auto px-4 py-8 sm:py-10">
+      <div class="uni-shell">
+        <aside class="uni-nav" aria-label="University sections">
+          <button type="button" class="uni-nav__btn is-active" data-view="home"><span class="uni-nav__ico">⌂</span> Overview</button>
+          <button type="button" class="uni-nav__btn" data-view="curriculum"><span class="uni-nav__ico">▦</span> Curriculum</button>
+          <button type="button" class="uni-nav__btn" data-view="labs"><span class="uni-nav__ico">◈</span> Labs</button>
+          <button type="button" class="uni-nav__btn" data-view="flash"><span class="uni-nav__ico">◇</span> Flashcards</button>
+          <button type="button" class="uni-nav__btn" data-view="timer"><span class="uni-nav__ico">⏱</span> Focus timer</button>
+          <button type="button" class="uni-nav__btn" data-view="resources"><span class="uni-nav__ico">↗</span> Free resources</button>
+          <button type="button" class="uni-nav__btn" data-view="notes"><span class="uni-nav__ico">✎</span> Notes</button>
+        </aside>
+
+        <div>
+          <!-- HOME -->
+          <section class="uni-view uni-panel" data-view="home">
+            <div id="uni-continue" class="uni-continue"></div>
+            <div class="uni-panel__head">
+              <div>
+                <div class="uni-panel__title">How this works</div>
+                <div class="uni-panel__sub">Learn → build → evaluate → share → lead</div>
+              </div>
+            </div>
+            <ol class="space-y-3 text-sm text-ink-muted mb-8 list-decimal list-inside">
+              <li><strong class="text-ink">Open Curriculum</strong> — pick a year, then a week. Do sessions A → B → C.</li>
+              <li><strong class="text-ink">Tick tasks</strong> as you finish; progress stays on this device.</li>
+              <li><strong class="text-ink">Use Labs</strong> for intuition (vectors, gradient descent) before heavy theory.</li>
+              <li><strong class="text-ink">Ship projects P1–P10</strong> with public writeups — LinkedIn + GitHub are your transcript.</li>
+            </ol>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <div class="uni-panel__title mb-3">Honest framing</div>
+                <ul class="uni-honesty" id="uni-honesty"></ul>
+              </div>
+              <div>
+                <div class="uni-panel__title mb-3">Milestone projects</div>
+                <div class="uni-project-list" id="uni-projects"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- CURRICULUM -->
+          <section class="uni-view uni-panel" data-view="curriculum" id="uni-curriculum" hidden>
+            <div id="uni-phase-tabs" class="uni-phase-tabs"></div>
+            <div id="uni-phase-head" class="uni-panel__head"></div>
+            <div id="uni-week-grid" class="uni-week-grid" aria-label="Week picker"></div>
+            <div id="uni-unit-detail"></div>
+          </section>
+
+          <!-- LABS -->
+          <section class="uni-view uni-panel" data-view="labs" hidden>
+            <div class="uni-panel__head">
+              <div>
+                <div class="uni-panel__title">Interactive labs</div>
+                <div class="uni-panel__sub">Build intuition with your hands — then open the week’s videos.</div>
+              </div>
+            </div>
+            <div class="uni-lab-grid">
+              <div class="uni-lab-card">
+                <h3>Vector lab</h3>
+                <p>Drag tips of <strong>a</strong> and <strong>b</strong>. Watch dot product, cosine similarity, and projection update live.</p>
+                <div class="uni-canvas-wrap">
+                  <canvas id="uni-vec-canvas" width="640" height="400" aria-label="Interactive vector plane"></canvas>
+                </div>
+                <div class="uni-lab-readout">
+                  <div>Dot product<strong id="uni-dot">—</strong></div>
+                  <div>Cosine<strong id="uni-cos">—</strong></div>
+                  <div>Angle<strong id="uni-angle">—</strong></div>
+                </div>
+              </div>
+              <div class="uni-lab-card">
+                <h3>Gradient descent</h3>
+                <p>Minimize L(w)=(w−1.5)². Step downhill; tune the learning rate. Too high = overshoot.</p>
+                <div class="uni-gd-plot">
+                  <canvas id="uni-gd-canvas" aria-label="Loss curve and gradient steps"></canvas>
+                </div>
+                <div class="uni-lab-readout">
+                  <div>w<strong id="uni-gd-w">—</strong></div>
+                  <div>Loss<strong id="uni-gd-loss">—</strong></div>
+                  <div>Steps<strong id="uni-gd-steps">—</strong></div>
+                </div>
+                <div class="uni-controls">
+                  <label>LR <input id="uni-gd-lr" type="range" min="0.02" max="0.8" step="0.02" value="0.15" /> <span id="uni-gd-lr-val">0.15</span></label>
+                  <button type="button" class="uni-btn" id="uni-gd-step">Step</button>
+                  <button type="button" class="uni-btn uni-btn--primary" id="uni-gd-run">Run ×25</button>
+                  <button type="button" class="uni-btn" id="uni-gd-reset">Reset</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- FLASH -->
+          <section class="uni-view uni-panel" data-view="flash" hidden>
+            <div class="uni-panel__head">
+              <div>
+                <div class="uni-panel__title">Concept flashcards</div>
+                <div class="uni-panel__sub">Tap the card to flip · <span id="uni-flash-count">1 / 10</span></div>
+              </div>
+            </div>
+            <div class="uni-flash">
+              <div class="uni-flash__inner" id="uni-flash-inner" role="button" tabindex="0" aria-label="Flip flashcard">
+                <div class="uni-flash__face">
+                  <div class="uni-flash__hint">Question</div>
+                  <div class="uni-flash__text" id="uni-flash-q"></div>
+                </div>
+                <div class="uni-flash__face uni-flash__face--back">
+                  <div class="uni-flash__hint">Answer</div>
+                  <div class="uni-flash__text" id="uni-flash-a"></div>
+                </div>
+              </div>
+            </div>
+            <div class="uni-controls" style="justify-content:center;margin-top:1.25rem">
+              <button type="button" class="uni-btn" data-flash-prev>← Prev</button>
+              <button type="button" class="uni-btn uni-btn--primary" data-flash-next>Next →</button>
+            </div>
+          </section>
+
+          <!-- TIMER -->
+          <section class="uni-view uni-panel" data-view="timer" hidden>
+            <div class="uni-panel__head">
+              <div>
+                <div class="uni-panel__title">Focus timer</div>
+                <div class="uni-panel__sub">One block. Phone away. Then tick a curriculum task.</div>
+              </div>
+            </div>
+            <div class="uni-timer">
+              <div class="uni-timer__display" id="uni-timer-display">25:00</div>
+              <div class="uni-timer__bar"><div class="uni-timer__fill" id="uni-timer-fill"></div></div>
+              <div class="uni-controls">
+                <button type="button" class="uni-btn" data-timer-set="25">25m</button>
+                <button type="button" class="uni-btn" data-timer-set="50">50m</button>
+                <button type="button" class="uni-btn" data-timer-set="90">90m</button>
+                <button type="button" class="uni-btn uni-btn--primary" id="uni-timer-toggle">Start</button>
+                <button type="button" class="uni-btn" id="uni-timer-reset">Reset</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- RESOURCES -->
+          <section class="uni-view uni-panel" data-view="resources" hidden>
+            <div class="uni-panel__head">
+              <div>
+                <div class="uni-panel__title">Free materials</div>
+                <div class="uni-panel__sub">MIT · Berkeley · Stanford · HF · open books — no paywall required.</div>
+              </div>
+            </div>
+            <div id="uni-resources"></div>
+          </section>
+
+          <!-- NOTES -->
+          <section class="uni-view uni-panel uni-notes" data-view="notes" hidden>
+            <div class="uni-panel__head">
+              <div>
+                <div class="uni-panel__title">Session notes</div>
+                <div class="uni-panel__sub">Autosaves in this browser. Prompt: one sentence · confusion · what you built · analogy · next goal.</div>
+              </div>
+            </div>
+            <textarea id="uni-notes-ta" placeholder="Today I learned…&#10;&#10;Confused by…&#10;&#10;Built / tried…&#10;&#10;Operator analogy…&#10;&#10;Next session…"></textarea>
+          </section>
+        </div>
+      </div>
+
+      <p class="uni-footer-note">Curriculum also lives in the repo under <code>ai-curriculum/</code>. University progress is local-only — clear site data resets checkboxes.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="max-w-6xl mx-auto px-4 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+      <div>
+        <p class="site-footer__brand site-brand site-brand--footer"><img src="../images/abestack-lockup-sm.png" alt="Abe Stack" class="site-logo-lockup" width="68" height="32" decoding="async" /></p>
+        <p class="mt-3 leading-relaxed">Product engineering studio — agentic AI, web platforms, and cloud automation. US-based delivery.</p>
+      </div>
+      <div>
+        <p class="site-footer__heading">Explore</p>
+        <ul class="space-y-2">
+          <li><a href="../projects.html">Work</a></li>
+          <li><a href="./">University</a></li>
+          <li><a href="../insights/index.html">Insights</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="site-footer__heading">Services</p>
+        <ul class="space-y-2">
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../ai-agents/">AI Automation</a></li>
+          <li><a href="../pricing.html">Pricing</a></li>
+          <li><a href="../resources/index.html">Free resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="site-footer__heading">Connect</p>
+        <ul class="space-y-2">
+          <li><a href="mailto:hello@abestack.com" data-email>hello@abestack.com</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="https://www.linkedin.com/company/abestack/" data-linkedin-link target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-6 px-4 text-center text-xs text-slate-500">
+      <p>© <span data-year></span> Abe Stack · abestack.com</p>
+      <p class="footer-legal mt-2"><a href="../security.html">Security</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></p>
+    </div>
+  </footer>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/university-data.js"></script>
+  <script src="../js/university.js"></script>
+</body>
+</html>

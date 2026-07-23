@@ -24,6 +24,7 @@
         <a href="projects.html" class="hover:text-accent transition">Work</a>
         <a href="services.html" class="hover:text-accent transition">Services</a>
         <a href="ai-agents/" class="hover:text-accent transition">AI Automation</a>
+        <a href="university/" class="hover:text-accent transition">University</a>
         <a href="pricing.html" class="hover:text-accent transition">Pricing</a>
         <a href="insights/index.html" class="hover:text-accent transition">Insights</a>
         <a href="about.html" class="hover:text-accent transition">About</a>
@@ -37,6 +38,7 @@
       <a href="projects.html" class="mobile-nav-link">Work</a>
       <a href="services.html" class="mobile-nav-link">Services</a>
       <a href="ai-agents/" class="mobile-nav-link">AI Automation</a>
+      <a href="university/" class="mobile-nav-link">University</a>
       <a href="pricing.html" class="mobile-nav-link">Pricing</a>
       <a href="insights/index.html" class="mobile-nav-link">Insights</a>
       <a href="about.html" class="mobile-nav-link">About</a>
@@ -51,25 +53,26 @@
         <p class="section-label mb-3">Contact</p>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Let's talk about your project.</h1>
         <p class="mt-4 text-ink-soft max-w-2xl leading-relaxed text-base">Share what you're building — timeline, budget range, and goals. We reply within <strong class="text-ink font-semibold">1–2 business days</strong> with an honest take on fit and next steps.</p>
-        <div class="mt-6">
-          <a href="?intent=ai-audit" class="inline-flex btn-primary !text-sm">Get a free AI opportunity audit →</a>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="?intent=ai-audit" class="btn-primary btn-cta-prominent">Get a free AI opportunity audit</a>
+          <a href="#project-form" class="btn-secondary">Jump to inquiry form →</a>
         </div>
       </div>
     </section>
     <div class="max-w-6xl mx-auto px-4 pb-16 grid lg:grid-cols-2 gap-12 lg:gap-16">
-      <div>
+      <div class="order-2 lg:order-1">
         <div class="mt-8 space-y-4">
-          <aside class="lead-capture-banner" id="enterprise-inquiry" aria-label="Enterprise engagement">
-            <p class="lead-capture-banner__label">Enterprise</p>
-            <h2 class="!text-lg sm:!text-xl">Multi-workflow or procurement-led projects</h2>
-            <p class="!text-sm">Several coordinated agents, audit requirements, security questionnaires, or custom SOW under MSA — tell us about your ops scale and compliance needs.</p>
-            <a href="?intent=enterprise" class="btn-primary !text-sm !py-2.5 mt-3 inline-flex">Start enterprise inquiry</a>
-          </aside>
           <aside class="lead-capture-banner" id="ai-audit" aria-label="Free AI opportunity audit">
             <p class="lead-capture-banner__label">Agentic AI</p>
             <h2 class="!text-lg sm:!text-xl">Free AI opportunity audit</h2>
             <p class="!text-sm">Tell us which workflows eat the most time — volunteer matching, enrollment, outreach, publishing. We'll reply with 1–2 agentic AI opportunities mapped to your stack (Firebase, Gmail, Sheets).</p>
-            <a href="?intent=ai-audit" class="btn-primary !text-sm !py-2.5 mt-3 inline-flex">Start AI audit request</a>
+            <a href="?intent=ai-audit" class="btn-primary btn-cta-prominent mt-3 inline-flex w-full sm:w-auto justify-center">Start free AI audit</a>
+          </aside>
+          <aside class="lead-capture-banner" id="enterprise-inquiry" aria-label="Enterprise engagement">
+            <p class="lead-capture-banner__label">Enterprise</p>
+            <h2 class="!text-lg sm:!text-xl">Multi-workflow or procurement-led projects</h2>
+            <p class="!text-sm">Several coordinated agents, audit requirements, security questionnaires, or custom SOW under MSA — tell us about your ops scale and compliance needs.</p>
+            <a href="?intent=enterprise" class="btn-secondary mt-3 inline-flex w-full sm:w-auto justify-center">Start enterprise inquiry</a>
           </aside>
           <div class="rounded-xl border border-slate-200 p-5">
             <p class="font-semibold text-sm">What happens next</p>
@@ -99,8 +102,9 @@
         </div>
       </div>
 
-      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+      <div id="project-form" class="order-1 lg:order-2 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
         <h2 class="font-bold text-lg">Project inquiry</h2>
+        <p class="mt-2 text-sm text-ink-soft">Three fields — we reply within 1–2 business days.</p>
         <div id="form-success" class="hidden mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800" role="status">
           Thanks — your message was sent. We reply within 1–2 business days.
         </div>
@@ -136,7 +140,7 @@
             <label for="message" class="block text-sm font-medium mb-1.5">Tell us about the project</label>
             <textarea id="message" name="message" rows="5" required placeholder="Goals, timeline, budget range, and anything else that helps us understand the scope." class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent resize-y"></textarea>
           </div>
-          <button type="submit" class="w-full rounded-full bg-ink px-6 py-3 min-h-[44px] text-sm font-semibold text-white hover:bg-accent transition">Send inquiry</button>
+          <button type="submit" class="btn-primary btn-cta-prominent w-full justify-center">Send inquiry</button>
           <p class="hidden text-sm" data-form-status role="alert" aria-live="polite"></p>
         </form>
       </div>
